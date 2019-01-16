@@ -21,7 +21,7 @@
 
 ### ブランチ作成
 
-master branchから branchを切ります。ブランチの命名規約は `(名詞または単語）#(issue番号)`例showedit#20
+master branchから branchを切ります。ブランチの命名規約は `（feature or bug）/(名詞または単語）#(issue番号)`例bug/showedit#20
 
 ### WIP(work in progress) PullRequestの作成
 
