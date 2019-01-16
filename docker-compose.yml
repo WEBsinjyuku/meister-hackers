@@ -1,0 +1,28 @@
+version: '3'
+
+services:
+  postgres:
+    image: postgres:10.6-alpine
+    volumes:
+      - postgres-store:/var/lib/postgresql/data
+
+  rails:
+    build: .
+    command: /bin/sh -c "rm -rf /app/tmp/pids/server.pid && bin/rails server -b 0.0.0.0 -p 3000"
+    depends_on:
+      - postgres
+    environment:
+      DATABASE_HOST: postgres
+    tty: true
+    ports:
+      - '3000:3000'    
+    volumes:
+      - .:/app
+      - bundler-store:/usr/local/bundle
+      - /dev/shm:/dev/shm
+      - node-modules-store:/app/node_modules
+
+volumes:
+  postgres-store:
+  bundler-store:
+  node-modules-store:
