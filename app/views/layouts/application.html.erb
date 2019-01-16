@@ -11,5 +11,10 @@
 
   <body>
     <%= yield %>
+    <% if logged_in? %>
+      <%= button_to 'ログアウト', logout_path, method: :delete %>
+    <% else %>
+      <%= button_to '開発用ログイン', login_dev_path, method: :post %>
+    <% end %>
   </body>
 </html>
