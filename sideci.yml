@@ -1,0 +1,5 @@
+linter:
+  rubocop:
+    root_dir: '.'
+    options:
+      config: '.rubocop.yml'
