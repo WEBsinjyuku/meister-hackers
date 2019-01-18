@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 module SessionsHelper
   # TODO: ログイン機能実装後変更
   def current_user
