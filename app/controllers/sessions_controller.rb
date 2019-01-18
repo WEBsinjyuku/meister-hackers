@@ -1,5 +1,6 @@
-class SessionsController < ApplicationController
+# frozen_string_literal: true
 
+class SessionsController < ApplicationController
   # TODO: ログイン機能実装後削除
   def test
   end
@@ -12,6 +13,6 @@ class SessionsController < ApplicationController
 
   def destroy
     session.delete(:user_id)
-    redirect_to root_url, notice: 'ログアウト'
+    redirect_to root_url, notice: "ログアウト"
   end
 end
