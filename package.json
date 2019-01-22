@@ -9,5 +9,13 @@
   },
   "devDependencies": {
     "webpack-dev-server": "2.11.2"
+  },
+  "scripts": {
+    "docker:clean": "docker volume ls | grep automatching | cut -b 21- | xargs docker volume rm",
+    "rails:c": "docker-compose run rails rails c",
+    "rails:s": "docker-compose run rails rails s",      
+    "rails:spec": "docker-compose run rails rspec",
+    "rails:bundle": "docker-compose run rails bundle",
+    "rails:rubocop": "docker-compose run rails rubocop -a"
   }
 }
