@@ -34,6 +34,11 @@ gem "jbuilder", "~> 2.5"
 # add by hirata
 gem "slim-rails"
 
+# rspec
+gem "rspec-rails"
+gem "factory_bot_rails"
+gem "rails-controller-testing"
+
 # Use ActiveStorage variant
 # gem 'mini_magick', '~> 4.8'
 
