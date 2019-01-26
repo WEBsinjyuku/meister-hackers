@@ -1,0 +1,15 @@
+doctype html
+html
+  head
+    title
+      | GithubOpenProducts
+    = csrf_meta_tags
+    = csp_meta_tag
+    = stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload'
+    = javascript_include_tag 'application', 'data-turbolinks-track': 'reload'
+  body
+    = yield
+    - if logged_in?
+      = button_to 'ログアウト', logout_path, method: :delete
+    - else
+      = button_to '開発用ログイン', login_dev_path, method: :post
