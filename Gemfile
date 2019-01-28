@@ -71,4 +71,3 @@ gem "tzinfo-data", platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 
 # add by takahashi
 gem "bulma-rails", "~> 0.7.2"
-
