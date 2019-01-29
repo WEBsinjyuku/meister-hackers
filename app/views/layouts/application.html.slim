@@ -11,34 +11,18 @@ html
     link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css"
 
   body
-    = yield
-    - if logged_in?
-      = button_to 'ログアウト', logout_path, method: :delete
-    - else
-      = button_to '開発用ログイン', login_dev_path, method: :post
-
-header.nav
-  .nav-left
-      span.nav-item
-          span.fa.fa-language
-  .nav-right
-    .nav-item
-      .control.has-addons
-        input.input.type.search.name.search.placeholder.キーワード検索
-        a.button.is-info 検索
-    span.nav-item
-      a.href.t.fa.fa-user ログイン
-
-/   <div class="nav-right">
-/     <span class="nav-item">
-/       <div class="control has-addons">
-/         <input class="input" type="search" name="search" placeholder="キーワード検索">
-/         <a class="button is-info"><i class="fa fa-search"></i>検索</a>
-/       </div>
-/     </span>
-/     <span class="nav-item">
-/       <a href="#" class="fa fa-user">ログイン</a>
-/     </span>
-/   </div>
-/   <!-- 記述場所③ --> 
-/ </header>
+   = yield
+    header.nav
+      .nav-left
+          span.nav-item
+              span.fa.fa-language
+      .nav-right
+        .nav-item
+          .control.has-addons
+            input.input.type.search.name.search.placeholder.キーワード検索
+            a.button.is-info 検索
+        span.nav-item
+        - if logged_in?
+          = button_to 'ログアウト', logout_path, method: :delete
+        - else
+          = button_to '開発用ログイン', login_dev_path, method: :post
