@@ -13,17 +13,18 @@ html
   body
   = yield
 
-  header.nav
-    .nav-left
-      span.nav-item
-      span.fa.fa-language
-    .nav-right
-      .nav-item
-        .control.has-addons
-          input.input.type.search.name.search.placeholder.キーワード検索
-          a.button.is-info 検索
-      span.nav-item
-      - if logged_in?
-        = button_to 'ログアウト', logout_path, method: :delete
-      - else
-        = button_to '開発用ログイン', login_dev_path, method: :post
+  header
+    nav.nav
+      .nav-left
+        span.nav-item
+        span.fa.fa-language
+      .nav-right
+        .nav-item
+          .control.has-addons
+            input.input.type.search.name.search.placeholder.キーワード検索
+            a.button.is-info 検索
+        span.nav-item
+        - if logged_in?
+          = button_to 'ログアウト', logout_path, method: :delete
+        - else
+          = button_to '開発用ログイン', login_dev_path, method: :post
