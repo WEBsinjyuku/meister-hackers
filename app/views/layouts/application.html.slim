@@ -21,7 +21,7 @@ html
               input.input.type.search.name.search.placeholder.キーワード検索
               a> href="#"
               button.is-info 検索
-          - if logged_in?
-            = button_to 'ログアウト', logout_path, method: :delete
+          - if user_signed_in?
+            = button_to 'ログアウト', destroy_user_session_path, method: :delete
           - else
-            = button_to '開発用ログイン', login_dev_path, method: :post
+            = button_to '開発用ログイン', user_github_omniauth_authorize_path, method: :post
