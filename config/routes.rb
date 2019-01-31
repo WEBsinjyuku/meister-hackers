@@ -5,4 +5,8 @@ Rails.application.routes.draw do
   post '/login_dev', to: 'sessions#login_dev'
 
   delete '/logout', to: 'sessions#destroy'
+  # deviseログイン
+  devise_for :users, controllers: {
+    registrations: "users/registrations"
+  }
 end
