@@ -15,14 +15,12 @@ html
     header
       nav.nav
         .nav-left
-          span.nav-item
-          span.fa.fa-language
         .nav-right
           .nav-item
             .control.has-addons
               input.input.type.search.name.search.placeholder.キーワード検索
-              a.button.is-info 検索
-          span.nav-item
+              a> href="#"
+              button.is-info 検索
           - if logged_in?
             = button_to 'ログアウト', logout_path, method: :delete
           - else
