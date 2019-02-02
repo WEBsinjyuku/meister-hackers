@@ -32,6 +32,8 @@ gem "jbuilder", "~> 2.5"
 # gem 'bcrypt', '~> 3.1.7'
 
 
+# add by hirata
+gem "slim-rails"
 
 # rspec
 gem "rspec-rails"
