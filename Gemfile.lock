@@ -44,13 +44,20 @@ GEM
       tzinfo (~> 1.1)
     arel (9.0.0)
     ast (2.4.0)
+    better_errors (2.5.0)
+      coderay (>= 1.0.0)
+      erubi (>= 1.0.0)
+      rack (>= 0.9.0)
     bindex (0.5.0)
+    binding_of_caller (0.8.0)
+      debug_inspector (>= 0.0.1)
     bootsnap (1.3.2)
       msgpack (~> 1.0)
     builder (3.2.3)
     bulma-rails (0.7.2)
       sass (~> 3.2)
     byebug (10.0.2)
+    coderay (1.1.2)
     coffee-rails (4.2.2)
       coffee-script (>= 2.2.0)
       railties (>= 4.0.0)
@@ -60,6 +67,7 @@ GEM
     coffee-script-source (1.12.2)
     concurrent-ruby (1.1.4)
     crass (1.0.4)
+    debug_inspector (0.0.3)
     diff-lcs (1.3)
     erubi (1.8.0)
     execjs (2.7.0)
@@ -231,6 +239,8 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
+  better_errors
+  binding_of_caller
   bootsnap (>= 1.1.0)
   bulma-rails (~> 0.7.2)
   byebug
