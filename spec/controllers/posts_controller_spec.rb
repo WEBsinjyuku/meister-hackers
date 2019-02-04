@@ -5,7 +5,7 @@ require "rails_helper"
 RSpec.describe PostsController, type: :controller do
   let(:user) { create(:user) }
   let(:post1) { create(:post) }
-  let(:post_params) { { title: "hello", content: "content" } }
+  let(:post_params) { { title: "hello", content: "content", repository: "repo_name" } }
 
   describe "new" do
     context "200" do

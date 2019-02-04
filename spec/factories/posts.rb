@@ -4,6 +4,7 @@ FactoryBot.define do
   factory :post do
     title { "post" }
     content { "testtesttesttesttesttesttesttesttesttest" }
+    repository { "repo_name" }
     user { create(:user) }
   end
 end

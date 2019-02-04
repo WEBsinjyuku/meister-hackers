@@ -21,6 +21,11 @@ RSpec.describe Post, type: :model do
       expect(post).not_to be_valid
     end
 
+    it "repository が空" do
+      post.repository = ""
+      expect(post).not_to be_valid
+    end
+
     it "user_id が空" do
       post.user_id = nil
       expect(post).not_to be_valid
