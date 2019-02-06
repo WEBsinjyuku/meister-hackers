@@ -11,9 +11,6 @@ html
     link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css"
 
   body
+    = render 'layouts/navbar'
     = yield
-    - if logged_in?
-      = button_to 'ログアウト', logout_path, method: :delete
-    - else
-      = button_to '開発用ログイン', login_dev_path, method: :post
-      
+ 
