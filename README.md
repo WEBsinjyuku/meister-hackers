@@ -1,24 +1,17 @@
-# README
+# GitHub Open Products
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+- Ruby version 2.6.0
+- Rails 5.2.1
+- PostgresSQL 10.6
 
-Things you may want to cover:
+## 概要
 
-* Ruby version
+GitHubで開発したい人と開発に協力したい人をマッチングすることを目的とするWebサービスを開発です。
 
-* System dependencies
+## Setup
 
-* Configuration
+- [Introduction Guide](https://github.com/WEBsinjyuku/github-open-products/wiki/Introduction-Guide)
 
-* Database creation
+## Licence
 
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+T.B.D.
