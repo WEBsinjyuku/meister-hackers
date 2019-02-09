@@ -5,6 +5,10 @@ class PostsController < ApplicationController
   before_action :only_logged_in_user, only: %i(new create edit update)
   before_action :only_author, only: %i(edit update)
 
+	def index
+		# 今は空メソッドで定義	
+  end
+
   def new
     @post = current_user.posts.build
   end
