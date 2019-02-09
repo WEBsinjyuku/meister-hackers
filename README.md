@@ -1,24 +1,10 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+## アプリケーション名
+<p>gitHubOSSマッチング（仮）</p>
 
-Things you may want to cover:
+## コンセプト
+<p>エンジニア/未経験エンジニアがOSSでチーム開発をする事を支援するアプリ</p>
 
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+## バージョン
+<p>Rails 5.2.2/ruby 2.6.0</p>

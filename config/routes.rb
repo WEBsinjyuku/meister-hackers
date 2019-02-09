@@ -5,4 +5,6 @@ Rails.application.routes.draw do
   post '/login_dev', to: 'sessions#login_dev'
 
   delete '/logout', to: 'sessions#destroy'
+
+  resources :posts, only: %i(new create edit update)
 end
