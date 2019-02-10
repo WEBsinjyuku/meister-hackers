@@ -17,6 +17,6 @@ test:
 
 production:
   <<: *default
+  adapter: postgresql
   database: github-open-products_production
-  username: github-open-products
-  password: <%= ENV['GITHUB-OPEN-PRODUCTS_DATABASE_PASSWORD'] %>
+  url: <%= ENV['DATABASE_URL'] %>
