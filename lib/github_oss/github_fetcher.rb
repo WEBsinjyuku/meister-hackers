@@ -31,8 +31,6 @@ module GithubOss
     end
 
     private
-      attr_reader :repo
-
       def repo
         @repo ||= fetch_repo
       end
