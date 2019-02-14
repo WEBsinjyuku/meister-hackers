@@ -21,6 +21,9 @@ class PostsController < ApplicationController
   def edit
   end
 
+  def show
+  end
+
   def update
     if @post.update(post_params)
       redirect_to @post, notice: "投稿を編集しました"
