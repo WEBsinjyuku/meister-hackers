@@ -1,3 +1,4 @@
+script src="https://cdn.jsdelivr.net/npm/vue@2.5.13/dist/vue.js"
 .title プロジェクト一覧画面
 .section
   .box
@@ -34,3 +35,15 @@
         span ★Star 999 
         span 👥開発メンバ 999
       u VIEW PROJECT
+.section
+  div#app
+    = "{{ message }}"
+javascript:
+  document.addEventListener("DOMContentLoaded", function(event) {
+   var app = new Vue({
+    el: '#app',
+    data: {
+      message: 'Hello Vue.js!'
+    }
+   })
+ });
