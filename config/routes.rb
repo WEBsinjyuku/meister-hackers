@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  devise_for :users
   # 後ほど変更
   root 'sessions#test'
   # ログイン機能実装後削除
