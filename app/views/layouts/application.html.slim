@@ -11,6 +11,12 @@ html
     link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css"
 
   body
+    - if notice
+      p.alert.alert-notice
+        = notice
+    - if alert
+      p.alert.alert-error
+        = alert
     = render 'layouts/navbar'
     = yield
  

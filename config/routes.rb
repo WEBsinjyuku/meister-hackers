@@ -1,9 +1,11 @@
 Rails.application.routes.draw do
   devise_for :users, controllers: {
-    registrations: "users/registrations"
+    registrations: "users/registrations",
+    omniauth_callbacks: "users/omniauth_callbacks"
   }
   # 後ほど変更
-  root 'sessions#test'
+  root :to => 'posts#index'
+  # root 'sessions#test'
   # ログイン機能実装後削除
   post '/login_dev', to: 'sessions#login_dev'
 

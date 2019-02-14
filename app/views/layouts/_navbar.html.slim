@@ -10,7 +10,13 @@ header
         /   a.button.is-info[href="#"]
         /     i.fa.fa-search
         /     | 検索
-        - if logged_in?
-            = button_to 'ログアウト', logout_path, method: :delete
+        p
+          = notice
+          = alert
+        - if user_signed_in?
+            = link_to "ログアウト", destroy_user_session_path, method: :delete
         - else
-            = button_to '開発用ログイン', login_dev_path, method: :post
+            = link_to 'githubでサインアップしてね', user_github_omniauth_authorize_path
+
+
+  
