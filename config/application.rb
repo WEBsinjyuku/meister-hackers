@@ -30,6 +30,9 @@ module GithubOpenProducts
     # Don't generate system test files.
     config.generators.system_tests = nil
 
+    # add lib direcotry
+    config.paths.add 'lib', eager_load: true
+
     # 自動生成系
     config.generators do |g|
       g.test_framework :rspec,
