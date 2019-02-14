@@ -37,13 +37,29 @@ script src="https://cdn.jsdelivr.net/npm/vue@2.5.13/dist/vue.js"
       u VIEW PROJECT
 .section
   div#app
-    = "{{ message }}"
+    ul
+      li v-for="item in list" v-bind:key="item.id"
+        | ID. {{ item.id }} &nbsp;
+        | {{ item.name }} &nbsp;
+        | HP. {{ item.hp }}
 javascript:
-  document.addEventListener("DOMContentLoaded", function(event) {
-   var app = new Vue({
+  var app = new Vue({
     el: '#app',
     data: {
-      message: 'Hello Vue.js!'
-    }
-   })
- });
+      list: [{
+            id: 1,
+            name: 'スライム',
+            hp: 100
+        },
+        {
+            id: 2,
+            name: 'ゴブリン',
+            hp: 200
+        },
+        {
+            id: 3,
+            name: 'ドラゴン',
+            hp: 500
+        }]
+      }
+  })
