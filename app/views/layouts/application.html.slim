@@ -13,7 +13,10 @@ html
   body
     - if notice
       p.alert.alert-notice
-        = notice
+        =  flash[:notice]
+    / - if flash[:notice]
+    /   .flash
+    /     = flash[:notice]
     - else alert
       p.alert.alert-error
         = alert
