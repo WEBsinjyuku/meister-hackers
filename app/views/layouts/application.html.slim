@@ -14,9 +14,9 @@ html
     - if notice
       p.alert.alert-notice
         = notice
-    - if alert
+    - else alert
       p.alert.alert-error
         = alert
     = render 'layouts/navbar'
     = yield
- 
+    =

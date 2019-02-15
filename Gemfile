@@ -77,3 +77,6 @@ gem 'devise'
 gem 'omniauth'
 gem 'omniauth-github'
 gem 'dotenv-rails'
+group :development do
+  gem 'meta_request'
+end
