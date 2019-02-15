@@ -46,3 +46,9 @@ module GithubOpenProducts
     end
   end
 end
+#deviseの日本語化
+module Sample
+  class Application < Rails::Application
+    config.i18n.default_locale = :ja #追記
+  end
+end
