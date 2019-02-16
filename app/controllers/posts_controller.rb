@@ -6,7 +6,22 @@ class PostsController < ApplicationController
   before_action :only_author, only: %i(edit update)
 
   def index
-    # 今は空メソッドで定義
+    repo1 = {
+      'id' => 1,
+      'title' => 'Vue.js入門',
+      'language' => 'JavaScript',
+      'topics' => ['eslint', 'eslint-plugin', 'html', 'javascript', 'npm', 'npm-module', 'npm-package', 'static-analysis', 'vue'],
+      'description' => 'Official ESLint plugin for Vue.js',
+      'stargazers_count' => 2259
+     }
+     repo2 = {
+      'id' => 2,
+      'title' => '【駆け出しエンジニア向け】DevMeets開発者募集！！',
+      'language' => 'Rails',
+      'stargazers_count' => 10
+     }
+
+    @repos = [repo1, repo2]
   end
 
   def new
