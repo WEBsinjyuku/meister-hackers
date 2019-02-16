@@ -1,17 +1,17 @@
 script src="https://cdn.jsdelivr.net/npm/vue@2.5.13/dist/vue.js"
 .title プロジェクト一覧画面
 .section#app
-  .box v-for="repo in list" v-bind:key="repo.id"
+  .box v-for="repo in repos" v-bind:key="repo.id"
     a href="#" 
       .content.is-large = "{{ repo.title }}"
       .tags.has-addons
         span.tag.is-dark.is-normal 言語
         span.tag.is-info.is-normal = "{{ repo.language }}"
       .field.is-grouped.is-grouped-multiline
-        .control v-for="value in repo.topics"
+        .control v-for="topic in repo.topics"
           .tags.has-addons
             span.tag.is-normal タグ
-            span.tag.is-warning.is-normal = "{{ value }}"
+            span.tag.is-warning.is-normal = "{{ topic }}"
       .content.is-medium v-if="repo.description" 簡易説明文： {{ repo.description }}
       .content.is-small
         i.fa.fa-star aria-hidden="true" Star {{ repo.stargazers_count }} &nbsp;
@@ -22,7 +22,7 @@ javascript:
   var app = new Vue({
     el: '#app',
     data: {
-      list: [{
+      repos: [{
             id: 1,
             title: 'Vue.js入門',
             language: 'JavaScript',
