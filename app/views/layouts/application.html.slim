@@ -11,14 +11,15 @@ html
     link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"
 
   body
+    = render 'layouts/navbar'
     - if notice
       p.alert.alert-notice
-        =  flash[:notice]
-    / - if flash[:notice]
-    /   .flash
-    /     = flash[:notice]
+        - notice="tesu"
+        = flash[:notice]
     - else alert
       p.alert.alert-error
-        = alert
-    = render 'layouts/navbar'
+        - notice="tesu"
+        = flash[:notice]
+
+
     = yield
