@@ -3,3 +3,10 @@ linter:
     root_dir: '.'
     options:
       config: '.rubocop.yml'
+    exclude:
+  eslint:
+    npm_install: true
+    options:
+      config: '.eslintrc.js'
+      ext: 'js, vue'
+      
