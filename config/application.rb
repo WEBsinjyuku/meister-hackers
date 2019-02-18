@@ -26,13 +26,14 @@ module GithubOpenProducts
     # Application configuration can go into files in config/initializers
     # -- all .rb files in that directory are automatically loaded after loading
     # the framework and any gems in your application.
-
+    
     # Don't generate system test files.
     config.generators.system_tests = nil
 
     # add lib direcotry
     config.paths.add 'lib', eager_load: true
-
+    
+    config.i18n.default_locale = :ja #追記
     # 自動生成系
     config.generators do |g|
       g.test_framework :rspec,
