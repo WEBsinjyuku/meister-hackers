@@ -33,4 +33,4 @@ header
           - if user_signed_in?
             = link_to "Log out", destroy_user_session_path, method: :delete, class: 'button is-primary'
           - else
-            = link_to 'Sign in', user_github_omniauth_authorize_path, class: 'button is-primary'
+            = link_to 'GitHub Sign in', user_github_omniauth_authorize_path, class: 'button is-primary'
