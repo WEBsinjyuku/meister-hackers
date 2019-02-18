@@ -12,14 +12,11 @@ html
 
   body
     = render 'layouts/navbar'
-    - if notice
-      p.alert.alert-notice
-        - notice="tesu"
-        = flash[:notice]
-    - else alert
-      p.alert.alert-error
-        - notice="tesu"
-        = flash[:notice]
-
-
+    / ↓メッセージ用のコード、未実装
+    / - if notice
+    /   p.alert.alert-notice
+    /     = notice
+    / - else alert
+    /   p.alert.alert-error
+    /     = alert
     = yield
