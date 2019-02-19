@@ -1,6 +1,8 @@
 # frozen_string_literal: true
 
 class MessagesController < ApplicationController
+  protect_from_forgery except: ["create"]
+
   def index
     post = Post.find_by(id: params[:post_id])
     if post
