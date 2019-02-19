@@ -13,7 +13,7 @@ form(@submit.prevent="submit")
 </template>
 
 <script>
-import Axios from 'axios'
+import Axios from "axios";
 
 export default {
   data() {
@@ -21,11 +21,11 @@ export default {
       messages: [],
     };
   },
-  mounted () {
-    Axios.get('http://localhost:3000/posts/1/messages')
-    .then((res) => {
-      this.messages = res.data
-    })
+  mounted() {
+    Axios.get("http://localhost:3000/posts/1/messages")
+      .then((res) => {
+        this.messages = res.data;
+      });
   },
   methods: {
     submit() {
