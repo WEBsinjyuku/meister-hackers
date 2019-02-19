@@ -16,7 +16,7 @@
 
 class Post < ApplicationRecord
   belongs_to :user
-  has_many :messages
+  has_many :messages, dependent: :destroy
 
   validates :title, presence: true, length: { maximum: 50 }
   validates :content, presence: true

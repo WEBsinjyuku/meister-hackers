@@ -2,6 +2,7 @@
 
 FactoryBot.define do
   factory :message do
-    content { "MyString" }
+    content { "こんにちは" }
+    post
   end
 end
