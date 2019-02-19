@@ -1,3 +1,5 @@
 <template lang="pug">
-p test hello world
+.tile.is-ancestor
+  .tile.is-vertical.box.is-6
+    .title フィード
 </template>
