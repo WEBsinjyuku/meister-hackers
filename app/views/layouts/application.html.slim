@@ -13,11 +13,11 @@ html
   body
     = render 'layouts/navbar'
     / ↓メッセージ用のコード、未実装
-    / - if notice
-    /   p.alert.alert-notice
-    /     = notice
-    / - else alert
-    /   p.alert.alert-error
-    /     = alert
+    - if notice
+      p.alert.alert-notice
+        = notice
+    - else alert
+      p.alert.alert-error
+        = alert
     = yield
     

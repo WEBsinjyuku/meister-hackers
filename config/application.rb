@@ -32,6 +32,8 @@ module GithubOpenProducts
 
     # add lib direcotry
     config.paths.add 'lib', eager_load: true
+    #deviseの日本語化
+    config.i18n.default_locale = :ja #追記
 
     # 自動生成系
     config.generators do |g|
@@ -47,11 +49,5 @@ module GithubOpenProducts
       g.helper false
       g.jbuilder false
     end
-  end
-end
-#deviseの日本語化
-module Sample
-  class Application < Rails::Application
-    config.i18n.default_locale = :ja #追記
   end
 end
