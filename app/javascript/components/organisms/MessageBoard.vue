@@ -20,30 +20,30 @@ export default {
   data() {
     return {
       messages: [],
-      content: ""
+      content: "",
     };
   },
   mounted() {
-    const messageUrl = location.href + "/messages"
+    const messageUrl = `${location.href}/messages`;
     Axios.get(messageUrl)
       .then((response) => {
-        response.data.data.map(h => {
-          this.messages.unshift({ content: h.content, time: moment(h.created_at).format("YYYY/MM/DD HH:mm") } )
-        })
-      })
+        response.data.data.map((h) => {
+          this.messages.unshift({ content: h.content, time: moment(h.created_at).format("YYYY/MM/DD HH:mm") });
+        });
+      });
   },
   methods: {
     submit() {
-      const messageUrl = location.href + "/messages"
+      const messageUrl = `${location.href}/messages`;
       const data = {
-        content: this.content
-      }
+        content: this.content,
+      };
       Axios.post(messageUrl, data)
         .then((response) => {
-          this.messages.unshift({ content: this.content, time: moment().format("YYYY/MM/DD HH:mm") })
-          this.content = ""
-        })
-      },
+          this.messages.unshift({ content: this.content, time: moment().format("YYYY/MM/DD HH:mm") });
+          this.content = "";
+        });
+    },
   },
 };
 </script>
