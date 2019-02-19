@@ -9,7 +9,7 @@ form(@submit.prevent="submit")
       br
       .list
         li(v-for="message in messages" :key="message.id").list-item
-          | {{ message.text }}
+          | {{ message.content }}
 </template>
 
 <script>
@@ -22,10 +22,10 @@ export default {
     };
   },
   mounted() {
-    Axios.get("http://localhost:3000/posts/1/messages")
-      .then((res) => {
-        this.messages = res.data;
-      });
+    Axios.get("http://localhost:3000/posts/4/messages")
+      .then((response) => {
+        this.messages = response.data.data
+      })
   },
   methods: {
     submit() {
