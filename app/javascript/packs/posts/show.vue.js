@@ -3,7 +3,7 @@ import MessageBoard from "../../components/organisms/MessageBoard.vue";
 
 document.addEventListener("DOMContentLoaded", () => {
   new Vue({
-    el: "#app",
+    el: "#message-board",
     render: h => h(MessageBoard),
   });
 });
