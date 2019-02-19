@@ -1,11 +1,13 @@
 <template lang="pug">
 .tile.is-ancestor
-  .tile.is-vertical.box.is-6
+  .tile.is-vertical.box.is-8
     .title.has-background-grey-lighter フィード
     input.input(type="text" placeholder="コメント")
+    br
     .button.is-info 投稿
-    ul
-      li(v-for="message in messages" :key="message.id")
+    br
+    .list
+      li(v-for="message in messages" :key="message.id").list-item
         | {{ message.text }}
 </template>
 
