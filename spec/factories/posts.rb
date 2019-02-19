@@ -19,6 +19,6 @@ FactoryBot.define do
     title { "post" }
     content { "testtesttesttesttesttesttesttesttesttest" }
     repository { "repo_name" }
-    user
+    association :user
   end
 end

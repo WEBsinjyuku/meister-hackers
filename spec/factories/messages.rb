@@ -3,6 +3,6 @@
 FactoryBot.define do
   factory :message do
     content { "こんにちは" }
-    post
+    association :post
   end
 end
