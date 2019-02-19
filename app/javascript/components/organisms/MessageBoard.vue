@@ -9,7 +9,7 @@ form(@submit.prevent="submit")
       br
       .list
         li(v-for="message in messages" :key="message.id").list-item
-          | {{ message.content }}
+          | {{ message}}
 </template>
 
 <script>
@@ -26,7 +26,9 @@ export default {
     const messageUrl = location.href + "/messages"
     Axios.get(messageUrl)
       .then((response) => {
-        this.messages = response.data.data
+        response.data.data.map(h => {
+          this.messages.unshift(h.content)
+        })
       })
   },
   methods: {
@@ -37,7 +39,8 @@ export default {
       }
       Axios.post(messageUrl, data)
         .then((response) => {
-          this.messages = response.data.data
+          this.messages.unshift(data.content)
+          this.content = ""
         })
       },
   },
