@@ -33,6 +33,10 @@ class PostsController < ApplicationController
     end
   end
 
+  def show
+    # 今は空メソッドで定義
+  end
+
   private
     def post_params
       params.require(:post).permit(:title, :content, :repository)
