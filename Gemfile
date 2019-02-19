@@ -72,6 +72,8 @@ group :development do
 
   gem "better_errors"
   gem "binding_of_caller"
+
+  gem "meta_request"
 end
 
 
@@ -83,6 +85,3 @@ gem "devise"
 gem "omniauth"
 gem "omniauth-github"
 gem "dotenv-rails"
-group :development do
-  gem "meta_request"
-end
