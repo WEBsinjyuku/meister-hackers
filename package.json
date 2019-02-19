@@ -3,16 +3,17 @@
   "private": true,
   "dependencies": {
     "@rails/webpacker": "3.5",
+    "eslint-plugin-vue": "^5.0.0-beta.3",
     "vue": "^2.5.22",
     "vue-loader": "14.2.2",
     "vue-template-compiler": "^2.5.22",
-    "eslint-plugin-vue": "^5.0.0-beta.3"
+    "webpack-cli": "^3.2.3"
   },
   "devDependencies": {
-    "webpack-dev-server": "2.11.2",
     "eslint": "^5.7.0",
     "eslint-config-airbnb-base": "^13.1.0",
-    "eslint-plugin-import": "^2.14.0"
+    "eslint-plugin-import": "^2.14.0",
+    "webpack-dev-server": "^3.1.14"
   },
   "scripts": {
     "spec": "docker-compose run rails rspec",
@@ -23,7 +24,7 @@
     "db:migrate": "docker-compose run rails env RAILS_ENV=development rails db:migrate",
     "db:seed": "docker-compose run rails env RAILS_ENV=development rails db:seed",
     "rails:c": "docker-compose run rails rails c",
-    "rails:s": "docker-compose run rails rails s",      
+    "rails:s": "docker-compose run rails rails s",
     "rails:spec": "docker-compose run rails rspec",
     "rails:bundle": "docker-compose run rails bundle",
     "rails:rubocop": "docker-compose run rails rubocop -a",
