@@ -9,11 +9,12 @@ form(@submit.prevent="submit")
       br
       .list
         li(v-for="message in messages" :key="message.id").list-item
-          | {{ message}}
+          | {{ `${message.time } | ${message.content}` }}
 </template>
 
 <script>
 import Axios from "axios";
+import moment from "moment";
 
 export default {
   data() {
@@ -27,7 +28,7 @@ export default {
     Axios.get(messageUrl)
       .then((response) => {
         response.data.data.map(h => {
-          this.messages.unshift(h.content)
+          this.messages.unshift({ content: h.content, time: moment(h.created_at).format("YYYY/MM/DD HH:mm") } )
         })
       })
   },
@@ -39,7 +40,7 @@ export default {
       }
       Axios.post(messageUrl, data)
         .then((response) => {
-          this.messages.unshift(data.content)
+          this.messages.unshift({ content: this.content, time: moment().format("YYYY/MM/DD HH:mm") })
           this.content = ""
         })
       },
