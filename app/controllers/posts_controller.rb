@@ -34,7 +34,7 @@ class PostsController < ApplicationController
   end
 
   def show
-
+    # 今は空メソッドで定義
   end
 
   private
