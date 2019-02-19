@@ -17,8 +17,10 @@
     "webpack-dev-server": "3.0.0"
   },
   "scripts": {
+    "up": "docker-compose up -d",
+    "down": "docker-compose down",
     "spec": "docker-compose run rails rspec",
-    "docker:update": "docker-compose run rails bundle install && docker-compose run rails yarn install",
+    "docker:install": "docker-compose run rails bundle install && docker-compose run rails yarn install",
     "docker:clean": "docker volume ls | grep automatching | cut -b 21- | xargs docker volume rm",
     "db:create": "docker-compose run rails env RAILS_ENV=development rails db:create",
     "db:recovery": "docker-compose run rails env RAILS_ENV=development rails db:recovery",
