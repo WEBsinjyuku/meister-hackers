@@ -36,7 +36,6 @@ class AddDeviseToUsers < ActiveRecord::Migration[5.2]
      # t.datetime :locked_at
 
 
-     t.timestamps null: false
    end
 
    add_index :users, :name,                 unique: true
