@@ -2,7 +2,7 @@
 
 class MessagesController < ApplicationController
   def index
-    post = Post.find(params[:post_id])
+    post = Post.find_by(id: params[:post_id])
     if post
       render json: { status: 200, data: post.messages }
     else

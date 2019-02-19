@@ -3,6 +3,7 @@
   "private": true,
   "dependencies": {
     "@rails/webpacker": "3.5",
+    "axios": "^0.18.0",
     "eslint-plugin-vue": "^5.0.0-beta.3",
     "pug": "^2.0.3",
     "vue": "^2.5.22",
@@ -32,6 +33,7 @@
     "rails:bundle": "docker-compose run rails bundle",
     "rails:rubocop": "docker-compose run rails rubocop -a",
     "rails:annotate": "docker-compose run rails annotate",
+    "rails:routes": "docker-compose run rails rails routes",
     "eslint": "node_modules/.bin/eslint . --ext .vue,.js ",
     "eslint-fix": "node_modules/.bin/eslint . --fix --ext .vue,.js"
   }
