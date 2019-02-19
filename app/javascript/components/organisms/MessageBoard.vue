@@ -39,7 +39,7 @@ export default {
         content: this.content,
       };
       Axios.post(messageUrl, data)
-        .then((response) => {
+        .then(() => {
           this.messages.unshift({ content: this.content, time: moment().format("YYYY/MM/DD HH:mm") });
           this.content = "";
         });
