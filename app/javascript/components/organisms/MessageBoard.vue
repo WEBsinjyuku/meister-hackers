@@ -27,9 +27,11 @@ export default {
     const messageUrl = `${location.href}/messages`;
     Axios.get(messageUrl)
       .then((response) => {
-        response.data.data.map((h) => {
-          this.messages.unshift({ content: h.content, time: moment(h.created_at).format("YYYY/MM/DD HH:mm") });
-        });
+        if(response.data.data) {
+          response.data.data.map((h) => {
+            this.messages.unshift({ content: h.content, time: moment(h.created_at).format("YYYY/MM/DD HH:mm") });
+          });
+        }
       });
   },
   methods: {

@@ -8,7 +8,7 @@ class MessagesController < ApplicationController
     if post
       render json: { status: 200, data: post.messages }
     else
-      render json: { status: 500 }
+      render json: { status: 500, data: [] }
     end
   end
 
