@@ -14,7 +14,11 @@ class MessagesController < ApplicationController
 
   def create
     post = Post.find_by(id: params[:post_id])
-    render json: { status: 500 } if post.nil?
+    
+    unless post.present?
+      render json: { status: 500 } 
+      return
+    end
 
     message = post.messages.build(content: params[:content])
 
