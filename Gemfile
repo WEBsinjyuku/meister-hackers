@@ -51,6 +51,9 @@ gem "bootsnap", ">= 1.1.0", require: false
 # GitHub API Client
 gem "octokit"
 
+# for webpacker and puma
+gem "foreman"
+
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem "byebug", platforms: [:mri, :mingw, :x64_mingw]
@@ -58,6 +61,9 @@ group :development, :test do
   gem "rubocop"
   gem "rubocop-rails_config"
 end
+
+# for language
+gem "rails-i18n"
 
 group :development do
   # Access an interactive console on exception pages or by calling 'console' anywhere in the code.
@@ -69,6 +75,9 @@ group :development do
 
   gem "better_errors"
   gem "binding_of_caller"
+
+  gem "meta_request"
+  gem "annotate"
 end
 
 
@@ -80,6 +89,3 @@ gem "devise"
 gem "omniauth"
 gem "omniauth-github"
 gem "dotenv-rails"
-group :development do
-  gem "meta_request"
-end

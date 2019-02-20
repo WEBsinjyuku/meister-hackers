@@ -17,6 +17,8 @@ module.exports = {
     "prefer-destructuring": 0,
     "max-len": 0,
     "no-param-reassign": 0,
+    "no-restricted-globals": 0,
+    "array-callback-return": 0,
     "quotes": ["error", "double"],
     "vue/require-default-prop": 0,
   }
