@@ -46,7 +46,7 @@ export default {
         twitter_url: "",
         facebook_url: "",
         blog_url: "",
-        introduction: ""
+        introduction: "",
       },
     };
   },
