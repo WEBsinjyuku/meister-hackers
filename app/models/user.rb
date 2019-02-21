@@ -26,7 +26,10 @@ class User < ApplicationRecord
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable,
          :omniauthable, omniauth_providers: %i(github)
+
   has_many :posts, dependent: :destroy
+  has_one :profile, dependent: :destroy
+
   def self.create_unique_string
     SecureRandom.uuid
   end
@@ -44,6 +47,7 @@ class User < ApplicationRecord
       )
     end
     user.save
+    user.profile.build
     user
   end
 
