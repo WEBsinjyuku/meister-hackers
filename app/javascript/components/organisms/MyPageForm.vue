@@ -6,7 +6,7 @@
         form(@submit.prevent="submit")
           .field
             .label 都道府県
-            input.input(type="text" placeholder="東京都" v-model="profile.area")
+            input.input(type="text" v-model="profile.area")
           .field
             .label 性別
             label.radio 男性
@@ -26,6 +26,9 @@
             .label Blog URL
             input.input(type="text" v-model="profile.blog_url")
           .field
+            .label 自由記述文
+            textarea.textarea(v-model="profile.introduction")
+          .field
             button.button(type="submit").is-primary 編集完了
             button.button(@click="cancel") キャンセル
 </template>
@@ -43,6 +46,7 @@ export default {
         twitter_url: "",
         facebook_url: "",
         blog_url: "",
+        introduction: ""
       },
     };
   },

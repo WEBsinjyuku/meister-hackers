@@ -22,6 +22,7 @@ class ProfilesController < ApplicationController
         twitter_url: params[:twitter_url],
         facebook_url: params[:facebook_url],
         blog_url: params[:blog_url],
+        introduction: params[:introduction]
       }
       profile.update!(attributes)
       render json: { status: 200 }
