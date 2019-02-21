@@ -5,7 +5,7 @@
       .column.is-one-third
         user-profile
       .column.is-two-third
-        user-post
+        user-post(:content="content")
 </template>
 
 <script>
@@ -24,6 +24,7 @@ export default {
         name: "",
         image: "",
       },
+      content: "",
       profile: null,
     };
   },
@@ -32,7 +33,8 @@ export default {
     Axios.get(profileUrl)
       .then((response) => {
         this.user.name = response.data.username;
-        this.profile = response.data.profile;
+        this.content = response.data.profile.introduction
+        this.profile = response.data.profile
       });
   },
 };
