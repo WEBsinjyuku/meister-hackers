@@ -25,15 +25,15 @@
 </template>
 
 <script>
-import moment from 'moment'
+import moment from "moment";
 
 export default {
-  props: ["user", "attributes"],
   filters: {
-    formatDate: function (value) {
-      if (!value) return '-'
-      return moment(value).format("YYYY/MM/DD HH:mm")
-    }
-  }
-}
+    formatDate(value) {
+      if (!value) return "-";
+      return moment(value).format("YYYY/MM/DD HH:mm");
+    },
+  },
+  props: ["user", "attributes"],
+};
 </script>

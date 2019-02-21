@@ -33,8 +33,8 @@ export default {
     Axios.get(profileUrl)
       .then((response) => {
         this.user.name = response.data.username;
-        this.content = response.data.profile.introduction
-        this.profile = response.data.profile
+        this.content = response.data.profile.introduction;
+        this.profile = response.data.profile;
       });
   },
 };
