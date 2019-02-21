@@ -47,7 +47,6 @@ class User < ApplicationRecord
       )
     end
     user.save
-    user.profile.build
     user
   end
 
