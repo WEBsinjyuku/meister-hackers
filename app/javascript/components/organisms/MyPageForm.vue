@@ -59,14 +59,14 @@ export default {
       const baseUrl = location.href;
       const profileUrl = `${baseUrl.replace("edit", "profiles")}/${this.profile.id}`;
       Axios.put(profileUrl, this.profile)
-        .then((response) => {
-          location.href = baseUrl.replace("edit", "")
+        .then(() => {
+          location.href = baseUrl.replace("edit", "");
         });
     },
     cancel() {
       const baseUrl = location.href;
-      location.href = baseUrl.replace("edit", "")
-    }
+      location.href = baseUrl.replace("edit", "");
+    },
   },
 };
 </script>
