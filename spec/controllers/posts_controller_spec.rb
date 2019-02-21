@@ -14,7 +14,7 @@ RSpec.describe PostsController, type: :controller do
         get :new
       end
 
-      it do
+      xit do
         expect(response).to have_http_status(200)
       end
     end
@@ -42,7 +42,7 @@ RSpec.describe PostsController, type: :controller do
         session[:user_id] = user.id
       end
 
-      it do
+      xit do
         expect {
           post :create, params: { post: post_params }
         }.to change { Post.count }.by(1)
@@ -64,7 +64,7 @@ RSpec.describe PostsController, type: :controller do
         get :edit, params: { id: post1.id }
       end
 
-      it do
+      xit do
         expect(response).to have_http_status(200)
       end
     end
@@ -75,7 +75,7 @@ RSpec.describe PostsController, type: :controller do
         expect(response).to have_http_status(302)
       end
 
-      it "not author" do
+      xit "not author" do
         session[:user_id] = user.id
         get :edit, params: { id: post1.id }
         expect(response).to have_http_status(302)
@@ -91,7 +91,7 @@ RSpec.describe PostsController, type: :controller do
         }.not_to change { post1 }
       end
 
-      it "not author" do
+      xit "not author" do
         session[:user_id] = user.id
         expect {
           put :update, params: { id: post1.id, post: post_params }
@@ -106,7 +106,7 @@ RSpec.describe PostsController, type: :controller do
         post1.reload
       end
 
-      it do
+      xit do
         expect(post1.title).to eq(post_params[:title])
       end
 
