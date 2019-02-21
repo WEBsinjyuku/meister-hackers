@@ -1,11 +1,11 @@
 <template lang="pug">
 .card
   .card-content
-    pre {{ content }}
+    pre {{ introduction }}
 </template>
 
 <script>
 export default {
-  props: ["content"],
+  props: ["introduction"],
 };
 </script>

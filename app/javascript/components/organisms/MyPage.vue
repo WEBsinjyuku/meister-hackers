@@ -5,7 +5,7 @@
       .column.is-one-third
         user-profile(:attributes="profile", :user="user")
       .column.is-two-third
-        user-post(:content="content")
+        user-post(:introduction="introduction")
 </template>
 
 <script>
@@ -21,10 +21,11 @@ export default {
   data() {
     return {
       user: {
+        id: 0,
         name: "",
         image: "https://bulma.io/images/placeholders/96x96.png",
       },
-      content: "自己紹介文が未入力",
+      introduction: "自己紹介文が未入力",
       profile: null,
     };
   },
@@ -33,7 +34,8 @@ export default {
     Axios.get(profileUrl)
       .then((response) => {
         this.user.name = response.data.username;
-        this.content = response.data.profile.introduction;
+        this.user.id = response.data.id;
+        this.introduction = response.data.profile.introduction;
         this.profile = response.data.profile;
       });
   },
