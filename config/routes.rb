@@ -7,7 +7,7 @@ Rails.application.routes.draw do
   }
 
   resources :users, only: %i(show edit) do
-    resources :profiles, only: %i(show update)
+    resources :profiles, only: %i(index update)
   end
 
   resources :posts, only: %i(new create edit update show index) do

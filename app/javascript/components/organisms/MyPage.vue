@@ -24,7 +24,7 @@ export default {
     };
   },
   mounted() {
-    const profileUrl = `${location.href}/profiles/1`;
+    const profileUrl = `${location.href}/profiles`;
     Axios.get(profileUrl)
       .then((response) => {
         this.user.name = response.data.username
