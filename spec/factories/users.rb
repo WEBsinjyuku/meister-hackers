@@ -24,8 +24,8 @@
 
 FactoryBot.define do
   factory :user do
-    name { "tsu-nera" }
-    email { "harada.tsunemichi@gmail.com" }
+    sequence (:name) { |n| "tsu-nera#{n}" }
+    sequence(:email) { |n| "example#{n}@gmail.com" }
     password { "helloworld" }
     sequence(:uid) { |n| n }
     provider { "github" }

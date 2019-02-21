@@ -20,5 +20,8 @@
 
 FactoryBot.define do
   factory :profile do
+    area { "東京都" }
+    sex { ["男", "女"].sample }
+    introduction { "今日も一日、頑張るぞい！" }
   end
 end
