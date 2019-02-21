@@ -21,7 +21,7 @@
         a.fab.fa-2x.fa-facebook(:href="attributes.facebook_url")
       .icon.is-large(v-if="attributes && attributes.blog_url")
         a.fas.fa-2x.fa-rss-square(:href="attributes.blog_url")
-    .button.is-primary 編集
+      .button.is-primary(@click="edit") 編集
 </template>
 
 <script>
@@ -35,5 +35,19 @@ export default {
     },
   },
   props: ["user", "attributes"],
+  computed: {
+    editUrl() {
+      if(this.user.id && this.attributes.id) {
+        return `/users/${this.user.id}/edit`
+      } else{
+        return "/"
+      }
+    }
+  },
+  methods: {
+    edit() {
+      window.location.href = this.editUrl
+    }
+  }
 };
 </script>

@@ -21,6 +21,7 @@ export default {
   data() {
     return {
       user: {
+        id: 0,
         name: "",
         image: "https://bulma.io/images/placeholders/96x96.png",
       },
@@ -33,6 +34,7 @@ export default {
     Axios.get(profileUrl)
       .then((response) => {
         this.user.name = response.data.username;
+        this.user.id = response.data.id;
         this.content = response.data.profile.introduction;
         this.profile = response.data.profile;
       });
