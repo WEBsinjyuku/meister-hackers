@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 module TestDatas
   extend Rake::DSL
   extend self
@@ -42,7 +44,7 @@ module TestDatas
       return if disable_env?
 
       Post.all do |post|
-        5.times do 
+        5.times do
           create_message(post: post)
         end
       end
