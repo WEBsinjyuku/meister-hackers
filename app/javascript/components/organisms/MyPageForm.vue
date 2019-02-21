@@ -25,6 +25,9 @@
           .field
             .label Blog URL
             input.input(type="text" v-model="profile.blog_url")
+          .field
+            button.button(type="submit").is-primary 編集完了
+            button.button(@click="cancel") キャンセル
 </template>
 
 <script>
@@ -53,8 +56,17 @@ export default {
   },
   methods: {
     submit() {
-      console.log("submit");
+      const baseUrl = location.href;
+      const profileUrl = `${baseUrl.replace("edit", "profiles")}/${this.profile.id}`;
+      Axios.put(profileUrl, this.profile)
+        .then((response) => {
+          location.href = baseUrl.replace("edit", "")
+        });
     },
+    cancel() {
+      const baseUrl = location.href;
+      location.href = baseUrl.replace("edit", "")
+    }
   },
 };
 </script>
