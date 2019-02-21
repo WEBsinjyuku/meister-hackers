@@ -12,5 +12,6 @@ Rails.application.routes.draw do
 
   resources :posts, only: %i(new create edit update show index) do
     resources :messages, only: %i(index create)
+
   end
 end
