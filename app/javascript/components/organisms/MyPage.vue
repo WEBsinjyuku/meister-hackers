@@ -3,7 +3,7 @@
   .content
     .columns
       .column.is-one-third
-        user-profile
+        user-profile(:attributes="profile", :user="user")
       .column.is-two-third
         user-post(:content="content")
 </template>
@@ -22,9 +22,9 @@ export default {
     return {
       user: {
         name: "",
-        image: "",
+        image: "https://bulma.io/images/placeholders/96x96.png",
       },
-      content: "",
+      content: "自己紹介文が未入力",
       profile: null,
     };
   },
