@@ -13,10 +13,13 @@ import UserPost from "../../components/molecules/UserPost.vue";
 import UserProfile from "../../components/molecules/UserProfile.vue";
 
 export default {
+  mounted() {
+    // Get Request
+    console.log("mounted")
+  },
   components: {
     UserPost,
     UserProfile
   }
 }
 </script>
-
