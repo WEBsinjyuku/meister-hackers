@@ -9,16 +9,20 @@
 </template>
 
 <script>
-import Axios from 'axios';
-import UserPost from "../../components/molecules/UserPost.vue";
-import UserProfile from "../../components/molecules/UserProfile.vue";
+import Axios from "axios";
+import UserPost from "../molecules/UserPost.vue";
+import UserProfile from "../molecules/UserProfile.vue";
 
 export default {
+  components: {
+    UserPost,
+    UserProfile,
+  },
   data() {
     return {
       user: {
         name: "",
-        image: ""
+        image: "",
       },
       profile: null,
     };
@@ -27,13 +31,9 @@ export default {
     const profileUrl = `${location.href}/profiles`;
     Axios.get(profileUrl)
       .then((response) => {
-        this.user.name = response.data.username
-        this.profile = response.data.profile
+        this.user.name = response.data.username;
+        this.profile = response.data.profile;
       });
   },
-  components: {
-    UserPost,
-    UserProfile
-  }
-}
+};
 </script>
