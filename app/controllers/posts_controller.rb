@@ -50,7 +50,7 @@ class PostsController < ApplicationController
     end
 
     def only_logged_in_user
-      redirect_back fallback_location: root_url unless logged_in?
+      redirect_back fallback_location: root_url unless user_signed_in?
     end
 
     def only_author
