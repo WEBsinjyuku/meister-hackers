@@ -9,13 +9,27 @@
 </template>
 
 <script>
+import Axios from 'axios';
 import UserPost from "../../components/molecules/UserPost.vue";
 import UserProfile from "../../components/molecules/UserProfile.vue";
 
 export default {
+  data() {
+    return {
+      user: {
+        name: "",
+        image: ""
+      },
+      profile: null,
+    };
+  },
   mounted() {
-    // Get Request
-    console.log("mounted")
+    const profileUrl = `${location.href}/profiles/1`;
+    Axios.get(profileUrl)
+      .then((response) => {
+        this.user.name = response.data.username
+        this.profile = response.data.profile
+      });
   },
   components: {
     UserPost,
