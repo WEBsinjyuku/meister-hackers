@@ -28,7 +28,7 @@
 </template>
 
 <script>
-import Axios from 'axios'
+import Axios from "axios";
 
 export default {
   data() {
@@ -39,22 +39,22 @@ export default {
         github_url: "",
         twitter_url: "",
         facebook_url: "",
-        blog_url: ""
-      }
+        blog_url: "",
+      },
     };
   },
   mounted() {
-    const baseUrl = location.href
+    const baseUrl = location.href;
     const profileUrl = `${baseUrl.replace("edit", "profiles")}`;
     Axios.get(profileUrl)
       .then((response) => {
-        this.profile = response.data.profile
+        this.profile = response.data.profile;
       });
   },
   methods: {
     submit() {
-      console.log("submit")
-    }
-  }
-}
+      console.log("submit");
+    },
+  },
+};
 </script>

@@ -37,17 +37,16 @@ export default {
   props: ["user", "attributes"],
   computed: {
     editUrl() {
-      if(this.user.id && this.attributes.id) {
-        return `/users/${this.user.id}/edit`
-      } else{
-        return "/"
+      if (this.user.id && this.attributes.id) {
+        return `/users/${this.user.id}/edit`;
       }
-    }
+      return "/";
+    },
   },
   methods: {
     edit() {
-      window.location.href = this.editUrl
-    }
-  }
+      window.location.href = this.editUrl;
+    },
+  },
 };
 </script>
