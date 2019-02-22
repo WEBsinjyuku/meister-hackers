@@ -10,5 +10,12 @@
     = f.label :募集概要
     = f.text_area :content
   div
+    - if params[:action] == 'edit'
+      = f.label :募集ステータス
+      = f.radio_button :status, 'wanted', checked: post.wanted?
+      | 募集中
+      = f.radio_button :status, 'stopped', checked: post.stopped?
+      | 募集停止
+  div
     = f.submit submit_text, data: { confirm: '投稿しますか？' }
     = link_to 'キャンセル', :back if params[:action] == 'edit'
