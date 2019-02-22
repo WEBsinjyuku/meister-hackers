@@ -1,12 +1,12 @@
 = form_with(model: post, local: true) do |f|
-
   div
-    = f.label :title
+    = f.label :レポジトリURL
+    = f.text_field :repository
+  div
+    = f.label :募集タイトル
     = f.text_field :title
-
   div
-    = f.label :content
+    = f.label :募集概要
     = f.text_area :content
-
   div
-    = f.submit submit_text
+    = f.submit submit_text, data: { confirm: '投稿しますか？' }
