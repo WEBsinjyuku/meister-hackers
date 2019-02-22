@@ -10,3 +10,4 @@
     = f.text_area :content
   div
     = f.submit submit_text, data: { confirm: '投稿しますか？' }
+    = link_to 'キャンセル', :back if params[:action] == 'edit'
