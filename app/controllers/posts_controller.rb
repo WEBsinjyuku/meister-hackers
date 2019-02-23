@@ -64,10 +64,10 @@ class PostsController < ApplicationController
       repos.each do |repo|
         client = GithubOss::GithubFetcher.new(repo)
         post = {
-          "id" => cnt += 1,
-          "title" => 'タイトル' + cnt.to_s,
+          "id" => cnt += 1, # postsより取得する
+          "title" => "タイトル" + cnt.to_s, # postsより取得する
           "language" => client.language,
-          # "topics" => client.topics,
+          "topics" => client.topics.names,
           "description" => client.description,
           "stargazers_count" => client.stargazers_count
         }

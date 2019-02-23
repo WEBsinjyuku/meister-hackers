@@ -1,4 +1,6 @@
 .title プロジェクト一覧画面
+.div
+  a.button.is-link href="#" style=("position: absolute; right: 0;") プロジェクト新規作成
 .section#app
   .box v-for="repo in repos" v-bind:key="repo.id"
     a href="#" 
@@ -13,8 +15,10 @@
             span.tag.is-warning.is-normal = "{{ topic }}"
       .content.is-medium v-if="repo.description" 簡易説明文： {{ repo.description }}
       .content.is-small
-        i.fa.fa-star aria-hidden="true" Star {{ repo.stargazers_count }} &nbsp;
-        i.fa.fa-user-circle aria-hidden="true" メンバ 999
+      .tags.has-addons
+        span.tag.is-dark
+          i.fa.fa-star
+        span.tag.is-white = "{{ repo.stargazers_count }}"
       .content.is-medium
         u VIEW PROJECT                 
 javascript:
