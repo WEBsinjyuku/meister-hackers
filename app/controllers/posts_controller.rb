@@ -6,22 +6,7 @@ class PostsController < ApplicationController
   before_action :only_author, only: %i(edit update)
 
   def index
-    repo1 = {
-      'id' => 1,
-      'title' => 'Vue.js入門',
-      'language' => 'JavaScript',
-      'topics' => ['eslint', 'eslint-plugin', 'html', 'javascript', 'npm', 'npm-module', 'npm-package', 'static-analysis', 'vue'],
-      'description' => 'Official ESLint plugin for Vue.js',
-      'stargazers_count' => 2259
-     }
-     repo2 = {
-      'id' => 2,
-      'title' => '【駆け出しエンジニア向け】DevMeets開発者募集！！',
-      'language' => 'Rails',
-      'stargazers_count' => 10
-     }
-
-    @repos = [repo1, repo2]
+    search_posts 
   end
 
   def new
@@ -70,5 +55,24 @@ class PostsController < ApplicationController
 
     def only_author
       redirect_back fallback_location: root_url unless current_user == @post.user
+    end
+
+    def search_posts
+      repos = ["vuejs/vue", "dh-megane/DesignPTN"]
+      cnt = 0
+      posts = []
+      repos.each do |repo|
+        client = GithubOss::GithubFetcher.new(repo)
+        post = {
+          'id' => cnt += 1,
+          'title' => 'タイトル' + cnt.to_s,
+          'language' => client.language,
+          #'topics' => client.topics,
+          'description' => client.description,
+          'stargazers_count' => client.stargazers_count
+        }
+        posts.push(post)
+      end
+      @posts = posts
     end
 end
