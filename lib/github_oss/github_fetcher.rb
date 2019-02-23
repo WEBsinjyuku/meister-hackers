@@ -3,6 +3,9 @@
 module GithubOss
   class GithubFetcher
     def initialize(repo_name)
+      # 仮認証
+      Octokit.login = "自分のアカウント名"
+      Octokit.password = "パスワード"
       @repo_name = repo_name
     end
 

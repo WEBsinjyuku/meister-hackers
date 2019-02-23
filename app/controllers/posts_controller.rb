@@ -65,6 +65,7 @@ class PostsController < ApplicationController
         client = GithubOss::GithubFetcher.new(repo)
         post = {
           "id" => cnt += 1, # postsより取得する
+          "url" => post + cnt.to_s, # URL書き方は別途検討
           "title" => "タイトル" + cnt.to_s, # postsより取得する
           "language" => client.language,
           "topics" => client.topics.names,
