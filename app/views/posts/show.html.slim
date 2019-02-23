@@ -1,0 +1,60 @@
+section.show-wrapper.columns
+
+
+    //  プロジェクトの情報を表示するメイン枠
+    .show-content-right.column
+        / .show-content-top
+        .show-content-right-head.level
+            .level-left
+                .level-item
+                    h1.title プロジェクトのタイトル
+            .level-right
+                .level-item
+                    a.button.is-primary href="#" 参加するボタン
+
+        .show-content-right-git-info.field.is-grouped
+            .control
+                .tags.has-addons
+                    span.tag.is-dark.is-small 言語
+                    span.tag.is-info.is-small Ruby
+            .control
+                .tags.has-addons
+                    span.tag.is-dark
+                        i.fa.fa-star
+                    span.tag.is-info 7
+            .control
+                .tags.has-addons
+                    spna.tag.is-dark コラボレータ
+                    span.tag.is-info 8
+
+        .show-content-right-git-topics
+            ul.tags
+                li.tag.is-info TOPICS1
+                li.tag.is-info TOPICS2
+                li.tag.is-info TOPICS3
+                li.tag.is-info TOPICS4
+                li.tag.is-info TOPICS5
+
+        .show-content-right-git-description
+            p gitから取得する情報のdescription
+
+        .show-content-5.box
+            p
+                |
+                    プロジェクトの説明文プロジェクトの説明文プロジェクトの説明文プロジェクトの説明文プロジェクトの説明文プロジェクトの説明文プロジェクトの説明文プロジェクトの説明文プロジェクトの説明文プロジェクトの説明文プロジェクトの説明文プロジェクトの説明文プロジェクトの説明文プロジェクトの説明文プロジェクトの説明文プロジェクトの説明文プロジェクトの説明文プロジェクトの説明文プロジェクトの説明文プロジェクトの説明文プロジェクトの説明文プロジェクトの説明文プロジェクトの説明文プロジェクトの説明文プロジェクトの説明文プロジェクトの説明文プロジェクトの説明文プロジェクトの説明文プロジェクトの説明文プロジェクトの説明文プロジェクトの説明文プロジェクトの説明文プロジェクトの説明文プロジェクトの説明文プロジェクトの説明文プロジェクトの説明文プロジェクトの説明文プロジェクトの説明文プロジェクトの説明文プロジェクトの説明文プロジェクトの説明文プロジェクトの説明文プロジェクトの説明文プロジェクトの説明文プロジェクトの説明文プロジェクトの説明文プロジェクトの説明文プロジェクトの説明文プロジェクトの説明文プロジェクトの説明文プロジェクトの説明文プロジェクトの説明文プロジェクトの説明文プロジェクトの説明文プロジェクトの説明文プロジェクトの説明文プロジェクトの説明文プロジェクトの説明文プロジェクトの説明文プロジェクトの説明文プロジェクトの説明文プロジェクトの説明文プロジェクトの説明文プロジェクトの説明文プロジェクトの説明文プロジェクトの説明文プロジェクトの説明文プロジェクトの説明文プロジェクトの説明文プロジェクトの説明文プロジェクトの説明文プロジェクトの説明文プロジェクトの説明文プロジェクトの説明文プロジェクトの説明文プロジェクトの説明文プロジェクトの説明文プロジェクトの説明文プロジェクトの説明文プロジェクトの説明文プロジェクトの説明文プロジェクトの説明文プロジェクトの説明文プロジェクトの説明文プロジェクトの説明文プロジェクトの説明文プロジェクトの説明文プロジェクトの説明文プロジェクトの説明文プロジェクトの説明文プロジェクトの説明文プロジェクトの説明文プロジェクトの説明文プロジェクトの説明文プロジェクトの説明文プロジェクトの説明文プロジェクトの説明文プロジェクトの説明文プロジェクトの説明文プロジェクトの説明文プロジェクトの説明文プロジェクトの説明文プロジェクトの説明文プロジェクトの説明文プロジェクトの説明文プロジェクトの説明文プロジェクトの説明文プロジェクトの説明文プロジェクトの説明文プロジェクトの説明文プロジェクトの説明文プロジェクトの説明文プロジェクトの説明文プロジェクトの説明文プロジェクトの説明文
+
+
+    //  下はサイドバー
+    .show-content-left.column.is-3.is-info
+        / .box
+        //  起案者の枠
+        .show-drafter.menu.is-white
+            .menu-list
+                p.image.is-256x256
+                    img src="http://placehold.it/256x256"
+                        .img-title
+                h1.subtitle プロジェクト　起案者
+
+
+section.show-comment#message-board
+  = javascript_pack_tag 'posts/show.js'

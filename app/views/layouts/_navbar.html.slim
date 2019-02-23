@@ -1,16 +1,11 @@
 header
-  nav.nav
-    .nav-left
-    / todo:ロゴを入れる。
-    .nav-right
-      / todo:下記の９行目〜１２行目まで「検索」と後にログインアイコンを入れる。
-      .nav-item
-        .control.has-addons
-        /   input.input[type="search" name="search" placeholder="キーワード検索"]
-        /   a.button.is-info[href="#"]
-        /     i.fa.fa-search
-        /     | 検索
-        - if logged_in?
-            = button_to 'ログアウト', logout_path, method: :delete
-        - else
-            = button_to '開発用ログイン', login_dev_path, method: :post
+  nav.navbar[role="navigation" aria-label="main navigation"]
+    #navbarBasicExample.navbar-menu
+      .navbar-start
+      .navbar-end
+        .navbar-item
+          .buttons
+          - if user_signed_in?
+            = link_to "Log out", destroy_user_session_path, method: :delete, class: 'button is-primary'
+          - else
+            = link_to 'GitHub Sign in', user_github_omniauth_authorize_path, class: 'button is-primary'
