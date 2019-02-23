@@ -1,0 +1,40 @@
+/* 
+
+pc max 1180
+ipad max 768
+iphone max 480
+
+*/
+
+
+.show-wrapper {
+    width: 100%;
+    max-width: 1180px;
+    margin: 0 auto !important;
+}
+
+.show-content-right-git-description {
+    padding: 12px 0 40px 0;
+}
+
+
+
+.show-comment {
+    background-color: turquoise;
+    width: 100%;
+    height: 500px;
+}
+
+.show-comment {
+    widows: 100%;
+    max-width: 1180px;
+    margin: 0 auto;
+}
+
+
+
+
+@media screen and (min-width: 1180px) {
+
+}
+

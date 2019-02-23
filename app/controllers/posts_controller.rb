@@ -25,6 +25,9 @@ class PostsController < ApplicationController
     @post = find_post
   end
 
+  def show
+  end
+
   def update
     @post = find_post
     if @post.update(post_params)
@@ -32,6 +35,10 @@ class PostsController < ApplicationController
     else
       render :edit
     end
+  end
+
+  def show
+    # 今は空メソッドで定義
   end
 
   private
