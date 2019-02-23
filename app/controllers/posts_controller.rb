@@ -6,7 +6,7 @@ class PostsController < ApplicationController
   before_action :only_author, only: %i(edit update)
 
   def index
-    search_posts 
+    search_posts
   end
 
   def new
@@ -64,12 +64,12 @@ class PostsController < ApplicationController
       repos.each do |repo|
         client = GithubOss::GithubFetcher.new(repo)
         post = {
-          'id' => cnt += 1,
-          'title' => 'タイトル' + cnt.to_s,
-          'language' => client.language,
-          #'topics' => client.topics,
-          'description' => client.description,
-          'stargazers_count' => client.stargazers_count
+          "id" => cnt += 1,
+          "title" => 'タイトル' + cnt.to_s,
+          "language" => client.language,
+          # "topics" => client.topics,
+          "description" => client.description,
+          "stargazers_count" => client.stargazers_count
         }
         posts.push(post)
       end
