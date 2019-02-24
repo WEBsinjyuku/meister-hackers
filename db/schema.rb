@@ -34,6 +34,20 @@ ActiveRecord::Schema.define(version: 2019_02_24_073550) do
     t.index ["user_id"], name: "index_posts_on_user_id"
   end
 
+  create_table "profiles", force: :cascade do |t|
+    t.string "area"
+    t.string "sex"
+    t.string "github_url"
+    t.string "twitter_url"
+    t.string "facebook_url"
+    t.string "blog_url"
+    t.string "introduction"
+    t.bigint "user_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["user_id"], name: "index_profiles_on_user_id"
+  end
+
   create_table "users", force: :cascade do |t|
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
