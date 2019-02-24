@@ -58,14 +58,13 @@ class PostsController < ApplicationController
     end
 
     def search_posts
-      repos = Post.all
       posts = []
-      repos.each do |repo|
-        client = GithubOss::GithubFetcher.new(repo)
+      Post.joins(:user).select() do |repo|
+        client = GithubOss::GithubFetcher.new(repo.user.name + '/' + repo.repository)
         post = {
-          "id" => repo.id, # postsより取得する
-          "url" => "/posts/" + repo.id, # URL書き方は別途検討
-          "title" => repo.title, # postsより取得する
+          "id" => repo.id,
+          "url" => "/posts/" + repo.id.to_s,
+          "title" => repo.title,
           "language" => client.language,
           "topics" => client.topics.names,
           "description" => client.description,
