@@ -19,8 +19,8 @@
         span.tag.is-primary = "{{ repo.stargazers_count }}"
       .content.is-normal
         u VIEW PROJECT
-.div#btn_area
-  a.button.is-dark プロジェクト新規登録
+.div.footer-btn
+  a.button.is-dark href="/posts/new" プロジェクト新規登録
 javascript:
   var posts = #{{ @posts.to_json }}
 = javascript_pack_tag 'posts/index.js'
@@ -38,6 +38,12 @@ css:
   .box {
     box-shadow: 0 0 8px gray;
   }
-  #btn_area {
-    text-align: right;  
+  .footer-btn {
+    text-align: right;
+    position: fixed;
+    bottom: 16px;
+    right: 16px;
+  }
+  .footer-btn:hover {
+    opacity: 0.85;
   }
