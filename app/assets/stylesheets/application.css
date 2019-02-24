@@ -28,3 +28,8 @@ img {
 a.button.is-left {
   margin-right: 17px;
 }
+.navbar-log {
+  background-color: cornflowerblue;
+  margin-left: -3px;
+  width: 160px;
+}
