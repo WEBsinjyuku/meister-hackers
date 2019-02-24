@@ -1,11 +1,11 @@
 .container
   = form_with(model: post, local: true) do |f|
     .field
-      = f.label :レポジトリ, class: 'label'
+      = f.label :リポジトリ, class: 'label'
       - if params[:action] == 'new'
         = f.text_field :repository, class: 'control input'
         p.help
-          | 募集するレポジトリのURLを入力してください
+          | 募集するリポジトリのURLを入力してください
       = f.text_field :repository, class: 'control input', disabled: true if params[:action] == 'edit'
     .field
       = f.label :募集タイトル, class: 'label'
