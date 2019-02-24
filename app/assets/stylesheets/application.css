@@ -16,3 +16,8 @@
 .tes {
   margin-top: 26px;
 }
+
+.my-navbar-menu {
+  display: flex;
+  justify-content: space-between;
+}
