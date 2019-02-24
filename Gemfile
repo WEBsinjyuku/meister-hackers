@@ -65,6 +65,8 @@ group :development, :test do
 
   gem "rubocop"
   gem "rubocop-rails_config"
+
+  gem "rails_db"
 end
 
 # for language
