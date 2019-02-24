@@ -25,9 +25,6 @@ class PostsController < ApplicationController
   def edit
   end
 
-  def show
-  end
-
   def update
     if @post.update(post_params)
       redirect_to @post, notice: "投稿を編集しました"
@@ -37,7 +34,11 @@ class PostsController < ApplicationController
   end
 
   def show
-    # 今は空メソッドで定義
+    post = Post.find(params[:id])
+
+    @post = post
+    @user = User.find(params[:id])
+    
   end
 
   private
