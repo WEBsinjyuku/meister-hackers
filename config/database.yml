@@ -9,14 +9,14 @@ default: &default
 
 development:
   <<: *default
-  database: github-open-products_development
+  database: meister-hackers_development
 
 test:
   <<: *default
-  database: github-open-products_test
+  database: meister-hackers_test
 
 production:
   <<: *default
   adapter: postgresql
-  database: github-open-products_production
+  database: meister-hackers_production
   url: <%= ENV['DATABASE_URL'] %>
