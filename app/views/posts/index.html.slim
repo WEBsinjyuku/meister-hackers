@@ -1,6 +1,4 @@
 .title プロジェクト一覧画面
-.div
-  a.button.is-link href="#" style=("position: absolute; right: 0;") プロジェクト新規作成
 .section#app
   .box v-for="repo in repos" v-bind:key="repo.id"
     a v-bind:href="repo.url" 
@@ -16,12 +14,32 @@
       .content.is-medium v-if="repo.description" 簡易説明文： {{ repo.description }}
       .content.is-small
       .tags.has-addons
-        span.tag.is-dark
+        span.tag
           i.fa.fa-star
-        span.tag.is-white = "{{ repo.stargazers_count }}"
-      .content.is-medium
-        u VIEW PROJECT                 
+        span.tag.is-primary = "{{ repo.stargazers_count }}"
+      .content.is-normal
+        u VIEW PROJECT
+.div#btn_area
+  a.button.is-dark プロジェクト新規登録
 javascript:
   var posts = #{{ @posts.to_json }}
 = javascript_pack_tag 'posts/index.js'
+css:
+  body {
+    width: 100%;
+    max-width: 1180px;
+    margin: 0 auto !important;
+    background-color : #f9fbfe;
+  }
+  .title
+  {
+    padding-left: 20px;
+  }
+  .box {
+    box-shadow: 0 0 8px gray;
+  }
+  #btn_area {
+    text-align: right;  
+  }
+
 

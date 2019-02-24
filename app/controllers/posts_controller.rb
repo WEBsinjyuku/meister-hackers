@@ -58,15 +58,14 @@ class PostsController < ApplicationController
     end
 
     def search_posts
-      repos = ["vuejs/vue", "dh-megane/DesignPTN"]
-      cnt = 0
+      repos = Post.all
       posts = []
       repos.each do |repo|
         client = GithubOss::GithubFetcher.new(repo)
         post = {
-          "id" => cnt += 1, # postsより取得する
-          "url" => "/posts/" + cnt.to_s, # URL書き方は別途検討
-          "title" => "タイトル" + cnt.to_s, # postsより取得する
+          "id" => repo.id, # postsより取得する
+          "url" => "/posts/" + repo.id, # URL書き方は別途検討
+          "title" => repo.title, # postsより取得する
           "language" => client.language,
           "topics" => client.topics.names,
           "description" => client.description,
