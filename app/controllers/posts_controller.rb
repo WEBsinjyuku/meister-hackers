@@ -59,7 +59,7 @@ class PostsController < ApplicationController
 
     def search_posts
       posts = []
-      Post.joins(:user).select() do |repo|
+      Post.order("id").joins(:user).select() do |repo|
         client = GithubOss::GithubFetcher.new(repo.user.name + '/' + repo.repository)
         post = {
           "id" => repo.id,
