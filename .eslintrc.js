@@ -21,5 +21,6 @@ module.exports = {
     "array-callback-return": 0,
     "quotes": ["error", "double"],
     "vue/require-default-prop": 0,
+    "vue/require-prop-types": 0
   }
 };
