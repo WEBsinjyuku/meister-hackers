@@ -11,7 +11,7 @@
 #  content    :text             not null
 #  user_id    :bigint(8)        not null
 #  repository :string           not null
-#
+#  status     :integer          not null, default: 1
 
 
 class Post < ApplicationRecord
