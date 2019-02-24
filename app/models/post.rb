@@ -26,6 +26,6 @@ class Post < ApplicationRecord
   before_save :format_repository_url
 
   def format_repository_url
-    self.repository.gsub!(/https:\/\/github.com/, '')
+    self.repository.gsub!(/https:\/\/github.com/, "")
   end
 end
