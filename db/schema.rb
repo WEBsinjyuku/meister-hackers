@@ -30,6 +30,7 @@ ActiveRecord::Schema.define(version: 2019_02_21_051923) do
     t.text "content", null: false
     t.bigint "user_id", null: false
     t.string "repository", null: false
+    t.integer "status", default: 1, null: false
     t.index ["user_id"], name: "index_posts_on_user_id"
   end
 
