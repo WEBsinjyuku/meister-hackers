@@ -20,7 +20,7 @@
       .content.is-normal
         u VIEW PROJECT
 .div.footer-btn
-  a.button.is-dark href="/posts/new" プロジェクト新規登録
+  a.button.is-dark href="javascript:alert('新規投稿画面へ遷移させる');" プロジェクト新規登録
 javascript:
   var posts = #{{ @posts.to_json }}
 = javascript_pack_tag 'posts/index.js'
