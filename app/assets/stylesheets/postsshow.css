@@ -1,11 +1,9 @@
-/* 
 
+/*=========================
 pc max 1180
 ipad max 768
 iphone max 480
-
-*/
-
+===========================*/
 
 .show-wrapper {
     width: 100%;
@@ -17,12 +15,42 @@ iphone max 480
     padding: 12px 0 40px 0;
 }
 
+/*=========================
+        1.show-content-right-head
+===========================*/
 
+.show-content-right-head > h1 {
+    padding-bottom: 15px;
+}
+
+/*=========================
+        2.show-content-right-git-info
+===========================*/
+
+
+/*=========================
+        3.show-content-right-git-topics
+===========================*/
+
+
+
+/*=========================
+        4.show-content-right-git-description
+===========================*/
+
+
+
+/*=========================
+        5.show-content-5
+===========================*/
+
+
+/*=========================
+        6.show-comment
+===========================*/
 
 .show-comment {
-    background-color: turquoise;
     width: 100%;
-    height: 500px;
 }
 
 .show-comment {
@@ -30,11 +58,3 @@ iphone max 480
     max-width: 1180px;
     margin: 0 auto;
 }
-
-
-
-
-@media screen and (min-width: 1180px) {
-
-}
-
