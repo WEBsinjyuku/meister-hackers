@@ -1,5 +1,5 @@
 {
-  "name": "github-open-products",
+  "name": "meister-hackers",
   "private": true,
   "dependencies": {
     "@rails/webpacker": "3.5",

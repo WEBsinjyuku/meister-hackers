@@ -38,7 +38,7 @@ export default {
   props: ["user", "attributes"],
   computed: {
     editUrl() {
-      if (this.user.id && this.attributes.id) {
+      if (this.user) {
         return `/users/${this.user.id}/edit`;
       }
       return "/";

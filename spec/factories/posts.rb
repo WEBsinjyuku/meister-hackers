@@ -11,8 +11,8 @@
 #  content    :text             not null
 #  user_id    :bigint(8)        not null
 #  repository :string           not null
+#  status     :integer          default("wanted"), not null
 #
-
 
 FactoryBot.define do
   factory :post do

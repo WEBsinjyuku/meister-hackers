@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_02_21_051923) do
+ActiveRecord::Schema.define(version: 2019_02_22_031603) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -30,6 +30,7 @@ ActiveRecord::Schema.define(version: 2019_02_21_051923) do
     t.text "content", null: false
     t.bigint "user_id", null: false
     t.string "repository", null: false
+    t.integer "status", default: 1, null: false
     t.index ["user_id"], name: "index_posts_on_user_id"
   end
 
@@ -48,6 +49,8 @@ ActiveRecord::Schema.define(version: 2019_02_21_051923) do
   end
 
   create_table "users", force: :cascade do |t|
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
     t.string "name", default: "", null: false
     t.string "email", default: "", null: false
     t.string "encrypted_password", default: "", null: false
@@ -60,8 +63,6 @@ ActiveRecord::Schema.define(version: 2019_02_21_051923) do
     t.datetime "confirmed_at"
     t.datetime "confirmation_sent_at"
     t.string "unconfirmed_email"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["name"], name: "index_users_on_name", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
