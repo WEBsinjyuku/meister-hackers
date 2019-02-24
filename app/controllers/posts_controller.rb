@@ -1,6 +1,7 @@
 # frozen_string_literal: true
 
 class PostsController < ApplicationController
+  before_action :set_post, only: %i(edit update)
   before_action :only_logged_in_user, only: %i(new create edit update)
   before_action :only_author, only: %i(edit update)
 
@@ -22,11 +23,9 @@ class PostsController < ApplicationController
   end
 
   def edit
-    @post = find_post
   end
 
   def update
-    @post = find_post
     if @post.update(post_params)
       redirect_to @post, notice: "投稿を編集しました"
     else
@@ -39,8 +38,8 @@ class PostsController < ApplicationController
       params.require(:post).permit(:title, :content, :repository, :status)
     end
 
-    def find_post
-      Post.find_by(id: params[:id])
+    def set_post
+      @post = Post.find_by(id: params[:id])
     end
 
     def only_logged_in_user
@@ -48,6 +47,6 @@ class PostsController < ApplicationController
     end
 
     def only_author
-      redirect_back fallback_location: root_url unless current_user == find_post.user
+      redirect_back fallback_location: root_url unless current_user == @post.user
     end
 end
