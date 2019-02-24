@@ -20,4 +20,11 @@
 .my-navbar-menu {
   display: flex;
   justify-content: space-between;
+  background-color: #293742;
+}
+img {
+  margin-right: 12px;
+}
+a.button.is-left {
+  margin-right: 17px;
 }

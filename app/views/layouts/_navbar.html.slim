@@ -5,10 +5,12 @@ header
       .navbar-end
         .navbar-item
           - if user_signed_in?
+            a.button.is-left href=""
+              |  新規投稿
+            = image_tag("https://github.com/takahashi19.png", :size => "36x36", :alt => "アイコン")          
+            / a.button.is-light
+            /   |  Log in 
             = link_to "ログアウト", destroy_user_session_path, method: :delete, class: 'button is-primary'
-            a.button.is-light
-             |  Log in 
-            a.button.is-light
-              |  Log in 
+
           - else
             = link_to 'GitHub ログイン', user_github_omniauth_authorize_path, class: 'button is-primary'
