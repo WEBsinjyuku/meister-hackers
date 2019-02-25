@@ -31,6 +31,12 @@ img {
   height: 1.6em;
   border-radius: 0.2666666667em;
 }
+a.button.is-primary {
+  height: 32px;
+}
+a.a.button.is-left {
+  height: 32px;
+}
 a.button.is-left {
   margin-right: 17px;
 }
