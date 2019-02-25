@@ -30,6 +30,8 @@ class User < ApplicationRecord
   has_many :posts, dependent: :destroy
   has_one :profile, dependent: :destroy
 
+  scope :get_repo_name, -> (user_id, repository) { select("name || '/' || '#{repository}' AS repo_name").find(user_id).repo_name }
+
   def self.create_unique_string
     SecureRandom.uuid
   end

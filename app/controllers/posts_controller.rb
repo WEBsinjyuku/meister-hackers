@@ -6,7 +6,7 @@ class PostsController < ApplicationController
   before_action :only_author, only: %i(edit update)
 
   def index
-    # 今は空メソッドで定義
+    @posts = Post.new().search_posts
   end
 
   def new

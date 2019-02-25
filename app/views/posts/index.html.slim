@@ -1,8 +1,7 @@
-script src="https://cdn.jsdelivr.net/npm/vue@2.5.13/dist/vue.js"
 .title プロジェクト一覧画面
 .section#app
   .box v-for="repo in repos" v-bind:key="repo.id"
-    a href="#" 
+    a v-bind:href="repo.url" 
       .content.is-large = "{{ repo.title }}"
       .tags.has-addons
         span.tag.is-dark.is-normal 言語
@@ -14,27 +13,36 @@ script src="https://cdn.jsdelivr.net/npm/vue@2.5.13/dist/vue.js"
             span.tag.is-warning.is-normal = "{{ topic }}"
       .content.is-medium v-if="repo.description" 簡易説明文： {{ repo.description }}
       .content.is-small
-        i.fa.fa-star aria-hidden="true" Star {{ repo.stargazers_count }} &nbsp;
-        i.fa.fa-user-circle aria-hidden="true" メンバ 999
-      .content.is-medium
-        u VIEW PROJECT                 
+      .tags.has-addons
+        span.tag
+          i.fa.fa-star
+        span.tag.is-primary = "{{ repo.stargazers_count }}"
+      .content.is-normal
+        u VIEW PROJECT
+.div.footer-btn
+  a.button.is-dark href="javascript:alert('新規投稿画面へ遷移させる');" プロジェクト新規登録
 javascript:
-  var app = new Vue({
-    el: '#app',
-    data: {
-      repos: [{
-            id: 1,
-            title: 'Vue.js入門',
-            language: 'JavaScript',
-            topics: ['eslint', 'eslint-plugin', 'html', 'javascript', 'npm', 'npm-module', 'npm-package', 'static-analysis', 'vue'],
-            description: 'Official ESLint plugin for Vue.js',
-            stargazers_count: 2266
-        },
-        {
-            id: 2,
-            title: '【駆け出しエンジニア向け】DevMeets開発者募集！！',
-            language: 'Rails',
-            stargazers_count: 10
-        }]
-      }
-  })
+  var posts = #{{ @posts.to_json }}
+= javascript_pack_tag 'posts/index.js'
+css:
+  body {
+    width: 100%;
+    max-width: 1180px;
+    margin: 0 auto !important;
+    background-color : #f9fbfe;
+  }
+  .title
+  {
+    padding-left: 20px;
+  }
+  .box {
+    box-shadow: 0 0 8px gray;
+  }
+  .footer-btn {
+    position: fixed;
+    bottom: 16px;
+    right: 20px;
+  }
+  .footer-btn:hover {
+    opacity: 0.85;
+  }
