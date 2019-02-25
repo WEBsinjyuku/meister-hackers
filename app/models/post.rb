@@ -28,4 +28,22 @@ class Post < ApplicationRecord
   def format_repository_url
     self.repository.gsub!(/https:\/\/github.com/, "")
   end
+
+  def search_posts
+    posts = []
+    Post.order("id").select() do |repo|
+      client = GithubOss::GithubFetcher.new(User.get_repo_name(repo.user_id, repo.repository))
+      post = {
+        "id" => repo.id,
+        "url" => "/posts/" + repo.id.to_s,
+        "title" => repo.title,
+        "language" => client.language,
+        "topics" => client.topics.names,
+        "description" => client.description,
+        "stargazers_count" => client.stargazers_count
+      }
+      posts.push(post)
+    end
+    return posts
+  end
 end
