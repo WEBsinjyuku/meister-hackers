@@ -23,7 +23,7 @@ export default {
       user: {
         id: 0,
         name: "",
-        image: "https://bulma.io/images/placeholders/96x96.png",
+        avatar: ""
       },
       introduction: "自己紹介文が未入力",
       profile: null,
@@ -35,8 +35,11 @@ export default {
       .then((response) => {
         this.user.name = response.data.username;
         this.user.id = response.data.id;
-        this.introduction = response.data.profile.introduction;
-        this.profile = response.data.profile;
+        this.user.avatar = response.data.avatar;
+        if(response.data.profile) {
+          this.profile = response.data.profile;
+          this.introduction = response.data.profile.introduction
+        }
       });
   },
 };
