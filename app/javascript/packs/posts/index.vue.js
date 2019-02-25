@@ -4,7 +4,7 @@ document.addEventListener("DOMContentLoaded", () => {
   new Vue({
     el: "#app",
     data: {
-      repos: posts,
+      repos: window.posts,
     },
   });
 });
