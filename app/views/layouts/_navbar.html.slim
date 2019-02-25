@@ -1,10 +1,14 @@
 header
   nav[role="navigation" aria-label="main navigation"]
-    #navbarBasicExample.my-navbar-menu
-      .navbar-start
-      .navbar-end
-        .navbar-item
-          - if user_signed_in?
-            = link_to "Log out", destroy_user_session_path, method: :delete, class: 'button is-primary'
-          - else
-            = link_to 'GitHub Sign in', user_github_omniauth_authorize_path, class: 'button is-primary'
+      #navbarBasicExample.my-navbar-menu
+        .navbar-start
+          .navbar-log
+            / img[src="https://bulma.io/images/bulma-logo.png" width="100%" height="100%"]ロゴ用コメントアウト解除でbulmaロゴ
+        .navbar-end
+          .navbar-item
+            - if user_signed_in?
+              = link_to '新規投稿', new_post_path, class: 'a button is-left'
+              = image_tag(current_user.avatar_url, :size => "36x40", :alt => "アイコン")          
+              = link_to "ログアウト", destroy_user_session_path, method: :delete, class: 'button is-primary'
+            - else
+              = link_to 'GitHub ログイン', user_github_omniauth_authorize_path, class: 'button is-primary'
