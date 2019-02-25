@@ -24,6 +24,12 @@
 }
 img {
   margin-right: 12px;
+  border-radius: 0.2666666667em;
+}
+.Avatar {
+  width: 2.6em;
+  height: 1.6em;
+  border-radius: 0.2666666667em;
 }
 a.button.is-left {
   margin-right: 17px;

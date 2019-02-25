@@ -9,7 +9,8 @@ header
           .navbar-item
             - if user_signed_in?
               = link_to '新規投稿', new_post_path, class: 'a button is-left'
-              = link_to image_tag(current_user.avatar_url, :size => "36x40", :alt => "アイコン"), user_path(current_user)
+              / = link_to image_tag(current_user.avatar_url, :size => "36x40", :alt => "アイコン"), user_path(current_user)
+              = link_to image_tag(current_user.avatar_url, :alt => "アイコン"), user_path(current_user), class: 'Avatar'
               = link_to "ログアウト", destroy_user_session_path, method: :delete, class: 'button is-primary'
             - else
               = link_to 'GitHub ログイン', user_github_omniauth_authorize_path, class: 'button is-primary'
