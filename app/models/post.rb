@@ -44,6 +44,6 @@ class Post < ApplicationRecord
       }
       posts.push(post)
     end
-    return posts
+    posts
   end
 end
