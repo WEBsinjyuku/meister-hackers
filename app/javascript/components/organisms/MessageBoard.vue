@@ -1,6 +1,6 @@
 <template lang="pug">
 form(@submit.prevent="submit")
-  .tile.is-ancestor
+  .tile.is-ancestor.show-comment
     .tile.is-vertical.box.is-9
       .title.has-background-grey-lighter フィード
       input.input(type="text" placeholder="コメント" v-model="content")

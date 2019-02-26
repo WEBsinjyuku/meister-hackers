@@ -27,6 +27,7 @@ FactoryBot.define do
     sequence (:name) { |n| "tsu-nera#{n}" }
     sequence(:email) { |n| "example#{n}@gmail.com" }
     password { "helloworld" }
+    sequence(:avatar_url) { |n| "sample_url" }
     sequence(:uid) { |n| n }
     provider { "github" }
   end

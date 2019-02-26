@@ -49,12 +49,67 @@ iphone max 480
         6.show-comment
 ===========================*/
 
-.show-comment {
+
+
+/*=========================
+        7.show-buttons
+===========================*/
+
+#show-button {
+    position: fixed;
+    bottom: 5%;
     width: 100%;
 }
 
-.show-comment {
-    widows: 100%;
+.show-buttons-wrapper {
+    width: 100%;
     max-width: 1180px;
     margin: 0 auto;
+    display: flex;
+    justify-content: flex-end;
 }
+
+.show-buttons {
+    display: flex;
+}
+
+.show-button {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+}
+
+.show-button + .show-button {
+    margin-left: 10px;
+}
+
+.show-button > p {
+    vertical-align: middle;
+    line-height: 80px;
+    text-align: center;
+    font-size: 1.5rem;
+    font-weight: bold;
+    color:#fefefe;
+}
+
+.show-button-join {
+    background-color: #00d1b2;
+}
+
+.show-button-delete {
+    background-color: red;
+}
+
+.my-shadow {
+    box-shadow: inset -2px 2px 4px rgba(255,255,255,0.5), -2px 2px 4px rgba(0, 0, 0, 0.19);
+    transition: .3s;
+    border-bottom: solid 1px #b5b5b5;
+}
+
+.my-shadow:hover {
+    box-shadow: inset 0 1px 0 rgba(255,255,255,0.5), 0 2px 2px rgba(0, 0, 0, 0.19);
+    border-bottom: none;
+}
+
+
+
