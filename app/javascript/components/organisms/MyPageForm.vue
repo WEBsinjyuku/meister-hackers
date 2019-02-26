@@ -40,13 +40,13 @@ export default {
   data() {
     return {
       profile: {
-        area: "",
-        sex: "",
-        github_url: "",
-        twitter_url: "",
-        facebook_url: "",
-        blog_url: "",
-        introduction: "",
+        area: null,
+        sex: null,
+        github_url: null,
+        twitter_url: null,
+        facebook_url: null,
+        blog_url: null,
+        introduction: null,
       },
     };
   },
@@ -55,7 +55,11 @@ export default {
     const profileUrl = `${baseUrl.replace("edit", "profiles")}`;
     Axios.get(profileUrl)
       .then((response) => {
-        this.profile = response.data.profile;
+        if (response.data.profile) {
+          this.profile = response.data.profile;
+        } else {
+          this.profile = {};
+        }
       });
   },
   methods: {
