@@ -55,10 +55,10 @@ export default {
     const profileUrl = `${baseUrl.replace("edit", "profiles")}`;
     Axios.get(profileUrl)
       .then((response) => {
-        if(response.data.profile) {
+        if (response.data.profile) {
           this.profile = response.data.profile;
         } else {
-          this.profile = {}
+          this.profile = {};
         }
       });
   },

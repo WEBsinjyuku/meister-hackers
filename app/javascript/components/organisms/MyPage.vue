@@ -23,7 +23,7 @@ export default {
       user: {
         id: 0,
         name: "",
-        avatar: ""
+        avatar: "",
       },
       introduction: "自己紹介文が未入力",
       profile: null,
@@ -36,9 +36,9 @@ export default {
         this.user.name = response.data.username;
         this.user.id = response.data.id;
         this.user.avatar = response.data.avatar;
-        if(response.data.profile) {
+        if (response.data.profile) {
           this.profile = response.data.profile;
-          this.introduction = response.data.profile.introduction
+          this.introduction = response.data.profile.introduction;
         }
       });
   },
