@@ -50,8 +50,56 @@ a.button.is-left {
   /* margin-left: -3px; */
   width: 160px;
 }
-.navbar-log img {
-  margin-top: 8px;
-  margin-left: 8px;
-  border-radius: 0.2666666667em;
+
+.footer {
+  border-top: 1px solid #eee;
+  padding: 20px !important;
+  display: flex;
+  justify-content: space-around;
+  font-size: 15px;
+}
+
+.footer a {
+  color: #4a4a4a;
+}
+
+.item1 {
+  flex-grow: 1;
+  margin-top: -10px;
+}
+
+.item1 li:first-child {
+  font-size: 20px;
+  font-weight: bold;
+}
+
+.item2 {
+  flex-grow: 1;
+}
+
+.item3 {
+  flex-grow: 1;
+}
+
+.item4 {
+  flex-grow: 1;
+  text-align: center;
+  position: relative;
+  top: 10px;
+}
+
+.fab {
+  font-size: 30px;
+}
+
+.fa-twitter-square {
+  color: blue;
+  margin-left: 5px;
+  margin-right: 5px;
+}
+
+.connpass {
+  font-size: 10px;
+  position: relative;
+  top: 3px;
 }
