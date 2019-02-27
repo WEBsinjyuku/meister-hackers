@@ -28,5 +28,4 @@ class Post < ApplicationRecord
   def format_repository_url
     self.repository.gsub!(/https:\/\/github.com/, "")
   end
-
 end
