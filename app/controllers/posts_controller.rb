@@ -25,15 +25,26 @@ class PostsController < ApplicationController
   def edit
   end
 
-  def show
-  end
-
   def update
     if @post.update(post_params)
       redirect_to @post, notice: "投稿を編集しました"
     else
       render :edit
     end
+  end
+
+  def show
+    post = Post.find(params[:id])
+    client = GithubOss::GithubFetcher.new(User.get_repo_name(post.user_id, post.repository))
+
+    @post = post
+    @user = User.find(post.user_id)
+    @git = {
+      "language" => client.language,
+      "topics" => client.topics.names,
+      "description" => client.description,
+      "stargazers_count" => client.stargazers_count
+    }
   end
 
   private

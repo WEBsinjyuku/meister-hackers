@@ -17,6 +17,20 @@
   margin-top: 26px;
 }
 
+body {
+  background-color: #f9fbfe;
+}
+
+#main {
+  width: 100%;
+  max-width: 980px;
+  margin: 0 auto;
+}
+
+.container-wrapper {
+  width: 100%;
+}
+
 .my-navbar-menu {
   display: flex;
   justify-content: space-between;
