@@ -34,11 +34,10 @@ class PostsController < ApplicationController
   end
 
   def show
-    post = Post.find(params[:id])
-    client = GithubOss::GithubFetcher.new(User.get_repo_name(post.user_id, post.repository))
+    @post = Post.find_by(id: params[:id])
+    client = GithubOss::GithubFetcher.new(@post.owner_and_repository)
 
-    @post = post
-    @user = User.find(post.user_id)
+    @user = User.find(@post.user_id)
     @git = {
       "language" => client.language,
       "topics" => client.topics.names,
@@ -67,8 +66,7 @@ class PostsController < ApplicationController
     def search_posts
       posts = []
       Post.order("id").select() do |repo|
-        repo_name = repo.owner + "/" + repo.repository
-        client = GithubOss::GithubFetcher.new(repo_name)
+        client = GithubOss::GithubFetcher.new(repo.owner_and_repository)
         post = {
           "id" => repo.id,
           "url" => "/posts/#{ repo.id }",

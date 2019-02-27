@@ -25,6 +25,10 @@ class Post < ApplicationRecord
 
   before_save :format_repository
 
+  def owner_and_repository
+    [owner, repository].join("/")
+  end
+
   def format_repository
     url_splits = self.repository.split("/")
     self.owner = url_splits[-2]
