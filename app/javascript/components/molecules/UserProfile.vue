@@ -2,7 +2,7 @@
 .card
   .card-image
     figure.image.is-4by3
-      img(:src="user.image" alt="Placeholder image")
+      img(:src="user.avatar" alt="Placeholder image")
   .card-content
     .content
       .title {{ user.name }}
