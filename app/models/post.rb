@@ -20,12 +20,12 @@ class Post < ApplicationRecord
   has_many :messages, dependent: :destroy
 
   validates :title, presence: true, length: { maximum: 50 }
-  validates :content, presence: true
+  validates :content, presence: true, length: { maximum: 1000 }
   validates :repository, presence: true
 
   before_save :format_repository_url
 
   def format_repository_url
-    self.repository.gsub!(/https:\/\/github.com/, "")
+    self.repository.split("/")[-1]
   end
 end
