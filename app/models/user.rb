@@ -1,5 +1,4 @@
 # frozen_string_literal: true
-
 # == Schema Information
 #
 # Table name: users
@@ -19,8 +18,8 @@
 #  confirmed_at           :datetime
 #  confirmation_sent_at   :datetime
 #  unconfirmed_email      :string
+#  avatar_url             :string           not null
 #
-
 
 class User < ApplicationRecord
   devise :database_authenticatable, :registerable,
