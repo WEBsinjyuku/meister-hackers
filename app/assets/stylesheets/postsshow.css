@@ -7,8 +7,6 @@ iphone max 480
 
 .show-wrapper {
     width: 100%;
-    max-width: 1180px;
-    margin: 0 auto !important;
 }
 
 .show-content-right-git-description {
@@ -62,9 +60,8 @@ iphone max 480
 }
 
 .show-buttons-wrapper {
-    width: 100%;
-    max-width: 1180px;
-    margin: 0 auto;
+    max-width: 980px;
+    /* margin: 0 auto; */
     display: flex;
     justify-content: flex-end;
 }

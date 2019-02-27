@@ -13,5 +13,7 @@ html
 
   body
     = render 'layouts/navbar'
-    = yield
+    main#main
+      .container-wrapper
+        = yield
     

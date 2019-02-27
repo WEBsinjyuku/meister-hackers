@@ -1,60 +1,63 @@
-section.show-wrapper.columns
+
+section#show-content.columns
 
     //  プロジェクトの起案者のUser情報
     .show-content-left.column.is-3.is-info
         .show-drafter.menu.is-white
             .menu-list
-                p.image.is-256x256
-                    img src="http://placehold.it/256x256"
-                        .img-title
-                / h1.subtitle = @user.name
+                figura.image.is-256x256
+                    - unless @user.avatar_url == nil
+                        = image_tag(@user.avatar_url, :size => "256x256", :alt => "userIcon")
+                    - else
+                        img src="http://placehold.it/256x256"
+
+                h1.subtitle = @user.name
 
     //  プロジェクトの情報を表示するメイン枠
     .show-content-right.column
         .show-content-right-head
-            / h1.title = @post.title
+            h1.title = @post.title
 
         .show-content-right-git-info.field.is-grouped
             .control
                 .tags.has-addons
                     span.tag.is-dark.is-small 言語
-                    span.tag.is-info.is-small Ruby
+                    span.tag.is-info.is-small = @git['language']
             .control
                 .tags.has-addons
                     span.tag.is-dark
                         i.fa.fa-star
-                    span.tag.is-info 7
-            .control
-                .tags.has-addons
-                    spna.tag.is-dark コラボレータ
-                    span.tag.is-info 8
+                    span.tag.is-info = @git['stargazers_count']
+            / .control
+            /     .tags.has-addons
+            /         spna.tag.is-dark コラボレータ
+            /         span.tag.is-info = @git['topics']
 
         .show-content-right-git-topics
             ul.tags
-                li.tag.is-info TOPICS1
-                li.tag.is-info TOPICS2
-                li.tag.is-info TOPICS3
-                li.tag.is-info TOPICS4
-                li.tag.is-info TOPICS5
+                - @git['topics'].each do |topic|
+                    li.tag.is-info = topic
 
         .show-content-right-git-description
-            p gitから取得する情報のdescription
+            p = @git['description']
 
         .show-content-5.box
-            p
-            / p = @post.content
+            / p
+            p = @post.content
 
-section
+section#show-comment
     = javascript_pack_tag 'posts/show.js'
 
 sction#show-button
     .show-buttons-wrapper
         .show-buttons
-            a.show-button.my-shadow.show-button-join
-                p 参加
-            a.show-button.my-shadow.show-button-join
-                p 編集
-            a.show-button.my-shadow.show-button-delete
-                p 削除
+            - if @user.id == current_user.id
+                a.show-button.my-shadow.show-button-join
+                    p 編集
+                a.show-button.my-shadow.show-button-delete
+                    p 削除
+            - else
+                a.show-button.my-shadow.show-button-join
+                    p 参加
 
 

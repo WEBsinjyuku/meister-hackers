@@ -34,11 +34,17 @@ class PostsController < ApplicationController
   end
 
   def show
-    # post = Post.find(params[:id])
-    # user = User.find(post.user_id)
+    post = Post.find(params[:id])
+    client = GithubOss::GithubFetcher.new(User.get_repo_name(post.user_id, post.repository))
 
-    # @post = post
-    # @user = user
+    @post = post
+    @user = User.find(post.user_id)
+    @git = {
+      "language" => client.language,
+      "topics" => client.topics.names,
+      "description" => client.description,
+      "stargazers_count" => client.stargazers_count
+    }
   end
 
   private
