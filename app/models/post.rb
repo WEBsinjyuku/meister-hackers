@@ -11,6 +11,7 @@
 #  user_id    :bigint(8)        not null
 #  repository :string           not null
 #  status     :integer          default("wanted"), not null
+#  owner      :string
 #
 
 class Post < ApplicationRecord
@@ -22,9 +23,11 @@ class Post < ApplicationRecord
   validates :content, presence: true, length: { maximum: 1000 }
   validates :repository, presence: true
 
-  before_save :format_repository_url
+  before_save :format_repository
 
-  def format_repository_url
-    self.repository.split("/")[-1]
+  def format_repository
+    url_splits = self.repository.split("/")
+    self.owner = url_splits[-2]
+    self.repository = url_splits[-1]
   end
 end
