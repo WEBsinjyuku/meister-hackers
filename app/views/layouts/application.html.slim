@@ -2,7 +2,7 @@ doctype html
 html
   head
     title
-      | GithubOpenProducts
+      | Meister Hackers
     = csrf_meta_tags
     = csp_meta_tag
     = stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload'
@@ -14,12 +14,6 @@ html
 
   body
     = render 'layouts/navbar'
-<<<<<<< HEAD
     main#main
       .container-wrapper
         = yield
-    
-=======
-    = yield
-    = render 'layouts/footer'
->>>>>>> d442345eb04975e277658e85b90b56883726179d
