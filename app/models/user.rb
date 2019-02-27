@@ -19,6 +19,7 @@
 #  confirmation_sent_at   :datetime
 #  unconfirmed_email      :string
 #  avatar_url             :string           not null
+#  nickname               :string           default(""), not null
 #
 
 class User < ApplicationRecord
@@ -29,7 +30,7 @@ class User < ApplicationRecord
   has_many :posts, dependent: :destroy
   has_one :profile, dependent: :destroy
 
-  scope :get_repo_name, -> (user_id, repository) { select("name || '/' || '#{repository}' AS repo_name").find(user_id).repo_name }
+  scope :get_repo_name, -> (user_id, repository) { select("nickname || '/' || '#{repository}' AS repo_name").find(user_id).repo_name }
 
   def self.create_unique_string
     SecureRandom.uuid
@@ -42,6 +43,7 @@ class User < ApplicationRecord
         provider:     auth.provider,
         uid:          auth.uid,
         name:         auth.info.name,
+        nickname:     auth.info.nickname,
         email:        auth.info.email,
         avatar_url:   auth.info.image,
         password:     Devise.friendly_token[0, 20],
