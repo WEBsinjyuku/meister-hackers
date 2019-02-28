@@ -45,9 +45,8 @@ section#show-content.columns
       / p
       p = @post.content
 
-section#show-comment
-  #message-board
-= javascript_pack_tag 'posts/show.js'
+    #message-board
+    = javascript_pack_tag 'posts/show.js'
 
 - if user_signed_in?
   section#show-button
