@@ -1,40 +1,112 @@
-/* 
 
+/*=========================
 pc max 1180
 ipad max 768
 iphone max 480
-
-*/
-
+===========================*/
 
 .show-wrapper {
     width: 100%;
-    max-width: 1180px;
-    margin: 0 auto !important;
 }
 
 .show-content-right-git-description {
     padding: 12px 0 40px 0;
 }
 
+/*=========================
+        1.show-content-right-head
+===========================*/
+
+.show-content-right-head > h1 {
+    padding-bottom: 15px;
+}
+
+/*=========================
+        2.show-content-right-git-info
+===========================*/
 
 
-.show-comment {
-    background-color: turquoise;
+/*=========================
+        3.show-content-right-git-topics
+===========================*/
+
+
+
+/*=========================
+        4.show-content-right-git-description
+===========================*/
+
+
+
+/*=========================
+        5.show-content-5
+===========================*/
+
+
+/*=========================
+        6.show-comment
+===========================*/
+
+
+
+/*=========================
+        7.show-buttons
+===========================*/
+
+#show-button {
+    position: fixed;
+    bottom: 5%;
     width: 100%;
-    height: 500px;
 }
 
-.show-comment {
-    widows: 100%;
-    max-width: 1180px;
-    margin: 0 auto;
+.show-buttons-wrapper {
+    max-width: 980px;
+    /* margin: 0 auto; */
+    display: flex;
+    justify-content: flex-end;
+}
+
+.show-buttons {
+    display: flex;
+}
+
+.show-button {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+}
+
+.show-button + .show-button {
+    margin-left: 10px;
+}
+
+.show-button > p {
+    vertical-align: middle;
+    line-height: 80px;
+    text-align: center;
+    font-size: 1.5rem;
+    font-weight: bold;
+    color:#fefefe;
+}
+
+.show-button-join {
+    background-color: #00d1b2;
+}
+
+.show-button-delete {
+    background-color: red;
+}
+
+.my-shadow {
+    box-shadow: inset -2px 2px 4px rgba(255,255,255,0.5), -2px 2px 4px rgba(0, 0, 0, 0.19);
+    transition: .3s;
+    border-bottom: solid 1px #b5b5b5;
+}
+
+.my-shadow:hover {
+    box-shadow: inset 0 1px 0 rgba(255,255,255,0.5), 0 2px 2px rgba(0, 0, 0, 0.19);
+    border-bottom: none;
 }
 
 
-
-
-@media screen and (min-width: 1180px) {
-
-}
 
