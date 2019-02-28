@@ -1,36 +1,48 @@
-.title プロジェクト一覧画面
-.section
-  .box
-    a href="#" 
-      .content.is-large【初心者歓迎】RailsでWebアプリケーションを作ろう！
+.title Meister Hackers
+.section#app
+  .box v-for="repo in repos" v-bind:key="repo.id"
+    a v-bind:href="repo.url" 
+      .content.is-large = "{{ repo.title }}"
       .tags.has-addons
-        span.tag.is-dark.is-small 言語
-        span.tag.is-info.is-small Ruby
+        span.tag.is-dark.is-normal 言語
+        span.tag.is-info.is-normal = "{{ repo.language }}"
       .field.is-grouped.is-grouped-multiline
-        .control
+        .control v-for="topic in repo.topics"
           .tags.has-addons
-            span.tag.is-small タグ
-            span.tag.is-warning.is-small Ruby
-        .control
-          .tags.has-addons
-            span.tag.is-small タグ
-            span.tag.is-warning.is-small Rails
-        .control
-          .tags.has-addons
-            span.tag.is-small タグ
-            span.tag.is-warning.is-small Beginner
-      .content.is-medium 募集概要：対象レベルは、ProgateでRails Tutorialを完走していること。
+            span.tag.is-normal タグ
+            span.tag.is-warning.is-normal = "{{ topic }}"
+      .content.is-medium v-if="repo.description" 簡易説明文： {{ repo.description }}
       .content.is-small
-        span ★Star 999 
-        span 👥開発メンバ 999
-      u VIEW PROJECT
-  .box
-    a href="#" 
-      .content.is-large【脆弱性診断入門】やられサイトを作る！！！
       .tags.has-addons
-        span.tag.is-dark.is-small 言語
-        span.tag.is-info.is-small JavaScript
-      .content.is-small
-        span ★Star 999 
-        span 👥開発メンバ 999
-      u VIEW PROJECT
+        span.tag
+          i.fa.fa-star
+        span.tag.is-primary = "{{ repo.stargazers_count }}"
+      .content.is-normal
+        u VIEW PROJECT
+.div.footer-btn
+  a.button.is-dark href="/posts/new" プロジェクト新規登録
+javascript:
+  var posts = #{{ @posts.to_json }}
+= javascript_pack_tag 'posts/index.js'
+css:
+  body {
+    width: 100%;
+    max-width: 1180px;
+    margin: 0 auto !important;
+    background-color : #f9fbfe;
+  }
+  .title
+  {
+    padding-left: 20px;
+  }
+  .box {
+    box-shadow: 0 0 8px gray;
+  }
+  .footer-btn {
+    position: fixed;
+    bottom: 16px;
+    right: 20px;
+  }
+  .footer-btn:hover {
+    opacity: 0.85;
+  }

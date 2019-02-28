@@ -6,7 +6,7 @@ class PostsController < ApplicationController
   before_action :only_author, only: %i(edit update)
 
   def index
-    # 今は空メソッドで定義
+    @posts = search_posts
   end
 
   def new
@@ -36,10 +36,6 @@ class PostsController < ApplicationController
     end
   end
 
-  def show
-    # 今は空メソッドで定義
-  end
-
   private
     def post_params
       params.require(:post).permit(:title, :content, :repository, :status)
@@ -55,5 +51,24 @@ class PostsController < ApplicationController
 
     def only_author
       redirect_back fallback_location: root_url unless current_user == @post.user
+    end
+
+    def search_posts
+      posts = []
+      Post.order("id").select() do |repo|
+        repo_name = repo.owner + "/" + repo.repository
+        client = GithubOss::GithubFetcher.new(repo_name)
+        post = {
+          "id" => repo.id,
+          "url" => "/posts/#{ repo.id }",
+          "title" => repo.title,
+          "language" => client.language,
+          "topics" => client.topics.names,
+          "description" => client.description,
+          "stargazers_count" => client.stargazers_count
+        }
+        posts.push(post)
+      end
+      posts
     end
 end

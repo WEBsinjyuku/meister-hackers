@@ -1,5 +1,4 @@
 # frozen_string_literal: true
-
 # == Schema Information
 #
 # Table name: users
@@ -19,8 +18,9 @@
 #  confirmed_at           :datetime
 #  confirmation_sent_at   :datetime
 #  unconfirmed_email      :string
+#  avatar_url             :string           not null
+#  nickname               :string           default(""), not null
 #
-
 
 class User < ApplicationRecord
   devise :database_authenticatable, :registerable,
@@ -41,6 +41,7 @@ class User < ApplicationRecord
         provider:     auth.provider,
         uid:          auth.uid,
         name:         auth.info.name,
+        nickname:     auth.info.nickname,
         email:        auth.info.email,
         avatar_url:   auth.info.image,
         password:     Devise.friendly_token[0, 20],
