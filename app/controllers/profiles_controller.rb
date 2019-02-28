@@ -6,7 +6,7 @@ class ProfilesController < ApplicationController
   def index
     user = User.find_by(id: params[:user_id])
     if user
-      render json: { status: 200, profile: user.profile, username: user.name, avatar: user.avatar_url, id: user.id }
+      render json: { status: 200, profile: user.profile, username: user.name, avatar: user.avatar_url, id: user.id, is_login: user_signed_in? }
     elsif user.nil?
       render json: { status: 404 }
     else

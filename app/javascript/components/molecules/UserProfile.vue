@@ -22,7 +22,7 @@
           a.fab.fa-2x.fa-facebook(:href="attributes.facebook_url")
         .icon.is-large(v-if="attributes && attributes.blog_url")
           a.fas.fa-2x.fa-rss-square(:href="attributes.blog_url")
-      .button.is-primary(@click="edit") 編集
+      .button.is-primary(@click="edit" v-if="user.isLogin") 編集
 </template>
 
 <script>
