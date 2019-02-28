@@ -19,8 +19,8 @@
         span.tag.is-primary = "{{ repo.stargazers_count }}"
       .content.is-normal
         u VIEW PROJECT
-.div.footer-btn
-  a.button.is-dark href="/posts/new" プロジェクト新規登録
+/ .div.footer-btn
+/   a.button.is-dark href="/posts/new" プロジェクト新規登録
 javascript:
   var posts = #{{ @posts.to_json }}
 = javascript_pack_tag 'posts/index.js'
