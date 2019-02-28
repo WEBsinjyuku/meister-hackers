@@ -1,4 +1,5 @@
 # frozen_string_literal: true
+
 # == Schema Information
 #
 # Table name: posts
@@ -18,7 +19,8 @@ FactoryBot.define do
   factory :post do
     title { "post" }
     content { "testtesttesttesttesttesttesttesttesttest" }
-    repository { "https:github.com/WEBsinjyuku/meister-hackers" }
+    repository { "meister-hackers" }
+    owner { "WEBsinjyuku" }
     association :user
   end
 end

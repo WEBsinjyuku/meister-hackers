@@ -19,6 +19,10 @@
 
 body {
   background-color: #f9fbfe;
+  max-width: 1440px !important;
+}
+header {
+  width: 100%;
 }
 
 #main {
