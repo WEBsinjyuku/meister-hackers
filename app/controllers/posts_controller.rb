@@ -56,11 +56,11 @@ class PostsController < ApplicationController
     end
 
     def only_logged_in_user
-      redirect_back fallback_location: root_url unless user_signed_in?
+      redirect_to root_path, notice: 'ログインしてください' unless user_signed_in?
     end
 
     def only_author
-      redirect_back fallback_location: root_url unless current_user == @post.user
+      redirect_to root_path, notice: '権限がありません' unless current_user == @post.user
     end
 
     def search_posts
