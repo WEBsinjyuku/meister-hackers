@@ -49,7 +49,7 @@ section#show-comment
   #message-board
 = javascript_pack_tag 'posts/show.js'
 
-sction#show-button
+section#show-button
   .show-buttons-wrapper
     .show-buttons
       - if @user.id == current_user.id
@@ -60,5 +60,3 @@ sction#show-button
       - else
         a.show-button.my-shadow.show-button-join
           p 参加
-
-
