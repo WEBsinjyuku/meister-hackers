@@ -14,7 +14,9 @@ html
 
   body
     = render 'layouts/navbar'
-    = flash[:notice]
+    - if flash[:notice].present?
+      div.flash
+        = flash[:notice]
     main#main
       .container-wrapper
         = yield

@@ -76,6 +76,14 @@ a.button.is-left {
   width: 160px;
 }
 
+.flash {
+  background-color: #293742;
+  color: white;
+  opacity: 0.5;
+  padding: 5px;
+  text-align: center;
+}
+
 .footer {
   border-top: 1px solid #eee;
   padding: 20px !important;
