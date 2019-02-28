@@ -49,16 +49,15 @@ section#show-comment
   #message-board
 = javascript_pack_tag 'posts/show.js'
 
-sction#show-button
-  .show-buttons-wrapper
-    .show-buttons
-      - if @user.id == current_user.id
-        a.show-button.my-shadow.show-button-join
-          p 編集
-        a.show-button.my-shadow.show-button-delete
-          p 削除
-      - else
-        a.show-button.my-shadow.show-button-join
-          p 参加
-
-
+- if user_signed_in?
+  section#show-button
+    .show-buttons-wrapper
+      .show-buttons
+        - if @user == current_user
+          = link_to edit_post_path(params[:id]), class: "show-button my-shadow show-button-join"
+            p 編集
+          a.show-button.my-shadow.show-button-delete
+            p 削除
+        - else
+          a.show-button.my-shadow.show-button-join
+            p 参加
