@@ -13,12 +13,22 @@
  *= require_tree .
  *= require_self
  */
+ body {
+   display: flex;
+   flex-direction: column;
+   min-height: 100vh;
+ }
+
 .tes {
   margin-top: 26px;
 }
 
 body {
   background-color: #f9fbfe;
+  max-width: 1440px !important;
+}
+header {
+  width: 100%;
 }
 
 #main {
@@ -71,6 +81,7 @@ a.button.is-left {
   display: flex;
   justify-content: space-around;
   font-size: 15px;
+  margin-top: auto;
 }
 
 .footer a {
@@ -85,6 +96,10 @@ a.button.is-left {
 .item1 li:first-child {
   font-size: 20px;
   font-weight: bold;
+}
+
+.item1 li:nth-child(2) {
+  font-size: 13px;
 }
 
 .item2 {
@@ -104,12 +119,6 @@ a.button.is-left {
 
 .fab {
   font-size: 30px;
-}
-
-.fa-twitter-square {
-  color: blue;
-  margin-left: 5px;
-  margin-right: 5px;
 }
 
 .connpass {
