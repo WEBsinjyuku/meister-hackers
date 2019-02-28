@@ -14,6 +14,9 @@ Rails.application.routes.draw do
     resources :messages, only: %i(index create)
   end
 
+  get "error/404", controller: 'application', action: 'render_404'
+  get "error/500", controller: 'application', action: 'render_500'
+
   if Rails.env.production?
     get '*path', controller: 'application', action: 'render_404'
   end
