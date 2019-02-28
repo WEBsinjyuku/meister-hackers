@@ -2,7 +2,7 @@
 section#show-content.columns
 
   //  プロジェクトの起案者のUser情報
-  .show-content-left.column.is-3.is-info
+  // .show-content-left.column.is-3.is-info
     .show-drafter.menu.is-white
       .menu-list
         figura.image.is-256x256
@@ -10,8 +10,9 @@ section#show-content.columns
             = image_tag(@user.avatar_url, :size => "256x256", :alt => "userIcon")
           - else
             img src="http://placehold.it/256x256"
-
         h1.subtitle = @user.name
+
+  #user-profile
 
   //  プロジェクトの情報を表示するメイン枠
   .show-content-right.column
