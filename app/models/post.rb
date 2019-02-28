@@ -1,5 +1,4 @@
 # frozen_string_literal: true
-
 # == Schema Information
 #
 # Table name: posts
@@ -11,8 +10,9 @@
 #  content    :text             not null
 #  user_id    :bigint(8)        not null
 #  repository :string           not null
-#  status     :integer          not null, default: 1
-
+#  status     :integer          default("wanted"), not null
+#  owner      :string
+#
 
 class Post < ApplicationRecord
   enum status: { wanted: 1, stopped: 2 }
@@ -20,12 +20,14 @@ class Post < ApplicationRecord
   has_many :messages, dependent: :destroy
 
   validates :title, presence: true, length: { maximum: 50 }
-  validates :content, presence: true
+  validates :content, presence: true, length: { maximum: 1000 }
   validates :repository, presence: true
 
-  before_save :format_repository_url
+  before_save :format_repository
 
-  def format_repository_url
-    self.repository.gsub!(/https:\/\/github.com/, "")
+  def format_repository
+    url_splits = self.repository.split("/")
+    self.owner = url_splits[-2]
+    self.repository = url_splits[-1]
   end
 end
