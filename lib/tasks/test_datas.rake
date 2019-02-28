@@ -4,6 +4,8 @@ module TestDatas
   extend Rake::DSL
   extend self
 
+  NUMBER_OF_TEST_DATA = 5
+
   namespace :test_datas do
     desc "テストデータ生成"
     task all: :environment do
@@ -25,7 +27,7 @@ module TestDatas
     desc "テストユーザ生成"
     task create_users: :environment do |_task, _args|
       return if disable_env?
-      5.times do |t|
+      NUMBER_OF_TEST_DATA.times do |t|
         create_user
       end
     end
@@ -34,7 +36,7 @@ module TestDatas
     task create_posts: :environment do | _task, _args|
       return if disable_env?
 
-      User.all do |user|
+      User.all.each do |user|
         create_post(user)
       end
     end
@@ -43,10 +45,8 @@ module TestDatas
     task create_messages: :environment do | _task, _args|
       return if disable_env?
 
-      Post.all do |post|
-        5.times do
-          create_message(post: post)
-        end
+      Post.all.each do |post|
+        create_message(post)
       end
     end
 
@@ -66,8 +66,10 @@ module TestDatas
     def reset_all
       return if disable_env?
 
-      User.delete_all
+      Message.delete_all
       Post.delete_all
+      Profile.delete_all
+      User.delete_all
     end
 
     def disable_env?
