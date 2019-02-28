@@ -36,10 +36,6 @@ class PostsController < ApplicationController
     end
   end
 
-  def show
-    # 今は空メソッドで定義
-  end
-
   private
     def post_params
       params.require(:post).permit(:title, :content, :repository, :status)
@@ -60,7 +56,7 @@ class PostsController < ApplicationController
     def search_posts
       posts = []
       Post.order("id").select() do |repo|
-        repo_name = User.get_repo_name(repo.user_id, repo.repository)
+        repo_name = repo.owner + "/" + repo.repository
         client = GithubOss::GithubFetcher.new(repo_name)
         post = {
           "id" => repo.id,

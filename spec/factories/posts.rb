@@ -1,5 +1,4 @@
 # frozen_string_literal: true
-
 # == Schema Information
 #
 # Table name: posts
@@ -12,6 +11,7 @@
 #  user_id    :bigint(8)        not null
 #  repository :string           not null
 #  status     :integer          default("wanted"), not null
+#  owner      :string
 #
 
 FactoryBot.define do
