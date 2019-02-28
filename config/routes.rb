@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
   root :to => 'posts#index'
-  
+
   devise_for :users, controllers: {
     registrations: "users/registrations",
     omniauth_callbacks: "users/omniauth_callbacks"
@@ -12,6 +12,9 @@ Rails.application.routes.draw do
 
   resources :posts, only: %i(new create edit update show index) do
     resources :messages, only: %i(index create)
+  end
 
+  if Rails.env.production?
+    get '*path', controller: 'application', action: 'render_404'
   end
 end
