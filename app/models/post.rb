@@ -32,7 +32,9 @@ class Post < ApplicationRecord
 
   def format_repository
     url_splits = self.repository.split("/")
-    self.owner = url_splits[-2]
-    self.repository = url_splits[-1]
+    if !url_splits[-2].nil? # 仮対応
+      self.owner = url_splits[-2]
+      self.repository = url_splits[-1]
+    end
   end
 end
