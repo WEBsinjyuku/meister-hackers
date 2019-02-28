@@ -54,7 +54,7 @@ section#show-comment
     .show-buttons-wrapper
       .show-buttons
         - if @user == current_user
-          a.show-button.my-shadow.show-button-join
+          = link_to edit_post_path(params[:id]), class: "show-button my-shadow show-button-join"
             p 編集
           a.show-button.my-shadow.show-button-delete
             p 削除
