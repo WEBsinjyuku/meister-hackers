@@ -25,15 +25,25 @@ class PostsController < ApplicationController
   def edit
   end
 
-  def show
-  end
-
   def update
     if @post.update(post_params)
       redirect_to @post, notice: "投稿を編集しました"
     else
       render :edit
     end
+  end
+
+  def show
+    @post = Post.find_by(id: params[:id])
+    client = GithubOss::GithubFetcher.new(@post.owner_and_repository)
+
+    @user = User.find(@post.user_id)
+    @git = {
+      "language" => client.language,
+      "topics" => client.topics.names,
+      "description" => client.description,
+      "stargazers_count" => client.stargazers_count
+    }
   end
 
   private
@@ -56,8 +66,7 @@ class PostsController < ApplicationController
     def search_posts
       posts = []
       Post.order("id").select() do |repo|
-        repo_name = repo.owner + "/" + repo.repository
-        client = GithubOss::GithubFetcher.new(repo_name)
+        client = GithubOss::GithubFetcher.new(repo.owner_and_repository)
         post = {
           "id" => repo.id,
           "url" => "/posts/#{ repo.id }",
