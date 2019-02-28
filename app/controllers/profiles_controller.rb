@@ -8,8 +8,8 @@ class ProfilesController < ApplicationController
     if user
       render json: { status: 200, profile: user.profile, username: user.name, avatar: user.avatar_url, id: user.id }
     elsif user.nil?
-      render json: { status: 404 }      
-    else 
+      render json: { status: 404 }
+    else
       render json: { status: 500 }
     end
   end
