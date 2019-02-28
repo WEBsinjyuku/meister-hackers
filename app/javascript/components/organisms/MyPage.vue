@@ -33,13 +33,13 @@ export default {
     const profileUrl = `${location.href}/profiles`;
     Axios.get(profileUrl)
       .then((response) => {
-        if(response.data.status == 404) {
+        if (response.data.status == 404) {
           window.location.href = "/error/404";
-          return
+          return;
         }
-        if(response.data.status == 500) {
+        if (response.data.status == 500) {
           window.location.href = "/error/500";
-          return
+          return;
         }
 
         this.user.name = response.data.username;
