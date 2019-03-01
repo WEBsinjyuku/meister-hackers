@@ -1,29 +1,30 @@
-.container
-  = form_with(model: post, local: true) do |f|
-    .field
-      = f.label :リポジトリ, class: 'label'
-      - if params[:action] == 'new'
-        = f.text_field :repository, class: 'control input'
-        p.help
-          | 募集するリポジトリのURLを入力してください
-      = f.text_field :repository, class: 'control input', disabled: true if params[:action] == 'edit'
-    .field
-      = f.label :募集タイトル, class: 'label'
-      = f.text_field :title, class: 'control input'
-    .field
-      = f.label :募集概要, class: 'label'
-      = f.text_area :content, class: 'control textarea'
-    .field
-      .control
-        - if params[:action] == 'edit'
-          = f.label :募集ステータス, class: 'label'
-          = f.radio_button :status, 'wanted', checked: post.wanted?, class: 'radio'
-          | 募集中
-          = f.radio_button :status, 'stopped', checked: post.stopped?, class: 'radio'
-          | 募集停止
-    .field.is-grouped
-      .control
-        = f.submit submit_text, class: 'button is-success', data: { confirm: '投稿しますか？' }
-      .control
-        - if params[:action] == 'edit'
-          = link_to 'キャンセル', :back, class: 'button is-danger'
+.columns.is-centered
+  .column.is-half
+    = form_with(model: post, local: true) do |f|
+      .field
+        = f.label :リポジトリ, class: 'label'
+        - if params[:action] == 'new'
+          = f.text_field :repository, class: 'control input'
+          p.help
+            | 募集するリポジトリのURLを入力してください
+        = f.text_field :repository, class: 'control input', disabled: true if params[:action] == 'edit'
+      .field
+        = f.label :募集タイトル, class: 'label'
+        = f.text_field :title, class: 'control input'
+      .field
+        = f.label :募集概要, class: 'label'
+        = f.text_area :content, class: 'control textarea'
+      .field
+        .control
+          - if params[:action] == 'edit'
+            = f.label :募集ステータス, class: 'label'
+            = f.radio_button :status, 'wanted', checked: post.wanted?, class: 'radio'
+            | 募集中
+            = f.radio_button :status, 'stopped', checked: post.stopped?, class: 'radio'
+            | 募集停止
+      .field.is-grouped
+        .control
+          = f.submit submit_text, class: 'button is-success', data: { confirm: '投稿しますか？' }
+        .control
+          - if params[:action] == 'edit'
+            = link_to 'キャンセル', :back, class: 'button is-danger'
