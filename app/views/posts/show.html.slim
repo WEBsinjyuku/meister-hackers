@@ -43,7 +43,7 @@ section#show-content.columns
 
     .show-content-5.box
       / p
-      p = @post.content
+      = simple_format(h(@post.content))
 
 section#show-comment
   #message-board
