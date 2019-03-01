@@ -1,0 +1,9 @@
+ja:
+  activerecord:
+    models:
+      post: "プロジェクト"
+    attributes:
+      post:
+        title: "タイトル"
+        content: "募集内容"
+        repository: "リポジトリ"
