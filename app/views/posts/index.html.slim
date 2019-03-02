@@ -20,7 +20,7 @@
                   i.fa.fa-star
                 span.tag.is-primary = "{{ repo.stargazers_count }}"
           td.status-area rowspan="2"
-            span.status 【募集終了】
+            span.status = "{{ repo.status }}"
         tr
           td 
             .content.is-normal

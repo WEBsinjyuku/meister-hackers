@@ -74,10 +74,22 @@ class PostsController < ApplicationController
           "language" => client.language,
           "topics" => client.topics.names,
           "description" => client.description,
-          "stargazers_count" => client.stargazers_count
+          "stargazers_count" => client.stargazers_count,
+          "status" => convert_japanese(repo.status)
         }
         posts.push(post)
       end
       posts
+    end
+
+    def convert_japanese(status)
+      message = ""
+      case status
+      when "wanted"
+        message = "【募集中】"
+      when "stopped"
+        message = "【募集終了】"
+      else
+      end
     end
 end
