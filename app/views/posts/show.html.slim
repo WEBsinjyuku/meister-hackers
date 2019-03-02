@@ -16,7 +16,9 @@ section#show-content.columns
   //  プロジェクトの情報を表示するメイン枠
   .show-content-right.column
     .show-content-right-head
-      h1.title = @post.title
+      h1.title
+        p = @post.title
+        p = get_status_name(@post.status)
 
     .show-content-right-git-info.field.is-grouped
       .control
