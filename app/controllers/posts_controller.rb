@@ -46,6 +46,14 @@ class PostsController < ApplicationController
     }
   end
 
+  def destroy
+    if Post.find(params[:id]).delete
+        redirect_to posts_path, notice: "投稿を削除しました"
+    else
+        render :show
+    end
+  end
+
   private
     def post_params
       params.require(:post).permit(:title, :content, :repository, :status)
