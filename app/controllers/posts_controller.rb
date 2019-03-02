@@ -91,5 +91,6 @@ class PostsController < ApplicationController
         message = "【募集終了】"
       else
       end
+      message
     end
 end
