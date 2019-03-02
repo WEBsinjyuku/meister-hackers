@@ -11,13 +11,21 @@
             span.tag.is-normal タグ
             span.tag.is-warning.is-normal = "{{ topic }}"
       .content.is-medium v-if="repo.description" 簡易説明文： {{ repo.description }}
-      .content.is-small
-      .tags.has-addons
-        span.tag
-          i.fa.fa-star
-        span.tag.is-primary = "{{ repo.stargazers_count }}"
-      .content.is-normal
-        u VIEW PROJECT
+      table style="width:100%"
+        tr
+          td
+            .content.is-small
+              .tags.has-addons
+                span.tag
+                  i.fa.fa-star
+                span.tag.is-primary = "{{ repo.stargazers_count }}"
+          td.status-area rowspan="2"
+            span.status 【募集終了】
+        tr
+          td 
+            .content.is-normal
+            u VIEW PROJECT
+          td
 / - if user_signed_in?→footerとぶつかるまたheaderに投稿があるためコメントアウト
 /   .div.footer-btn
 /     a.button.is-dark href="/posts/new" プロジェクト新規登録
@@ -45,4 +53,11 @@ css:
   }
   .footer-btn:hover {
     opacity: 0.85;
+  }
+  .status-area {
+    text-align: right;
+    vertical-align: bottom;
+  }
+  .status {
+    font-size: 1.5em;
   }
