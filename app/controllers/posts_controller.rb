@@ -48,9 +48,9 @@ class PostsController < ApplicationController
 
   def destroy
     if Post.find(params[:id]).delete
-        redirect_to posts_path, notice: "投稿を削除しました"
+      redirect_to posts_path, notice: "投稿を削除しました"
     else
-        render :show
+      render :show
     end
   end
 
