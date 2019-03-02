@@ -18,7 +18,8 @@ section#show-content.columns
     .show-content-right-head
       h1.title
         p = @post.title
-        p = get_status_name(@post.status)
+        - if @post.status == "stopped"
+          font color="red" 募集は終了しました
 
     .show-content-right-git-info.field.is-grouped
       .control
