@@ -16,7 +16,10 @@ section#show-content.columns
   //  プロジェクトの情報を表示するメイン枠
   .show-content-right.column
     .show-content-right-head
-      h1.title = @post.title
+      h1.title
+        p = @post.title
+        - if @post.stopped?
+          font color="red" 募集は終了しました
 
     .show-content-right-git-info.field.is-grouped
       .control
@@ -59,8 +62,8 @@ section#show-comment
         - if @user == current_user
           = link_to edit_post_path(params[:id]), class: "show-button my-shadow show-button-join"
             p 編集
-          a.show-button.my-shadow.show-button-delete
+          = link_to post_path(params[:id]), class: "show-button my-shadow show-button-delete", method: :delete, data: { confirm: "本当に削除しますか" }
             p 削除
-        - else
+        - elsif @post.wanted?
           a.show-button.my-shadow.show-button-join
             p 参加

@@ -1,7 +1,7 @@
 # frozen_string_literal: true
 
 class PostsController < ApplicationController
-  before_action :set_post, only: %i(edit update)
+  before_action :set_post, only: %i(edit update destroy)
   before_action :only_logged_in_user, only: %i(new create edit update)
   before_action :only_author, only: %i(edit update)
 
@@ -44,6 +44,14 @@ class PostsController < ApplicationController
       "description" => client.description,
       "stargazers_count" => client.stargazers_count
     }
+  end
+
+  def destroy
+    if @post.destroy
+      redirect_to posts_path, notice: "投稿を削除しました"
+    else
+      render :show
+    end
   end
 
   private
