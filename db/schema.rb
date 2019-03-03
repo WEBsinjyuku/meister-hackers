@@ -32,8 +32,8 @@ ActiveRecord::Schema.define(version: 2019_03_03_081258) do
     t.string "repository", null: false
     t.integer "status", default: 1, null: false
     t.string "owner"
-    t.date "opened_at"
-    t.date "closed_at"
+    t.date "opened_on"
+    t.date "closed_on"
     t.index ["user_id"], name: "index_posts_on_user_id"
   end
 

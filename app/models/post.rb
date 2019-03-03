@@ -13,8 +13,8 @@
 #  repository :string           not null
 #  status     :integer          default("wanted"), not null
 #  owner      :string
-#  opened_at  :date
-#  closed_at  :date
+#  opened_on  :date
+#  closed_on  :date
 #
 
 class Post < ApplicationRecord
@@ -41,10 +41,10 @@ class Post < ApplicationRecord
 
   def update_date
     if self.wanted?
-      self.opened_at = Date.today
-      self.closed_at = nil
+      self.opened_on = Date.today
+      self.closed_on = nil
     elsif self.stopped?
-      self.closed_at = Date.today
+      self.closed_on = Date.today
     end
   end
 end
