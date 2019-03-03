@@ -41,6 +41,9 @@ section#show-content.columns
     .show-content-right-git-description
       p = @git['description']
 
+    .show-content-right-git-url
+      = link_to "https://github.com/#{@post.owner}/#{@post.repository}"
+
     .show-content-5.box
       / p
       = simple_format(h(@post.content))

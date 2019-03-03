@@ -9,7 +9,11 @@ iphone max 480
 }
 
 .show-content-right-git-description {
-  padding: 12px 0 40px 0;
+  padding-top: 12px;
+}
+
+.show-content-right-git-url {
+  padding-bottom: 12px;
 }
 
 /*=========================
