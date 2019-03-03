@@ -83,7 +83,7 @@ class PostsController < ApplicationController
           "topics" => client.topics.names,
           "description" => client.description,
           "stargazers_count" => client.stargazers_count,
-          "status" => view_context.get_status_name(repo)
+          "status" => view_context.get_status_name(repo.status)
         }
         posts.push(post)
       end
