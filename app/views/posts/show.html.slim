@@ -18,7 +18,7 @@ section#show-content.columns
     .show-content-right-head
       h1.title
         p = @post.title
-        - if @post.status == "stopped"
+        - if @post.stopped?
           font color="red" 募集は終了しました
 
     .show-content-right-git-info.field.is-grouped
@@ -61,6 +61,6 @@ section#show-comment
             p 編集
           = link_to post_path(params[:id]), class: "show-button my-shadow show-button-delete", method: :delete, data: { confirm: "本当に削除しますか" }
             p 削除
-        - elsif @post.status == "wanted"
+        - elsif @post.wanted?
           a.show-button.my-shadow.show-button-join
             p 参加
