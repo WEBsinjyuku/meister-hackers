@@ -2,14 +2,14 @@
 
 module ApplicationHelper
   def get_status_name(status)
-    message = ""
+    status_name = ""
     case status
     when status.wanted?
-      message = "【募集中】"
+      status_name = "【募集中】"
     when status.stopped?
-      message = "【募集終了】"
+      status_name = "【募集終了】"
     else
     end
-    message
+    status_name
   end
 end
