@@ -13,6 +13,8 @@
 #  repository :string           not null
 #  status     :integer          default("wanted"), not null
 #  owner      :string
+#  opened_on  :date
+#  closed_on  :date
 #
 
 class Post < ApplicationRecord
@@ -24,7 +26,8 @@ class Post < ApplicationRecord
   validates :content, presence: true, length: { maximum: 1000 }
   validates :repository, presence: true
 
-  before_save :format_repository
+  before_create :format_repository
+  before_save :update_date
 
   def owner_and_repository
     [owner, repository].join("/")
@@ -32,9 +35,16 @@ class Post < ApplicationRecord
 
   def format_repository
     url_splits = self.repository.split("/")
-    if !url_splits[-2].nil? # 仮対応
-      self.owner = url_splits[-2]
-      self.repository = url_splits[-1]
+    self.owner = url_splits[-2]
+    self.repository = url_splits[-1]
+  end
+
+  def update_date
+    if self.wanted?
+      self.opened_on = Date.today
+      self.closed_on = nil
+    elsif self.stopped?
+      self.closed_on = Date.today
     end
   end
 end

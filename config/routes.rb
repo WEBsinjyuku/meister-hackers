@@ -10,7 +10,7 @@ Rails.application.routes.draw do
     resources :profiles, only: %i(index update)
   end
 
-  resources :posts, only: %i(new create edit update show index) do
+  resources :posts, only: %i(new create edit update show index destroy) do
     resources :messages, only: %i(index create)
   end
 
