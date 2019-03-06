@@ -44,6 +44,7 @@ class ProfilesController < ApplicationController
       }
       if profile.update(attributes)
         render json: { status: 200 }
+        flash[:notice] = "編集に成功しました"
       else
         render json: { status: 500 }
       end
