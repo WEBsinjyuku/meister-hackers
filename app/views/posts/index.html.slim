@@ -1,25 +1,23 @@
 .section#app
-  .columns
-    .box.column v-for="repo in repos" v-bind:key="repo.id"
-      a v-bind:href="repo.url"
-        .content.is-large
-          b = "{{ repo.title }}"
-        .content.is-medium v-if="repo.description" {{ repo.description }}
-        .tags
-          span.tag.topic v-for="topic in repo.topics"
-            = "{{ topic }}"
-        .field.is-grouped.is-grouped-multiline
-          .control
-            .tags.has-addons
-              span.tag 言語
-              span.tag = "{{ repo.language }}" 
-          .control
-            .tags.has-addons
-              span.tag
-                i.fa.fa-star
-              span.tag = "{{ repo.stargazers_count }}"           
-        .content.is-medium.status-area
-          span.status = "{{ repo.status }}"
+  .columns.is-multiline
+    .box.column.is-5 v-for="repo in repos" v-bind:key="repo.id" v-bind:class="{ stopped: repo.status == 'stopped'}"
+        a v-bind:href="repo.url"
+          .content.is-large
+            b = "{{ repo.title }}"
+          .content.is-medium style="color: black;" v-if="repo.description" {{ repo.description }}
+          .tags
+            span.tag.topic v-for="topic in repo.topics"
+              = "{{ topic }}"
+          .tags
+            span.tag.is-white
+              | 言語 {{ repo.language }}
+            span.tag.is-white
+              i.fa.fa-star
+              | 　{{ repo.stargazers_count }}           
+          /.content.is-large
+            span.project-type ゆる募
+          .content.stopped-msg v-if="repo.status == 'stopped'"
+            span 募集停止
 javascript:
   var posts = #{{ @posts.to_json }}
 = javascript_pack_tag 'posts/index.js'
@@ -29,18 +27,33 @@ css:
     background-color : RGB(169, 245, 225, 0.1) !important;
     opactiy : 0
   }
-  body {
-    width: 100%;
-    background-color : #f9fbfe;
-  }
   .box {
-    -webkit-box-pack: center;
-    -ms-flex-pack: center;
-    justify-content: center;
-    box-shadow: 0px 3px 10px gray;
-    width: 550px;
-    margin : 2em;
+    margin : 1.5em;
+    position: relative;
   }
-  .status-area {
-    text-align: right;
+  .stopped {
+    z-index: 2; 
+    background-color : #A4A4A4;
+    opacity: 0.7;
+  }
+  .stopped-msg {
+    z-index: 3;
+    color: white;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    margin-top: -50px;
+    margin-left: -100px;
+  }
+  .stopped-msg span {
+    font-size: 50px;
+    font-weight: bold;
+
+  }
+  .project-type {
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    color : RGB(255, 191, 0) !important;
+    background-color : RGB(243, 226, 169, 0.1) !important;
   }
