@@ -4,7 +4,7 @@
         a v-bind:href="repo.url"
           .content.is-large
             b = "{{ repo.title }}"
-          .content.is-medium style="color: black;" v-if="repo.description" {{ repo.description }}
+          .content.is-medium style="color: black; font-size: small;" v-if="repo.description" {{ repo.description }}
           .tags
             span.tag.topic v-for="topic in repo.topics"
               = "{{ topic }}"
