@@ -19,8 +19,7 @@ FactoryBot.define do
   factory :post do
     title { "post" }
     content { "testtesttesttesttesttesttesttesttesttest" }
-    repository { "meister-hackers" }
-    owner { "WEBsinjyuku" }
+    repository { "WEBsinjyuku/meister-hackers" }
     association :user
   end
 end
