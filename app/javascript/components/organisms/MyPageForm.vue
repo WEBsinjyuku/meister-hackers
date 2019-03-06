@@ -30,7 +30,7 @@
             textarea.textarea(v-model="profile.introduction")
           .field
             button.button(type="submit").is-primary 編集完了
-            button.button(@click="cancel") キャンセル
+            button.button(type="button" @click="cancel") キャンセル
 </template>
 
 <script>
