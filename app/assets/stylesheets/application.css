@@ -19,10 +19,6 @@ body {
   min-height: 100vh;
 }
 
-.tes {
-  margin-top: 26px;
-}
-
 body {
   background-color: #f9fbfe;
   max-width: 1440px !important;
@@ -89,9 +85,6 @@ a.button.is-left {
   margin-right: 16px;
 }
 .navbar-log {
-  /* background-color: cornflowerblue; */
-  /* margin-left: -3px; */
-  /* margin-left: 181px; */
   padding-top: 13px;
 }
 
