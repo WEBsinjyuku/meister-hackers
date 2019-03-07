@@ -13,10 +13,18 @@
  *= require_tree .
  *= require_self
  */
+a,
+a:hover {
+  text-decoration: none !important;
+  outline: none !important;
+  color: #000 !important;
+}
+
  body {
    display: flex;
    flex-direction: column;
    min-height: 100vh;
+   color: #242424;
  }
 
 .tes {

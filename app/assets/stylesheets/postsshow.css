@@ -1,78 +1,226 @@
+
 /*=========================
-pc max 1180
-ipad max 768
-iphone max 480
+        0.for-all
 ===========================*/
 
-.show-wrapper {
-  width: 100%;
+.my-icon {
+  width: 35px;
+  height: 35px;
+  margin-right: 10px;
 }
 
-.show-content-right-git-description {
-  padding-top: 12px;
+.my-fa {
+  font-size: 35px !important;
 }
 
-.show-content-right-git-url {
-  padding-bottom: 12px;
+.my-small-icon {
+  width: 15px;
+  height: 15px;
+}
+
+.my-small-fa {
+  font-size: 15px !important;
+  marigno-bottom: 9px !important;
 }
 
 /*=========================
-        1.show-content-right-head
+        1.show-delete
 ===========================*/
 
-.show-content-right-head > h1 {
-  padding-bottom: 15px;
+#show-delete {
+  height: 50px;
 }
 
-/*=========================
-        2.show-content-right-git-info
-===========================*/
-
-/*=========================
-        3.show-content-right-git-topics
-===========================*/
-
-/*=========================
-        4.show-content-right-git-description
-===========================*/
-
-/*=========================
-        5.show-content-5
-===========================*/
-
-/*=========================
-        6.show-comment
-===========================*/
-
-/*=========================
-        7.show-buttons
-===========================*/
-
-#show-button {
-  position: fixed;
-  bottom: 5%;
-  width: 100%;
-}
-
-.show-buttons-wrapper {
-  max-width: 980px;
-  /* margin: 0 auto; */
+.post-delete-box {
   display: flex;
   justify-content: flex-end;
 }
 
-.show-buttons {
+.post-delete-title {
+  font-size: 18px;
+  text-align: right;
+  margin-top: 10px;
+  display: inline-block;
+  color: #EF4D4D;
+}
+
+/*=========================
+        2.show-post
+===========================*/
+
+#show-post {
+  background-color: #fff;
+  padding: 15px;
+  margin-bottom: 50px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1)
+}
+
+/*=========================
+        2-1.show-post-itme-title
+===========================*/
+
+.show-post-item-title {
   display: flex;
+  justify-content: space-between;
+  padding-bottom: 15px;
+}
+
+.show-post-title {
+  display: inline-block;
+  font-size: 24px;
+  font-weight: bold;
+  text-align: left;
+}
+
+.show-post-right {  
+  width: 120px;
+  display: flex;
+  justify-content: flex-end;
+}
+
+.bosyu-type {
+  padding: 5px 9px;
+  font-size: 12px;
+  font-weight: bold;
+  border-radius: 12px;
+}
+
+.is-sanity {
+  color: #F4B400;
+  background-color: rgba(244, 180, 0, 0.15);
+}
+
+.is-slack {
+  color: #fff;
+  background-color: #F4B400;
+}
+
+/*=========================
+        2-2.show-post-itme
+===========================*/
+
+.show-post-item {
+  display: flex;
+  margin-bottom: 20px;
+}
+
+.git-text {
+  display: inline-block;
+  margin-top: 11px;
+}
+
+.git-item {
+  display: flex;
+}
+
+.git-item + .git-item {
+  margin-left: 20px;
+}
+
+.git-item-language {
+  margin-top: 5px;
+}
+
+.git-language-circle {
+  width: 15px;
+  height: 15px;
+  border-radius: 50%;
+  background-color: #701516;
+}
+
+.git-small-text {
+  font-size: 12px;
+  margin-left: 5px;
+}
+
+.git-item-star > .git-small-text {
+  margin-top: 5px;
+}
+
+.git-tag {
+  font-size: 12px;
+  padding: 3px 5px;
+  color: #00D1B2;
+  background-color: rgba(0, 209, 178, 0.1);
+  border-radius: 5px;
+}
+
+.git-tag + .git-tag {
+  margin-left: 5px;
+}
+
+.show-owner-items {
+  height: 30px;
+}
+
+.show-owner-img {
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+}
+
+.show-owner-item {
+  padding: 5px 0 0 15px;
+}
+
+.show-owner-name {
+  font-size: 18px;
+  display: inline-block;
+}
+
+/*=========================
+        2-3.show-post-description
+===========================*/
+
+.show-post-description {
+  margin-top: 40px;
+}
+
+.show-post-description-title {
+  font-size: 20px;
+  font-weight: bold;
+}
+
+.show-description-text {
+  margin: 0 5px;
+  padding-top: 15px;
+  padding-bottom: 30px;
+  border-top: 0.5px solid #000;
+}
+
+/*=========================
+        3.show-comment
+===========================*/
+
+/*=========================
+        4.show-buttons
+===========================*/
+
+#show-button {
+  position: fixed;
+  bottom: 150px;
+  width: 100%;
+  max-width: 980px;
+}
+
+.show-button-box {
+  display: flex;
+  justify-content: flex-end;
 }
 
 .show-button {
   width: 80px;
   height: 80px;
-  border-radius: 50%;
+  border-radius: 40px;
 }
 
-.show-button + .show-button {
-  margin-left: 10px;
+.post-end-button {
+  width: 160px;
+  box-shadow: inset -2px 2px 4px rgba(255, 255, 255, 0.5),
+  -2px 2px 4px rgba(0, 0, 0, 0.19);
+  transition: 0.3s;
+  border-bottom: solid 1px #b5b5b5;
+  background-color: #000;
 }
 
 .show-button > p {
@@ -82,14 +230,6 @@ iphone max 480
   font-size: 1.5rem;
   font-weight: bold;
   color: #fefefe;
-}
-
-.show-button-join {
-  background-color: #00d1b2;
-}
-
-.show-button-delete {
-  background-color: red;
 }
 
 .my-shadow {
@@ -104,6 +244,12 @@ iphone max 480
     0 2px 2px rgba(0, 0, 0, 0.19);
   border-bottom: none;
 }
+
+.show-button-join {
+  background-color: #00d1b2;
+}
+
+
 
 /* 新規投稿用テキストエリア */
 .textarea:not([rows]) {

@@ -1,69 +1,71 @@
 
-section#show-content.columns
+section#show-delete
+  .post-delete-box
+    - if user_signed_in?
+      - if @user == current_user
+        = link_to post_path(params[:id]), class: "post-delete-button", method: :delete, data: { confirm: "本当に削除しますか" }
+          p.post-delete-title プロジェクトを削除する
 
-  //  プロジェクトの起案者のUser情報
-  .show-content-left.column.is-3.is-info
-    .show-drafter.menu.is-white
-      .menu-list
-        figura.image.is-256x256
-          - if @user.avatar_url.present?
-            = image_tag(@user.avatar_url, :size => "256x256", :alt => "userIcon")
-          - else
-            img src="http://placehold.it/256x256"
+section#show-post
+  .show-post-item-title
+    .show-post-left
+      h1.show-post-title = @post.title
+    
+    .show-post-right
+      .bosyu-box
+        / span.is-sanity.bosyu-type ガチ募
+        span.is-slack.bosyu-type ゆる募
 
-        h1.subtitle = @user.name
+  .show-post-item
+    .my-icon
+      a href="https://github.com/#{@post.owner}/#{@post.repository}"
+        i.fab.fa-github-square.my-fa
+    .git-item
+      p.git-text = @git['description']
 
-  //  プロジェクトの情報を表示するメイン枠
-  .show-content-right.column
-    .show-content-right-head
-      h1.title
-        p = @post.title
-        - if @post.stopped?
-          font color="red" 募集は終了しました
+  .show-post-item
+    .git-item.git-item-language
+      span.git-language-circle
+      span.git-small-text = @git['language']
+    .git-item.git-item-star
+      .my-small-icon
+        i.fa.fa-star.my-small-fa
+      span.git-small-text = @git['stargazers_count']
+    ul.git-item
+      - @git['topics'].each do |topic|
+        li.git-tag = topic
 
-    .show-content-right-git-info.field.is-grouped
-      .control
-        .tags.has-addons
-          span.tag.is-dark.is-small 言語
-          span.tag.is-info.is-small = @git['language']
-      .control
-        .tags.has-addons
-          span.tag.is-dark
-            i.fa.fa-star
-          span.tag.is-info = @git['stargazers_count']
-      / .control
-      /   .tags.has-addons
-      /     spna.tag.is-dark コラボレータ
-      /     span.tag.is-info = @git['topics']
+  .show-post-item.show-owner-items
+    .show-owner
+      - if @user.avatar_url.present?
+        = image_tag(@user.avatar_url, :size => "30x30", :alt => "userIcon", :class => "show-owner-img")
+      - else
+        img.show-owner-img src="http://placehold.id/30x30"
+    .show-owner-item
+      p.show-owner-name = @user.name
 
-    .show-content-right-git-topics
-      ul.tags
-        - @git['topics'].each do |topic|
-          li.tag.is-info = topic
-
-    .show-content-right-git-description
-      p = @git['description']
-
-    .show-content-right-git-url
-      = link_to "https://github.com/#{@post.owner}/#{@post.repository}"
-
-    .show-content-5.box
-      / p
+  .show-post-description
+    .show-description-title
+      h2.show-post-description-title 募集概要
+    .show-description-text
       = simple_format(h(@post.content))
 
 section#show-comment
   #message-board
 = javascript_pack_tag 'posts/show.js'
 
-- if user_signed_in?
+
+- if @post.stopped?
   section#show-button
-    .show-buttons-wrapper
-      .show-buttons
-        - if @user == current_user
-          = link_to edit_post_path(params[:id]), class: "show-button my-shadow show-button-join"
-            p 編集
-          = link_to post_path(params[:id]), class: "show-button my-shadow show-button-delete", method: :delete, data: { confirm: "本当に削除しますか" }
-            p 削除
-        - elsif @post.wanted?
-          a.show-button.my-shadow.show-button-join
-            p 参加
+    .show-button-box
+      a.show-button.post-end-button
+        p 募集停止
+- elsif user_signed_in?
+  section#show-button
+    .show-button-box
+      - if @user == current_user
+        = link_to edit_post_path(params[:id]), class: "show-button my-shadow show-button-join"
+          p 編集
+      - elsif @post.wanted?
+        a.show-button.my-shadow.show-button-join
+          p 参加
