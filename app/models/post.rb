@@ -46,6 +46,4 @@ class Post < ApplicationRecord
       self.closed_on = Date.today
     end
   end
-
-
 end
