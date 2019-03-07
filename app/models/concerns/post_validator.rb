@@ -1,4 +1,5 @@
 # frozen_string_literal: true
+
 class PostValidator < ActiveModel::Validator
   def validate(record)
     record.validates_presence_of :repository, :title, :content
