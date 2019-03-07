@@ -14,7 +14,7 @@
           p.help
             | 募集するリポジトリのURLを入力してください
         - else
-          = f.text_field :repository, class: 'control input', disabled: true
+          = f.text_field :repository, class: 'control input'
       .field
         = f.label :募集タイトル, class: 'label'
         = f.text_field :title, class: 'control input'

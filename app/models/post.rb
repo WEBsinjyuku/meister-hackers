@@ -18,13 +18,12 @@
 #
 
 class Post < ApplicationRecord
+  include ActiveModel::Validations
+
   enum status: { wanted: 1, stopped: 2 }
   belongs_to :user
   has_many :messages, dependent: :destroy
-
-  validates :title, presence: true, length: { maximum: 50 }
-  validates :content, presence: true, length: { maximum: 1000 }
-  validates :repository, presence: true
+  validates_with PostValidator, field: [:repository, :title, :content]
 
   before_create :format_repository
   before_save :update_date
