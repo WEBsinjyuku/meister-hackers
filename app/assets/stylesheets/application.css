@@ -41,7 +41,7 @@ header {
 .container-wrapper {
   width: 100%;
 }
-
+/* navstart */
 .my-navbar-menu {
   display: flex;
   justify-content: space-between;
@@ -91,7 +91,7 @@ a.button.is-left {
 .navbar-log {
   /* background-color: cornflowerblue; */
   /* margin-left: -3px; */
-  margin-left: 181px;
+  /* margin-left: 181px; */
   padding-top: 13px;
 }
 
@@ -113,7 +113,16 @@ a.button.is-left {
   height: 30px;
   font-size: 15px !important;
 }
-
+.navbar-start {
+  margin-left: 14%;
+}
+.navbar-end {
+  margin-right: 12%;
+}
+a.btn:hover {
+  color: white !important;
+}
+/* navbar終わり */
 .flash {
   background-color: #293742;
   color: white;
