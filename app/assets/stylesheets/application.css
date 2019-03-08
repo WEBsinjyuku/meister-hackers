@@ -140,29 +140,29 @@ a.btn:hover {
 }
 li.copy {
   list-style: none;
+  margin-top: 23px;
 }
 li.meister-footer {
   color: #00d1b2;
 }
-.item1 {
+.item-footer-left {
   flex-grow: 1;
-  /* margin-top: -10px; */
   margin-left: 6%;
 }
 i.fab.fa-twitter-square {
   margin-left: 6px;
 }
 
-.item1 li:first-child {
+.item-footer-left li:first-child {
   font-size: 20px;
   font-weight: bold;
 }
 
-.item1 li:nth-child(2) {
+.item-footer-left li:nth-child(2) {
   font-size: 13px;
 }
 
-.item2 {
+.item-footer-right {
   /* flex-grow: 1; */
   margin-right: 12%;
   margin-top: 11px;
