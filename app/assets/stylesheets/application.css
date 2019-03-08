@@ -13,7 +13,7 @@
  *= require_tree .
  *= require_self
  */
-<<<<<<< HEAD
+
 a,
 a:hover {
   text-decoration: none !important;
@@ -21,34 +21,24 @@ a:hover {
   color: #000 !important;
 }
 
- body {
-   display: flex;
-   flex-direction: column;
-   min-height: 100vh;
-   color: #242424;
- }
-
-.tes {
-  margin-top: 26px;
-=======
 body {
   display: flex;
   flex-direction: column;
   min-height: 100vh;
->>>>>>> edd2ab2d8d7f32b3ff8969b224d6da4c86494c4d
 }
 
 body {
   background-color: #f9fbfe;
-  max-width: 1440px !important;
+  width: 100%;
 }
+
 header {
   width: 100%;
 }
 
 #main {
   width: 100%;
-  max-width: 1430px;
+  max-width: 1000px;
   margin: 0 auto;
   padding: 10px 10px;
 }
