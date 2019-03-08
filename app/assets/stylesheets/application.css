@@ -42,20 +42,16 @@ header {
 /* navstart */
 .my-navbar-menu {
   display: flex;
-  justify-content: space-between;
-  /* position: absolute; */
   width: 100%;
   height: 50px;
-  left: 1px;
-  top: 0px;
-
   background: #ffffff;
   box-shadow: 0px 3px 4px rgba(0, 0, 0, 0.25);
 }
-img {
-  /* margin-right: 12px; */
-  border-radius: 0.2666666667em;
-}
+/* a:hover {
+  text-decoration: none !important;
+  outline: none !important;
+  color: #000 !important;
+} */
 .navbar-item img {
   border-radius: 50%;
 }
@@ -126,6 +122,7 @@ a.btn:hover {
   text-align: center;
 }
 
+/* --footer開始ーーー */
 .footer {
   border-top: 1px solid #eee;
   padding: 20px !important;
@@ -138,10 +135,15 @@ a.btn:hover {
 .footer a {
   color: #4a4a4a;
 }
-
+li.copy {
+  list-style: none;
+}
 .item1 {
   flex-grow: 1;
   margin-top: -10px;
+}
+i.fab.fa-twitter-square {
+  margin-left: 6px;
 }
 
 .item1 li:first-child {
