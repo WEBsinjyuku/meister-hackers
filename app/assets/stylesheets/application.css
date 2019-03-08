@@ -132,10 +132,11 @@ a.btn:hover {
   justify-content: space-around;
   font-size: 15px;
   margin-top: auto;
+  background-color: #ffffff !important;
 }
 
 .footer a {
-  color: #4a4a4a;
+  color: #242424;
 }
 li.copy {
   list-style: none;
