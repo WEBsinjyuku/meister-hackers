@@ -34,7 +34,7 @@ ActiveRecord::Schema.define(version: 2019_03_08_053730) do
     t.string "owner"
     t.date "opened_on"
     t.date "closed_on"
-    t.string "slack_url"
+    t.string "slack_channel"
     t.index ["user_id"], name: "index_posts_on_user_id"
   end
 
