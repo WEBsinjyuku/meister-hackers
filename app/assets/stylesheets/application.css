@@ -141,9 +141,13 @@ a.btn:hover {
 li.copy {
   list-style: none;
 }
+li.meister-footer {
+  color: #00d1b2;
+}
 .item1 {
   flex-grow: 1;
-  margin-top: -10px;
+  /* margin-top: -10px; */
+  margin-left: 6%;
 }
 i.fab.fa-twitter-square {
   margin-left: 6px;
@@ -159,26 +163,19 @@ i.fab.fa-twitter-square {
 }
 
 .item2 {
-  flex-grow: 1;
-}
-
-.item3 {
-  flex-grow: 1;
-}
-
-.item4 {
-  flex-grow: 1;
-  text-align: center;
-  position: relative;
-  top: 10px;
+  /* flex-grow: 1; */
+  margin-right: 12%;
+  margin-top: 11px;
 }
 
 .fab {
   font-size: 30px;
 }
-
+/* Connpassアイテムは初期仕様にあったので残しておく */
 .connpass {
   font-size: 10px;
   position: relative;
   top: 3px;
 }
+
+/* footer終了 */
