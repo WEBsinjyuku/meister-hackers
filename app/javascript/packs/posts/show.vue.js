@@ -6,4 +6,11 @@ document.addEventListener("DOMContentLoaded", () => {
     el: "#message-board",
     render: h => h(MessageBoard),
   });
+
+  new Vue({
+    el: "#show-button",
+    data: {
+      isActive: false
+    }
+  })
 });
