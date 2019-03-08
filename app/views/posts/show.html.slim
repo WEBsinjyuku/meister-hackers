@@ -47,6 +47,10 @@ section#show-content.columns
     .show-content-right-git-url
       = link_to "https://github.com/#{@post.owner}/#{@post.repository}"
 
+    // おそらくデザインのPRと競合するので暫定でslackチャンネル名を表示
+    .show-content-right-slack_channel
+      p Slackチャンネル名:#{@post.slack_channel}
+
     .show-content-5.box
       / p
       = simple_format(h(@post.content))
