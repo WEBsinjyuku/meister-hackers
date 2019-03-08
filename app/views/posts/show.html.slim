@@ -35,14 +35,15 @@ section#show-post
       - @git['topics'].each do |topic|
         li.git-tag = topic
 
-  .show-post-item.show-owner-items
-    .show-owner
-      - if @user.avatar_url.present?
-        = image_tag(@user.avatar_url, :size => "30x30", :alt => "userIcon", :class => "show-owner-img")
-      - else
-        img.show-owner-img src="http://placehold.id/30x30"
-    .show-owner-item
-      p.show-owner-name = @user.name
+  .show-post-item
+    = link_to user_path(@user), class: 'show-owner-items'
+      .show-owner
+        - if @user.avatar_url.present?
+          = image_tag(@user.avatar_url, :size => "30x30", :alt => "userIcon", :class => "show-owner-img")
+        - else
+          img.show-owner-img src="http://placehold.id/30x30"
+      .show-owner-item
+        p.show-owner-name = @user.name
 
   .show-post-description
     .show-description-title

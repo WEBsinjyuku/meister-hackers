@@ -151,6 +151,7 @@
 
 .show-owner-items {
   height: 30px;
+  display: flex;
 }
 
 .show-owner-img {
