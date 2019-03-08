@@ -177,3 +177,19 @@ a.btn:hover {
   position: relative;
   top: 3px;
 }
+
+/* 404 error */
+.error-container {
+  display: flex;
+  justify-content: center;
+  margin-top: 100px;
+}
+
+.error-left h1 {
+  font-size: 20px;
+  margin-bottom: 20px;
+}
+
+.error-left ul {
+  margin-left: 30px;
+}
