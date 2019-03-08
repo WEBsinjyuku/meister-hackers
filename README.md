@@ -15,7 +15,7 @@
 
 ## バージョン
 <p>Rails 5.2.2/Ruby 2.6.0/</p>
-<p>その他仕様[Wiki](https://github.com/WEBsinjyuku/meister-hackers/wiki)
+その他仕様の詳細は[こちら](https://github.com/WEBsinjyuku/meister-hackers/wiki)
 
 ## 機能
 開発メンバー募集掲示板機能
