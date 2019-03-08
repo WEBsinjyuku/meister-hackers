@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_03_03_081258) do
+ActiveRecord::Schema.define(version: 2019_03_08_053730) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -34,6 +34,7 @@ ActiveRecord::Schema.define(version: 2019_03_03_081258) do
     t.string "owner"
     t.date "opened_on"
     t.date "closed_on"
+    t.string "slack_url"
     t.index ["user_id"], name: "index_posts_on_user_id"
   end
 
