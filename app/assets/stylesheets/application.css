@@ -13,6 +13,7 @@
  *= require_tree .
  *= require_self
  */
+<<<<<<< HEAD
 a,
 a:hover {
   text-decoration: none !important;
@@ -29,6 +30,12 @@ a:hover {
 
 .tes {
   margin-top: 26px;
+=======
+body {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+>>>>>>> edd2ab2d8d7f32b3ff8969b224d6da4c86494c4d
 }
 
 body {
@@ -51,15 +58,25 @@ header {
   max-width: 980px;
   margin: 0 auto;
 }
-
+/* navstart */
 .my-navbar-menu {
   display: flex;
   justify-content: space-between;
-  background-color: #293742;
+  /* position: absolute; */
+  width: 100%;
+  height: 50px;
+  left: 1px;
+  top: 0px;
+
+  background: #ffffff;
+  box-shadow: 0px 3px 4px rgba(0, 0, 0, 0.25);
 }
 img {
   /* margin-right: 12px; */
   border-radius: 0.2666666667em;
+}
+.navbar-item img {
+  border-radius: 50%;
 }
 .Avatar {
   width: 2.6em;
@@ -73,19 +90,53 @@ img {
 }
 a.button.is-primary {
   height: 30px;
+  width: 93px;
+  box-shadow: 0px 0px 4px rgba(0, 0, 0, 0.25);
+  border-radius: 5px;
 }
 a.a.button.is-left {
   height: 30px;
+  background: #ef4d4d;
+  box-shadow: 0px 0px 4px rgba(0, 0, 0, 0.25);
+  border-radius: 5px;
+  color: aliceblue;
+  margin-right: 5px;
 }
 a.button.is-left {
   margin-right: 16px;
 }
 .navbar-log {
-  /* background-color: cornflowerblue; */
-  /* margin-left: -3px; */
-  width: 160px;
+  padding-top: 13px;
 }
 
+.btn {
+  padding: 8px 24px;
+  color: white;
+  display: inline-block;
+  opacity: 0.8;
+  border-radius: 4px;
+}
+
+.github {
+  background-color: #00d1b2;
+  margin-right: 10px;
+}
+.fab2 {
+  padding-left: 8px;
+  padding-right: 8px;
+  height: 30px;
+  font-size: 15px !important;
+}
+.navbar-start {
+  margin-left: 14%;
+}
+.navbar-end {
+  margin-right: 12%;
+}
+a.btn:hover {
+  color: white !important;
+}
+/* navbar終わり */
 .flash {
   background-color: #293742;
   color: white;

@@ -30,6 +30,10 @@ module GithubOss
       @collab ||= Octokit.collaborators @repo_name
     end
 
+    def repository?
+      Octokit.repository?(@repo_name)
+    end
+
     private
       def repo
         @repo ||= fetch_repo

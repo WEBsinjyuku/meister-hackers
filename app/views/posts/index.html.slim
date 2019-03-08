@@ -1,63 +1,58 @@
 .section#app
-  .box v-for="repo in repos" v-bind:key="repo.id"
-    a v-bind:href="repo.url"
-      .content.is-large = "{{ repo.title }}"
-      .tags.has-addons
-        span.tag.is-dark.is-normal 言語
-        span.tag.is-info.is-normal = "{{ repo.language }}"
-      .field.is-grouped.is-grouped-multiline
-        .control v-for="topic in repo.topics"
-          .tags.has-addons
-            span.tag.is-normal タグ
-            span.tag.is-warning.is-normal = "{{ topic }}"
-      .content.is-medium v-if="repo.description" 簡易説明文： {{ repo.description }}
-      table style="width:100%"
-        tr
-          td
-            .content.is-small
-              .tags.has-addons
-                span.tag
-                  i.fa.fa-star
-                span.tag.is-primary = "{{ repo.stargazers_count }}"
-          td.status-area rowspan="2"
-            span.status = "{{ repo.status }}"
-        tr
-          td 
-            .content.is-normal
-            u VIEW PROJECT
-          td
-/ - if user_signed_in?→footerとぶつかるまたheaderに投稿があるためコメントアウト
-/   .div.footer-btn
-/     a.button.is-dark href="/posts/new" プロジェクト新規登録
+  .columns.is-multiline
+    .box.column.is-5 v-for="repo in repos" v-bind:key="repo.id" v-bind:class="{ stopped: repo.status == 'stopped'}"
+        a v-bind:href="repo.url"
+          .content.is-large
+            b = "{{ repo.title }}"
+          .content.is-medium style="color: black; font-size: small;" v-if="repo.description" {{ repo.description }}
+          .tags
+            span.tag.topic v-for="topic in repo.topics"
+              = "{{ topic }}"
+          .tags
+            span.tag.is-white
+              | 言語 {{ repo.language }}
+            span.tag.is-white
+              i.fa.fa-star
+              | 　{{ repo.stargazers_count }}           
+          /.content.is-large
+            span.project-type ゆる募
+          .content.stopped-msg v-if="repo.status == 'stopped'"
+            span 募集停止
 javascript:
   var posts = #{{ @posts.to_json }}
 = javascript_pack_tag 'posts/index.js'
 css:
-  body {
-    width: 100%;
-    max-width: 1180px;
-    margin: 0 auto !important;
-    background-color : #f9fbfe;
-  }
-  .title
-  {
-    padding-left: 20px;
+  .topic {
+    color : RGB(0, 209, 178) !important;
+    background-color : RGB(169, 245, 225, 0.1) !important;
   }
   .box {
-    box-shadow: 0 0 8px gray;
+    margin : 1.5em;
+    position: relative;
   }
-  .footer-btn {
-    position: fixed;
-    bottom: 16px;
-    right: 20px;
+  .stopped {
+    z-index: 2; 
+    background-color : #A4A4A4;
+    opacity: 0.7;
   }
-  .footer-btn:hover {
-    opacity: 0.85;
+  .stopped-msg {
+    z-index: 3;
+    color: white;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    margin-top: -50px;
+    margin-left: -100px;
   }
-  .status-area {
-    text-align: right;
-    vertical-align: bottom;
+  .stopped-msg span {
+    font-size: 50px;
+    font-weight: bold;
+
   }
-  .status {
-    font-size: 1.5em;
+  .project-type {
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    color : RGB(255, 191, 0) !important;
+    background-color : RGB(243, 226, 169, 0.1) !important;
   }
