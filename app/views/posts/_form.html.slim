@@ -19,6 +19,11 @@
         = f.label :募集タイトル, class: 'label'
         = f.text_field :title, class: 'control input'
       .field
+        = f.label :Slack_Url, class: 'label'
+        = f.text_field :slack_url, class: 'control input'
+        p.help
+          | 連絡用のSlack参加URLを入力してください
+      .field
         = f.label :募集概要, class: 'label'
         = f.text_area :content, class: 'control textarea'
       .field

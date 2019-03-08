@@ -5,7 +5,7 @@ class PostValidator < ActiveModel::Validator
   REPOSITORY_EXISTENCE = "存在するリポジトリを入力して下さい"
 
   def validate(record)
-    record.validates_presence_of :repository, :title, :content
+    record.validates_presence_of :repository, :title, :content, :slack_url
     record.validates_length_of :title, maximum: 50
     record.validates_length_of :content, maximum: 1000
 
