@@ -56,7 +56,7 @@ class PostsController < ApplicationController
 
   private
     def post_params
-      params.require(:post).permit(:title, :content, :repository, :status)
+      params.require(:post).permit(:title, :content, :repository, :status, :slack_channel)
     end
 
     def set_post
@@ -73,7 +73,7 @@ class PostsController < ApplicationController
 
     def search_posts
       posts = []
-      Post.order("id").select() do |repo|
+      Post.order(created_at: "DESC").select() do |repo|
         client = GithubOss::GithubFetcher.new(repo.owner_and_repository)
         post = {
           "id" => repo.id,
