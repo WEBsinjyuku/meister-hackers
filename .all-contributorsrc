@@ -10,6 +10,15 @@
   "commit": false,
   "contributors": [
     {
+      "login": "dh-megane",
+      "name": "dh_megane",
+      "avatar_url": "https://avatars3.githubusercontent.com/u/40923242?v=4",
+      "profile": "https://github.com/dh-megane",
+      "contributions": [
+        "maintenance"
+      ]
+    },
+    {
       "login": "takahashi19",
       "name": "takahashi",
       "avatar_url": "https://avatars2.githubusercontent.com/u/40596064?v=4",
