@@ -47,14 +47,17 @@ export default {
   methods: {
     submit() {
       const messageUrl = `${location.href}/messages`;
-      const data = {
-        content: this.content,
-      };
-      Axios.post(messageUrl, data)
-        .then(() => {
-          this.messages.unshift({ content: this.content, time: moment().format("YYYY/MM/DD HH:mm") });
-          this.content = "";
-        });
+
+      if (this.content !== "") {
+        const data = {
+          content: this.content,
+        };
+        Axios.post(messageUrl, data)
+          .then(() => {
+            this.messages.unshift({ content: this.content, time: moment().format("YYYY/MM/DD HH:mm") });
+            this.content = "";
+          });
+      }
     },
   },
 };
