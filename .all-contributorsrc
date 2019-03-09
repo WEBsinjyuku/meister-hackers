@@ -10,6 +10,15 @@
   "commit": false,
   "contributors": [
     {
+      "login": "takahashi19",
+      "name": "takahashi",
+      "avatar_url": "https://avatars2.githubusercontent.com/u/40596064?v=4",
+      "profile": "https://github.com/takahashi19",
+      "contributions": [
+        "maintenance"
+      ]
+    },
+    {
       "login": "tsu-nera",
       "name": "Tsunemichi Harada",
       "avatar_url": "https://avatars1.githubusercontent.com/u/760627?v=4",
