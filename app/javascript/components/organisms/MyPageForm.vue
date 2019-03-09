@@ -4,7 +4,8 @@
     .columns.is-centered
       form(@submit.prevent="submit")
         .account-header
-          .account-header-left アカウント名
+          .account-header-left
+            figure img(:src="{{this.user.avatar}}" alt="Placeholder image") {{ this.user.name }}
           .account-header-right
             .cancel-button(type="button" @click="cancel") キャンセル
         .account アカウント
@@ -36,6 +37,8 @@
 
 <script>
 import Axios from "axios";
+import UserProfile from "../molecules/UserProfile.vue";
+import Mypage from "./MyPage.vue";
 
 export default {
   data() {
@@ -49,6 +52,10 @@ export default {
         blog_url: null,
         introduction: null,
       },
+      user: {
+        name: "",
+        avatar: "",
+      }
     };
   },
   mounted() {
@@ -61,6 +68,9 @@ export default {
         } else {
           this.profile = {};
         }
+        this.user.name = response.data.username;
+        this.user.id = response.data.id;
+        this.user.avatar = response.data.avatar;
       });
   },
   methods: {
