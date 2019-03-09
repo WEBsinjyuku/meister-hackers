@@ -12,9 +12,9 @@ Meister Hackers
 
 ## コミュニティに参加
 
-Meister-Hackersオンラインサロン（ご自由にご参加ください）→[Slackリンク](https://join.slack.com/t/meister-hackers/shared_invite/enQtNTYyMzAyNDM2MjI2LTAzYjIyYmY0ZWM5YWQ2ODc3M2Y4MGI3MWYxMTVmODk5NWU0NmNmMDc1NjVjMDBmODcxZDkyNjUwZTgxMTM0M2I)
+* Slackコミュニティ→[Slackリンク](https://join.slack.com/t/meister-hackers/shared_invite/enQtNTYyMzAyNDM2MjI2LTAzYjIyYmY0ZWM5YWQ2ODc3M2Y4MGI3MWYxMTVmODk5NWU0NmNmMDc1NjVjMDBmODcxZDkyNjUwZTgxMTM0M2I)
 
-Meister-HackersLT会交流会のコミュニテイ→[Connpassリンク](https://ossteam.connpass.com/)
+* LT会交流会のコミュニテイ→[Connpassリンク](https://ossteam.connpass.com/)
 
 ## コントリビューションするには
 
