@@ -18,7 +18,8 @@ a,
 a:hover {
   text-decoration: none !important;
   outline: none !important;
-  color: #000 !important;
+  /* ↓navbarが影響受けるためコメントアウト */
+  /* color: #000 !important; */
 }
 
 body {
@@ -60,6 +61,7 @@ header {
   background: #ffffff;
   box-shadow: 0px 3px 4px rgba(0, 0, 0, 0.25);
 }
+
 /* a:hover {
   text-decoration: none !important;
   outline: none !important;
@@ -160,17 +162,21 @@ a.btn:hover {
 .footer a {
   color: #242424;
 }
+
 li.copy {
   list-style: none;
   margin-top: 23px;
 }
+
 li.meister-footer {
   color: #00d1b2;
 }
+
 .item-footer-left {
   flex-grow: 1;
   margin-left: 6%;
 }
+
 i.fab.fa-twitter-square {
   margin-left: 6px;
 }
@@ -193,13 +199,13 @@ i.fab.fa-twitter-square {
 .fab {
   font-size: 30px;
 }
+
 /* Connpassアイテムは初期仕様にあったので残しておく */
 .connpass {
   font-size: 10px;
   position: relative;
   top: 3px;
 }
-
 
 /* footer終了 */
 
