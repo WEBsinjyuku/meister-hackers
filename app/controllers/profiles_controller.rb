@@ -3,6 +3,8 @@
 class ProfilesController < ApplicationController
   protect_from_forgery except: ["update"]
   before_action :set_user, only: ["index", "index2"]
+  before_action :set_profile, only: [:update]
+  before_action :correct_user, only: [:index, :update]
 
   def index
     if @user
@@ -22,23 +24,21 @@ class ProfilesController < ApplicationController
 
   def update
     if params[:id] == "undefined"
-      profile = Profile.new
-      profile.area = params[:area]
-      profile.sex = params[:sex]
-      profile.github_url = params[:github_url]
-      profile.twitter_url = params[:twitter_url]
-      profile.facebook_url = params[:facebook_url]
-      profile.blog_url = params[:blog_url]
-      profile.introduction = params[:introduction]
-      profile.user_id = params[:user_id]
+      @profile.area = params[:area]
+      @profile.sex = params[:sex]
+      @profile.github_url = params[:github_url]
+      @profile.twitter_url = params[:twitter_url]
+      @profile.facebook_url = params[:facebook_url]
+      @profile.blog_url = params[:blog_url]
+      @profile.introduction = params[:introduction]
+      @profile.user_id = params[:user_id]
 
-      if profile.save
+      if @profile.save
         render json: { status: 200 }
       else
         render json: { status: 500 }
       end
     else
-      profile = Profile.find_by(id: params[:id])
       attributes = {
         area: params[:area],
         sex: params[:sex],
@@ -48,7 +48,7 @@ class ProfilesController < ApplicationController
         blog_url: params[:blog_url],
         introduction: params[:introduction]
       }
-      if profile.update(attributes)
+      if @profile.update(attributes)
         render json: { status: 200 }
         flash[:notice] = "編集に成功しました"
       else
@@ -64,5 +64,20 @@ class ProfilesController < ApplicationController
 
     def current?
       @user.present? && current_user.present? && current_user.id == @user.id
+
+    def set_profile
+      if params[:id] == "undefined"
+        @profile = Profile.new
+      else
+        @profile = Profile.find_by(id: params[:id])
+      end
+    end
+
+    def correct_user
+      if @profile.nil?
+        render json: { status: 401 }
+      elsif current_user.id == @profile.user.id
+        render json: { status: 401 }
+      end
     end
 end
