@@ -240,19 +240,25 @@ i.fab.fa-twitter-square {
         6.post-form
 ===========================*/
 
-
-
 #post-form-title {
   margin-bottom: 20px;
+  display: flex;
+  justify-content: space-between;
 }
 
+.post-form-title {
+  font-size: 18px;
+  font-weight: bold;
+}
 
+.post-form-cancel-button {
+  font-size: 14px;
+  color: #00D1B2;
+}
 
-
-
-
-
-
+.post-form-cancel-button:hover {
+  color: #00D1B2;
+}
 
 .post-form-buttons {
   justify-content: flex-end !important;
