@@ -162,11 +162,17 @@ a.btn:hover {
 .footer {
   border-top: 1px solid #eee;
   padding: 20px !important;
-  display: flex;
-  justify-content: space-around;
   font-size: 15px;
   margin-top: auto;
   background-color: #ffffff !important;
+}
+
+.footer-wrapper {
+  widows: 100%;
+  max-width: 980px;
+  display: flex;
+  justify-content: space-between;
+  margin: 0 auto;
 }
 
 .footer a {
@@ -184,7 +190,6 @@ li.meister-footer {
 
 .item-footer-left {
   flex-grow: 1;
-  margin-left: 6%;
 }
 
 i.fab.fa-twitter-square {
@@ -201,8 +206,6 @@ i.fab.fa-twitter-square {
 }
 
 .item-footer-right {
-  /* flex-grow: 1; */
-  margin-right: 12%;
   margin-top: 11px;
 }
 
