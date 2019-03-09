@@ -1,0 +1,23 @@
+{
+  "projectName": "meister-hackers",
+  "projectOwner": "WEBsinjyuku",
+  "repoType": "github",
+  "repoHost": "https://github.com",
+  "files": [
+    "README.md"
+  ],
+  "imageSize": 100,
+  "commit": false,
+  "contributors": [
+    {
+      "login": "takaaa220",
+      "name": "takaaa220",
+      "avatar_url": "https://avatars3.githubusercontent.com/u/25857381?v=4",
+      "profile": "https://github.com/takaaa220",
+      "contributions": [
+        "maintenance"
+      ]
+    }
+  ],
+  "contributorsPerLine": 7
+}
