@@ -13,7 +13,7 @@ class ProfilesController < ApplicationController
   end
 
   def index2
-    if current_user?
+    if current?
       render json: { status: 200, profile: @user.profile, username: @user.name, avatar: @user.avatar_url, id: @user.id, is_login: user_signed_in?, is_current_user: current? }
     else
       render json: { status: 401 }
