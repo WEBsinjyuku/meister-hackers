@@ -5,7 +5,7 @@
       form(@submit.prevent="submit")
         .account-header
           .account-header-left
-            figure img(:src="{{this.user.avatar}}" alt="Placeholder image") {{ this.user.name }}
+            | img(:src="{{this.user.avatar}}" alt="Placeholder image") {{ this.user.name }}
           .account-header-right
             .cancel-button(type="button" @click="cancel") キャンセル
         .account アカウント
@@ -15,8 +15,6 @@
         .field
           .label 性別
           input.input(type="text" v-model="profile.sex")
-        .field
-          .label 登録日
         .field
           .label 自己紹介
           input.input(v-model="profile.introduction")
