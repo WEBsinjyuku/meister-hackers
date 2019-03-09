@@ -1,0 +1,23 @@
+{
+  "projectName": "meister-hackers",
+  "projectOwner": "WEBsinjyuku",
+  "repoType": "github",
+  "repoHost": "https://github.com",
+  "files": [
+    "README.md"
+  ],
+  "imageSize": 100,
+  "commit": false,
+  "contributors": [
+    {
+      "login": "dh-megane",
+      "name": "dh_megane",
+      "avatar_url": "https://avatars3.githubusercontent.com/u/40923242?v=4",
+      "profile": "https://github.com/dh-megane",
+      "contributions": [
+        "maintenance"
+      ]
+    }
+  ],
+  "contributorsPerLine": 7
+}
