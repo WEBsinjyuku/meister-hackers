@@ -3,11 +3,14 @@
   .content
     .columns.is-centered
       form(@submit.prevent="submit")
-        .account-header
-          .account-header-left
-            | img(:src="{{this.user.avatar}}" alt="Placeholder image") {{ this.user.name }}
-          .account-header-right
-            .cancel-button(type="button" @click="cancel") キャンセル
+        table.account-header
+          tr
+            td.account-header-left
+              img(:src="this.user.avatar" alt="Placeholder image" width="50" height="50")
+            td.account-header-middle
+              | {{ this.user.name }}
+            td.account-header-right
+              a.cancel-button(type="button" @click="cancel") キャンセル
         .account アカウント
         .field
           .label 都道府県
@@ -31,14 +34,6 @@
           .label Blog URL
           input.input(type="text" v-model="profile.blog_url")
         button.button(type="submit").is-primary 更新
-        table.account-header
-          tr
-            td.account-header-left
-              | img(:src="{{this.user.avatar}}" alt="Placeholder image")
-            td.account-header-middle
-              | {{ this.user.name }}
-            td.account-header-right
-              .cancel-button(type="button" @click="cancel") キャンセル
 </template>
 
 <script>
@@ -109,20 +104,27 @@ export default {
     height: 70px;
     width: 100vw;
     margin-left: calc(50% - 50vw);
-    display: flex;
-    justify-content: space-between;
     background-color: #F0FFFF;
   }
 
   .account-header-left {
+    vertical-align: middle;
+    text-align: right;
+    padding-left: 3px;
+  }
+
+  .account-header-middle {
+    vertical-align: middle;
     font-size: 1.5rem;
-    margin-left: 250px;
-    line-height: 75px;
+    font-weight: bold;
+    padding-left: 0;
   }
 
   .account-header-right {
-    margin-right: 250px;
+    margin-left: 250px;
     line-height: 75px;
+    text-align: center;
+    padding-left: 8px;
   }
 
   .cancel-button {
