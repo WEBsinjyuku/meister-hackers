@@ -1,0 +1,23 @@
+{
+  "projectName": "meister-hackers",
+  "projectOwner": "WEBsinjyuku",
+  "repoType": "github",
+  "repoHost": "https://github.com",
+  "files": [
+    "README.md"
+  ],
+  "imageSize": 100,
+  "commit": false,
+  "contributors": [
+    {
+      "login": "takahashi19",
+      "name": "takahashi",
+      "avatar_url": "https://avatars2.githubusercontent.com/u/40596064?v=4",
+      "profile": "https://github.com/takahashi19",
+      "contributions": [
+        "maintenance"
+      ]
+    }
+  ],
+  "contributorsPerLine": 7
+}
