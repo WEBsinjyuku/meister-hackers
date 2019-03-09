@@ -24,7 +24,7 @@ class Post < ApplicationRecord
   belongs_to :user
   has_many :messages, dependent: :destroy
   validates_with PostValidator, field: [:repository, :title, :content]
- 
+
   before_save :format_repository, :update_date
 
   def owner_and_repository
