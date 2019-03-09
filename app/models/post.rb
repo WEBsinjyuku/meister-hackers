@@ -4,17 +4,18 @@
 #
 # Table name: posts
 #
-#  id         :bigint(8)        not null, primary key
-#  created_at :datetime         not null
-#  updated_at :datetime         not null
-#  title      :string           not null
-#  content    :text             not null
-#  user_id    :bigint(8)        not null
-#  repository :string           not null
-#  status     :integer          default("wanted"), not null
-#  owner      :string
-#  opened_on  :date
-#  closed_on  :date
+#  id            :bigint(8)        not null, primary key
+#  created_at    :datetime         not null
+#  updated_at    :datetime         not null
+#  title         :string           not null
+#  content       :text             not null
+#  user_id       :bigint(8)        not null
+#  repository    :string           not null
+#  status        :integer          default("wanted"), not null
+#  owner         :string           not null
+#  opened_on     :date
+#  closed_on     :date
+#  slack_channel :string
 #
 
 class Post < ApplicationRecord
@@ -25,8 +26,7 @@ class Post < ApplicationRecord
   has_many :messages, dependent: :destroy
   validates_with PostValidator, field: [:repository, :title, :content]
 
-  before_create :format_repository
-  before_save :update_date
+  before_save :format_repository, :update_date
 
   def owner_and_repository
     [owner, repository].join("/")
