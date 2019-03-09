@@ -58,11 +58,11 @@ class ProfilesController < ApplicationController
   end
 
   private
-  def set_user
-    @user = User.find_by(id: params[:user_id])
-  end
+    def set_user
+      @user = User.find_by(id: params[:user_id])
+    end
 
-  def current?
-    @user.present? && current_user.present? && current_user.id == @user.id
-  end
+    def current?
+      @user.present? && current_user.present? && current_user.id == @user.id
+    end
 end
