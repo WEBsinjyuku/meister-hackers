@@ -10,6 +10,15 @@
   "commit": false,
   "contributors": [
     {
+      "login": "hiromoto-kazuya",
+      "name": "hiromoto-kazuya",
+      "avatar_url": "https://avatars1.githubusercontent.com/u/40492325?v=4",
+      "profile": "https://github.com/hiromoto-kazuya",
+      "contributions": [
+        "maintenance"
+      ]
+    },
+    {
       "login": "LeonardoMatusaki",
       "name": "LeonardoMatusaki",
       "avatar_url": "https://avatars1.githubusercontent.com/u/39451570?v=4",
