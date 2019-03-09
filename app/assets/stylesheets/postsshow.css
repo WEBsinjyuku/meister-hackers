@@ -34,7 +34,8 @@ i.fab.fa-github-square.my-fa {
 
 .post-delete-box {
   display: flex;
-  justify-content: flex-end;
+  /* justify-content: flex-end; 修正T*/
+  justify-content: space-between;
 }
 
 .post-delete-title {
@@ -234,7 +235,7 @@ i.fab.fa-github-square.my-fa {
 #show-comment .message-header {
   background-color: #f9fbfe;
   color: initial;
-  padding: 0.50em 0.75em;
+  padding: 0.5em 0.75em;
   border: solid 1px #cdc8c8;
   border-bottom: 0px;
 }
@@ -248,7 +249,7 @@ i.fab.fa-github-square.my-fa {
 }
 
 #show-comment .message-body {
-  padding: 0.50em 0.75em;
+  padding: 0.5em 0.75em;
   border: solid 1px #cdc8c8;
 }
 
