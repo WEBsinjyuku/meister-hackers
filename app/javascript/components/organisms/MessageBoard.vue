@@ -7,9 +7,19 @@ form(@submit.prevent="submit")
         input.input(type="text" placeholder="コメント" v-model="content")
         button(type="submit").button.is-danger.is-rounded 投稿
       br
-      .list
-        li(v-for="message in messages" :key="message.id").list-item
-          | {{ `${message.time } | ${message.content}` }}
+
+      li(v-for="message in messages" :key="message.id").message-wrapper
+        // TODO: サンプル画像(機能実装後、修正すること)
+        //img(src="https://avatars1.githubusercontent.com/u/40492325?v=4" size="30x30" alt="userIcon").show-owner-img
+        .message
+          // TODO: ユーザー名と削除ボタン(機能実装後、修正すること)
+          .message-header
+            //p ユーザー名
+            //a(href="#") 削除
+          .message-body
+            | {{ `${message.content}` }}
+        .message-time
+          | {{ `${message.time }` }}
 </template>
 
 <script>
