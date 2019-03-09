@@ -52,7 +52,7 @@ export default {
   },
   mounted() {
     const baseUrl = location.href;
-    const profileUrl = `${baseUrl.replace("edit", "profiles")}`;
+    const profileUrl = `${baseUrl.replace("edit", "profiles2")}`;
     Axios.get(profileUrl)
       .then((response) => {
         if (response.data.status === 401) {
