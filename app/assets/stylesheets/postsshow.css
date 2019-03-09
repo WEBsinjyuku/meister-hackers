@@ -72,7 +72,7 @@
   text-align: left;
 }
 
-.show-post-right {  
+.show-post-right {
   width: 120px;
   display: flex;
   justify-content: flex-end;
@@ -192,6 +192,31 @@
 /*=========================
         3.show-comment
 ===========================*/
+
+#show-comment {
+  background-color: #fff;
+  padding: 15px;
+  margin-bottom: 50px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+#show-comment .show-comment {
+  padding: 0.75rem;
+}
+
+#show-comment .title {
+  font-size: 1.5rem;
+  border-bottom: 1px solid;
+}
+
+#show-comment .input {
+  max-width: 88%;
+}
+
+#show-comment .button {
+  max-width: 9%;
+  margin-left: 3%;
+}
 
 /*=========================
         4.show-buttons

@@ -1,11 +1,11 @@
 <template lang="pug">
 form(@submit.prevent="submit")
   .tile.is-ancestor.show-comment
-    .tile.is-vertical.box.is-9
-      .title.has-background-grey-lighter フィード
-      input.input(type="text" placeholder="コメント" v-model="content")
-      br
-      button(type="submit").button.is-info 投稿
+    .tile.is-vertical
+      .title コメント
+      .submit-area
+        input.input(type="text" placeholder="コメント" v-model="content")
+        button(type="submit").button.is-danger.is-rounded 投稿
       br
       .list
         li(v-for="message in messages" :key="message.id").list-item
