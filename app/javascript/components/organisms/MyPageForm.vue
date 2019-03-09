@@ -5,7 +5,7 @@
       form(@submit.prevent="submit")
         .account-header
           .account-header-left
-            figure img(:src="{{this.user.avatar}}" alt="Placeholder image") {{ this.user.name }}
+            | img(:src="{{this.user.avatar}}" alt="Placeholder image") {{ this.user.name }}
           .account-header-right
             .cancel-button(type="button" @click="cancel") キャンセル
         .account アカウント
@@ -17,6 +17,7 @@
           input.input(type="text" v-model="profile.sex")
         .field
           .label 登録日
+          .date {{ profile.created_at | formatDate }}
         .field
           .label 自己紹介
           input.input(v-model="profile.introduction")
@@ -39,8 +40,15 @@
 import Axios from "axios";
 import UserProfile from "../molecules/UserProfile.vue";
 import Mypage from "./MyPage.vue";
+import moment from "moment";
 
 export default {
+  filters: {
+    formatDate(value) {
+      if (!value) return "-";
+      return moment(value).format("YYYY/MM/DD HH:mm");
+    },
+  },
   data() {
     return {
       profile: {
@@ -143,6 +151,10 @@ export default {
 
   .input {
     width: 800px;
+  }
+
+  .date {
+    margin-right: 670px;
   }
 
   form {
