@@ -23,7 +23,7 @@ Rails 5.2.2/Ruby 2.6.0/
 GitHubダッシュボード機能（予定）
 
 ## Another
-Meister-Hackersオンラインサロン（ご自由にご参加ください）→[Slackリンク](https://join.slack.com/t/meister-hackers/shared_invite/enQtNTYyMzAyNDM2MjI2LTAzYjIyYmY0ZWM5YWQ2ODc3M2Y4MGI3MWYxMTVmODk5NWU0NmNmMDc1NjVjMDBmODcxZDkyNjUwZTgxMTM0M2I)
+Meister-Hackersオンラインサロン（ご自由にご参加ください）→[Slackリンク](https://join.slack.com/t/meister-hackers/shared_invite/enQtNTYyMzAyNDM2MjI2LTAzYjIyYmY0ZWM5YWQ2ODc3M2Y4MGI3MWYxMTVmODk5NWU0NmNmMDc1NjVjMDBmODcxZDkyNjUwZTgxMTM0M2I)<br>
 Meister-HackersLT会交流会のコミュニテイ→[Connpassリンク](https://ossteam.connpass.com/)
 
 
