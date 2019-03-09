@@ -14,12 +14,15 @@
  *= require_self
  */
 
+
+/*=========================
+        1.all
+===========================*/
+
 a,
 a:hover {
   text-decoration: none !important;
   outline: none !important;
-  /* ↓navbarが影響受けるためコメントアウト */
-  /* color: #000 !important; */
 }
 
 body {
@@ -51,12 +54,20 @@ header {
   margin: 0 auto;
 }
 
-/* navstart */
+.disabled-style {
+  background-color: #f5f5f5 !important;
+  border-color: #f5f5f5 !important;
+  box-shadow: none !important;
+  color: #7a7a7a !important;
+}
+
+/*=========================
+        2.navbar
+===========================*/
+
 .my-navbar-menu {
-  /* display: flex; */
   width: 100%;
   height: 50px;
-  /* justify-content: space-between; */
   background: #ffffff;
   box-shadow: 0px 3px 4px rgba(0, 0, 0, 0.25);
 }
@@ -68,11 +79,6 @@ header {
   justify-content: space-between;
 }
 
-/* a:hover {
-  text-decoration: none !important;
-  outline: none !important;
-  color: #000 !important;
-} */
 .navbar-item img {
   border-radius: 50%;
 }
@@ -137,7 +143,10 @@ a.btn:hover {
   color: white !important;
 }
 
-/* navbar終わり */
+/*=========================
+        3.?????
+===========================*/
+
 .flash {
   background-color: #293742;
   color: white;
@@ -146,7 +155,10 @@ a.btn:hover {
   text-align: center;
 }
 
-/* --footer開始ーーー */
+/*=========================
+        4.footer
+===========================*/
+
 .footer {
   border-top: 1px solid #eee;
   padding: 20px !important;
@@ -205,9 +217,10 @@ i.fab.fa-twitter-square {
   top: 3px;
 }
 
-/* footer終了 */
+/*=========================
+        5.404 error
+===========================*/
 
-/* 404 error */
 .error-container {
   display: flex;
   justify-content: center;
@@ -223,10 +236,38 @@ i.fab.fa-twitter-square {
   margin-left: 30px;
 }
 
-/* 共通 */
-.disabled-style {
-  background-color: #f5f5f5 !important;
-  border-color: #f5f5f5 !important;
-  box-shadow: none !important;
-  color: #7a7a7a !important;
+/*=========================
+        6.post-form
+===========================*/
+
+
+
+#post-form-title {
+  margin-bottom: 20px;
+}
+
+
+
+
+
+
+
+
+
+.post-form-buttons {
+  justify-content: flex-end !important;
+}
+
+.post-form-button-box {
+  margin-right: 0 !important;
+}
+
+.post-form-button {
+  font-size: 14px !important;
+  font-weight: bold;
+  background-color: #EF4D4D !important;
+  height: 30px !important;
+  padding: 5px 10px !important;
+  border: 0 !important;
+  border-radius: 15px !important;
 }
