@@ -31,7 +31,7 @@
             | 募集停止
       .field.is-grouped
         .control
-          = f.submit submit_text, class: 'button is-success', data: { confirm: '投稿しますか？' }
+          = f.submit submit_text, class: 'button is-success is-rounded', data: { confirm: '投稿しますか？' }
         .control
           - if params[:action] == 'edit'
-            = link_to 'キャンセル', :back, class: 'button is-danger'
+            = link_to 'キャンセル', :back, class: 'button is-danger is-rounded'
