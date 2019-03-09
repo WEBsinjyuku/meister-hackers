@@ -13,15 +13,24 @@
  *= require_tree .
  *= require_self
  */
+
+a,
+a:hover {
+  text-decoration: none !important;
+  outline: none !important;
+  color: #000 !important;
+}
+
 body {
   display: flex;
   flex-direction: column;
   min-height: 100vh;
+  height: 1250px;
 }
 
 body {
   background-color: #f9fbfe;
-  max-width: 1440px !important;
+  width: 100%;
 }
 
 header {
@@ -30,7 +39,7 @@ header {
 
 #main {
   width: 100%;
-  max-width: 1430px;
+  max-width: 1000px;
   margin: 0 auto;
   padding: 10px 10px;
 }
@@ -44,22 +53,18 @@ header {
 /* navstart */
 .my-navbar-menu {
   display: flex;
-  justify-content: space-between;
-  /* position: absolute; */
   width: 100%;
   height: 50px;
-  left: 1px;
-  top: 0px;
-
+  justify-content: space-between;
+  /* position: absolute; */
   background: #ffffff;
   box-shadow: 0px 3px 4px rgba(0, 0, 0, 0.25);
 }
-
-img {
-  /* margin-right: 12px; */
-  border-radius: 0.2666666667em;
-}
-
+/* a:hover {
+  text-decoration: none !important;
+  outline: none !important;
+  color: #000 !important;
+} */
 .navbar-item img {
   border-radius: 50%;
 }
@@ -141,6 +146,7 @@ a.btn:hover {
   text-align: center;
 }
 
+/* --footer開始ーーー */
 .footer {
   border-top: 1px solid #eee;
   padding: 20px !important;
@@ -148,50 +154,54 @@ a.btn:hover {
   justify-content: space-around;
   font-size: 15px;
   margin-top: auto;
+  background-color: #ffffff !important;
 }
 
 .footer a {
-  color: #4a4a4a;
+  color: #242424;
 }
-
-.item1 {
+li.copy {
+  list-style: none;
+  margin-top: 23px;
+}
+li.meister-footer {
+  color: #00d1b2;
+}
+.item-footer-left {
   flex-grow: 1;
-  margin-top: -10px;
+  margin-left: 6%;
+}
+i.fab.fa-twitter-square {
+  margin-left: 6px;
 }
 
-.item1 li:first-child {
+.item-footer-left li:first-child {
   font-size: 20px;
   font-weight: bold;
 }
 
-.item1 li:nth-child(2) {
+.item-footer-left li:nth-child(2) {
   font-size: 13px;
 }
 
-.item2 {
-  flex-grow: 1;
-}
-
-.item3 {
-  flex-grow: 1;
-}
-
-.item4 {
-  flex-grow: 1;
-  text-align: center;
-  position: relative;
-  top: 10px;
+.item-footer-right {
+  /* flex-grow: 1; */
+  margin-right: 12%;
+  margin-top: 11px;
 }
 
 .fab {
   font-size: 30px;
 }
-
+/* Connpassアイテムは初期仕様にあったので残しておく */
 .connpass {
   font-size: 10px;
   position: relative;
   top: 3px;
 }
+
+
+/* footer終了 */
 
 /* 404 error */
 .error-container {
