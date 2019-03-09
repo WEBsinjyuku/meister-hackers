@@ -10,7 +10,7 @@ document.addEventListener("DOMContentLoaded", () => {
   new Vue({
     el: "#show-button",
     data: {
-      isActive: false
-    }
-  })
+      isActive: false,
+    },
+  });
 });
