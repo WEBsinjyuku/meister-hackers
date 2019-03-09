@@ -1,24 +1,22 @@
 .footer
-  .item1
+  .item-footer-left
     ul
-      li
+      li.meister-footer
         | Meister Hackers
       li
         | 〜エンジニア/未経験エンジニアがOSSでチーム開発をする事を支援するアプリ〜
-  .item2
+      = link_to("https://github.com/WEBsinjyuku/meister-hackers/") do
+        i.fab.fa-github-square
+      = link_to("https://twitter.com") do
+        i.fab.fa-twitter-square
+      li.copy
+        small
+          | &copy; 2019 Meister Hackers
+  .item-footer-right
     ul
       li
         = link_to 'Meister Hackersの想い', "#"
       li
         = link_to '私たちについて', "#"
-  .item3
-    ul
       li
-        = link_to 'お問い合わせ', "#"
-  .item4
-    = link_to("https://github.com/WEBsinjyuku/meister-hackers/") do
-      i.fab.fa-github-square
-    = link_to("https://twitter.com") do
-      i.fab.fa-twitter-square
-    = link_to("https://connpass.com/") do
-      = image_tag "/connpass.png", class:'connpass', size: "28x28"
+        = link_to 'お問い合わせ', "https://github.com/WEBsinjyuku/meister-hackers-support/issues"
