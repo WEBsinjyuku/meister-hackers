@@ -31,12 +31,14 @@ i.fab.fa-github-square.my-fa {
 #show-delete {
   height: 50px;
 }
-/* ---------------add takahashi */
-.post-delete-box {
-  /* display: flex; */
+/* add takahashi */
+.post-delete-stopped {
   display: -webkit-box;
   justify-content: flex-end;
-  /* justify-content: space-between; */
+}
+.post-delete-box {
+  display: flex;
+  justify-content: flex-end;
 }
 section#show-stopped {
   font-size: large;

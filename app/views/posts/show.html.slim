@@ -1,13 +1,18 @@
 
 section#show-delete
-  .post-delete-box
-    - if user_signed_in?
-      - if @post.stopped?
+  - if user_signed_in?
+    - if @post.stopped?
+      .post-delete-stopped
         section#show-stopped
           p 募集停止
-      - if @user == current_user
-        = link_to post_path(params[:id]), class: "post-delete-button", method: :delete, data: { confirm: "本当に削除しますか" }
-          p.post-delete-title プロジェクトを削除する
+        - if @user == current_user
+          = link_to post_path(params[:id]), class: "post-delete-button", method: :delete, data: { confirm: "本当に削除しますか" }
+            p.post-delete-title プロジェクトを削除する
+    - else
+      .post-delete-box
+        - if @user == current_user
+          = link_to post_path(params[:id]), class: "post-delete-button", method: :delete, data: { confirm: "本当に削除しますか" }
+            p.post-delete-title プロジェクトを削除する
 
 section#show-post
   .show-post-item-title
