@@ -111,6 +111,10 @@ export default {
     background-color: #F0FFFF;
   }
 
+  img {
+    border-radius: 5px;
+  }
+
   .account-header-left {
     vertical-align: middle;
     text-align: right;
