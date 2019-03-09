@@ -25,8 +25,7 @@ class Post < ApplicationRecord
   has_many :messages, dependent: :destroy
   validates_with PostValidator, field: [:repository, :title, :content]
 
-  before_create :format_repository
-  before_save :update_date
+  before_save :format_repository, :update_date
 
   def owner_and_repository
     [owner, repository].join("/")
