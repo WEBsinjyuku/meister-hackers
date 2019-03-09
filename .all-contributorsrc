@@ -10,6 +10,15 @@
   "commit": false,
   "contributors": [
     {
+      "login": "LeonardoMatusaki",
+      "name": "LeonardoMatusaki",
+      "avatar_url": "https://avatars1.githubusercontent.com/u/39451570?v=4",
+      "profile": "https://github.com/LeonardoMatusaki",
+      "contributions": [
+        "maintenance"
+      ]
+    },
+    {
       "login": "dh-megane",
       "name": "dh_megane",
       "avatar_url": "https://avatars3.githubusercontent.com/u/40923242?v=4",
