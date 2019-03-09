@@ -25,7 +25,7 @@
         = f.text_area :content, class: 'control textarea'
       .field
         .control
-          - if params[:action] == 'edit'
+          - if @post.id?
             = f.label :募集ステータス, class: 'label'
             = f.radio_button :status, 'wanted', checked: post.wanted?, class: 'radio'
             | 募集中
@@ -35,5 +35,5 @@
         .control
           = f.submit submit_text, class: 'button is-success', data: { confirm: '投稿しますか？' }
         .control
-          - if params[:action] == 'edit'
-            = link_to 'キャンセル', :back, class: 'button is-danger'
+          - if @post.id?
+            = link_to 'キャンセル', post_path(@post.id), class: 'button is-danger'
