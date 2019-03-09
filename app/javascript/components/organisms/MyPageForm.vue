@@ -35,8 +35,6 @@
 
 <script>
 import Axios from "axios";
-import UserProfile from "../molecules/UserProfile.vue";
-import Mypage from "./MyPage.vue";
 
 export default {
   data() {
@@ -53,7 +51,7 @@ export default {
       user: {
         name: "",
         avatar: "",
-      }
+      },
     };
   },
   mounted() {
@@ -67,7 +65,6 @@ export default {
           this.profile = {};
         }
         this.user.name = response.data.username;
-        this.user.id = response.data.id;
         this.user.avatar = response.data.avatar;
       });
   },
