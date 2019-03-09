@@ -18,7 +18,7 @@ section#show-post
   .show-post-item-title
     .show-post-left
       h1.show-post-title = @post.title
-    
+
     .show-post-right
       .bosyu-box
         / span.is-sanity.bosyu-type ガチ募
@@ -76,16 +76,16 @@ section#show-comment
         a.show-button.my-shadow.show-button-join
           p @click="isActive=!isActive" 参加
 
-  .modal :class="{'is-active':isActive}"
-    .modal-background @click="isActive=!isActive"
-    .modal-card
-      header.modal-card-head
-        p.modal-card-title
-          | プロジェクト応募手順
-        button.delete @click="isActive=!isActive"
-      section.modal-card-body
-        p 1.下記URLよりMeister HackersのSlackに参加してください
-        a href="https://meister-hackers.slack.com/join/shared_invite/enQtNTYyMzAyNDM2MjI2LTAzYjIyYmY0ZWM5YWQ2ODc3M2Y4MGI3MWYxMTVmODk5NWU0NmNmMDc1NjVjMDBmODcxZDkyNjUwZTgxMTM0M2I" target="_blank" Slackに参加
-        p 2.募集ページに記載されたSlackチャンネルを検索してください
-        p 3.チャンネル内でプロジェクト投稿者とやりとりをしてください
-      footer.modal-card-foot
+    .modal :class="{'is-active':isActive}"
+      .modal-background @click="isActive=!isActive"
+      .modal-card
+        header.modal-card-head
+          p.modal-card-title
+            | プロジェクト応募手順
+          button.delete @click="isActive=!isActive"
+        section.modal-card-body
+          p 1.下記URLよりMeister HackersのSlackに参加してください
+          a href="https://meister-hackers.slack.com/join/shared_invite/enQtNTYyMzAyNDM2MjI2LTAzYjIyYmY0ZWM5YWQ2ODc3M2Y4MGI3MWYxMTVmODk5NWU0NmNmMDc1NjVjMDBmODcxZDkyNjUwZTgxMTM0M2I" target="_blank" Slackに参加
+          p 2.募集ページに記載されたSlackチャンネルを検索してください
+          p 3.チャンネル内でプロジェクト投稿者とやりとりをしてください
+        footer.modal-card-foot

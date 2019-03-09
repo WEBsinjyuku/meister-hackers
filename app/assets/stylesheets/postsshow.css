@@ -245,7 +245,7 @@ section#show-stopped {
 #show-comment .message-header {
   background-color: #f9fbfe;
   color: initial;
-  padding: 0.5em 0.75em;
+  padding: 0.50em 0.75em;
   border: solid 1px #cdc8c8;
   border-bottom: 0px;
 }
@@ -259,7 +259,7 @@ section#show-stopped {
 }
 
 #show-comment .message-body {
-  padding: 0.5em 0.75em;
+  padding: 0.50em 0.75em;
   border: solid 1px #cdc8c8;
 }
 
