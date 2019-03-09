@@ -10,21 +10,45 @@ Meister Hackers
 * 開発メンバー推薦コメント機能(開発予定)
 * GitHubダッシュボード機能（開発予定）
 
-## バージョン
-
-* Rails 5.2.2
-* Ruby 2.6.0
-
-## Joining
+## コミュニティに参加
 
 Meister-Hackersオンラインサロン（ご自由にご参加ください）→[Slackリンク](https://join.slack.com/t/meister-hackers/shared_invite/enQtNTYyMzAyNDM2MjI2LTAzYjIyYmY0ZWM5YWQ2ODc3M2Y4MGI3MWYxMTVmODk5NWU0NmNmMDc1NjVjMDBmODcxZDkyNjUwZTgxMTM0M2I)
 
 Meister-HackersLT会交流会のコミュニテイ→[Connpassリンク](https://ossteam.connpass.com/)
 
-## Contributing
+## コントリビューションするには
+
+このプロジェクトはオープンソースですので、あなたのコントリビューションをお待ちしています。
 
 私たちのコーディング規範とプルリクエストの手順についての詳細は、
 [CONTRIBUTING.md](https://github.com/WEBsinjyuku/meister-hackers/blob/master/CONTRIBUTING.md) を参照してください。
+
+## 開発スタートガイド
+
+### 事前条件
+
+* Rails 5.2.2
+* Ruby 2.6.0
+* PostgreSQL 10.6
+
+and see Gemfile and package.json
+
+### インストール
+
+このプロジェクトは docker-composeで構成管理をしています。
+
+```bash
+$ git clone https://github.com/WEBsinjyuku/meister-hackers.git
+$ cd meister-hackers
+$ docker-commpose build
+$ docker-compose run rails bundle install
+$ docker-compose run rails yarn install
+$ docker-compose run rails rails db:create
+$ docker-compose run rails rails db:migrate
+$ docker-compose up -d
+```
+
+http://localhost:3000 にアクセス。 終了するときは、 `docker-compose down`
 
 ## サポート
 
