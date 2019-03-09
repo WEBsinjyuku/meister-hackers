@@ -13,6 +13,14 @@
  *= require_tree .
  *= require_self
  */
+
+a,
+a:hover {
+  text-decoration: none !important;
+  outline: none !important;
+  color: #000 !important;
+}
+
 body {
   display: flex;
   flex-direction: column;
@@ -22,15 +30,16 @@ body {
 
 body {
   background-color: #f9fbfe;
-  max-width: 1440px !important;
+  width: 100%;
 }
+
 header {
   width: 100%;
 }
 
 #main {
   width: 100%;
-  max-width: 1430px;
+  max-width: 1000px;
   margin: 0 auto;
   padding: 10px 10px;
 }
