@@ -18,7 +18,8 @@ a,
 a:hover {
   text-decoration: none !important;
   outline: none !important;
-  color: #000 !important;
+  /* ↓navbarが影響受けるためコメントアウト */
+  /* color: #000 !important; */
 }
 
 body {
@@ -188,7 +189,6 @@ i.fab.fa-twitter-square {
   top: 3px;
 }
 
-
 /* footer終了 */
 
 /* 404 error */
@@ -206,4 +206,3 @@ i.fab.fa-twitter-square {
 .error-left ul {
   margin-left: 30px;
 }
-
