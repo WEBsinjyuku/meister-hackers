@@ -9,12 +9,14 @@
                 = msg
       .field
         = f.label :リポジトリ, class: 'label'
-        - if params[:action] == 'new'
+        - if params[:action] == 'new' # 新規モード
           = f.text_field :repository, class: 'control input'
           p.help
             | 募集するリポジトリのURLを入力してください
-        - else
+        - elsif @post.id? # 編集モード(リポジトリは編集不可で表示)
           = f.text_field :repository, readonly: true, value: [post[:owner], post[:repository]].join("/"), class: 'control input disabled-style'
+        - else # 新規登録時の入力エラー(リポジトリは入力可能)
+          = f.text_field :repository, class: 'control input'
       .field
         = f.label :募集タイトル, class: 'label'
         = f.text_field :title, class: 'control input'
