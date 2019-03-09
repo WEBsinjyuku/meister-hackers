@@ -1,0 +1,23 @@
+{
+  "projectName": "meister-hackers",
+  "projectOwner": "WEBsinjyuku",
+  "repoType": "github",
+  "repoHost": "https://github.com",
+  "files": [
+    "README.md"
+  ],
+  "imageSize": 100,
+  "commit": false,
+  "contributors": [
+    {
+      "login": "LeonardoMatusaki",
+      "name": "LeonardoMatusaki",
+      "avatar_url": "https://avatars1.githubusercontent.com/u/39451570?v=4",
+      "profile": "https://github.com/LeonardoMatusaki",
+      "contributions": [
+        "maintenance"
+      ]
+    }
+  ],
+  "contributorsPerLine": 7
+}
