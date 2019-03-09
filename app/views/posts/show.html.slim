@@ -4,7 +4,7 @@ section#show-delete
     - if user_signed_in?
       - if @post.stopped?
         section#show-stopped
-          p 募集停止中
+          p 募集停止
       - if @user == current_user
         = link_to post_path(params[:id]), class: "post-delete-button", method: :delete, data: { confirm: "本当に削除しますか" }
           p.post-delete-title プロジェクトを削除する
