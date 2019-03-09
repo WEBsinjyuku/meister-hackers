@@ -24,7 +24,8 @@
         = f.label :Slackチャンネル名, class: 'label'
         = f.text_field :slack_channel, class: 'control input', placeholder: "例: meister-hackersチャンネル"
         p.help
-          | Meister-HackersのSlack内で作成したチャンネル名を記載してください。
+          | Meister-HackersのSlackに参加し、作成したチャンネル名を記載してください。
+          a.help href="https://meister-hackers.slack.com/join/shared_invite/enQtNTYyMzAyNDM2MjI2LTAzYjIyYmY0ZWM5YWQ2ODc3M2Y4MGI3MWYxMTVmODk5NWU0NmNmMDc1NjVjMDBmODcxZDkyNjUwZTgxMTM0M2I" target="_blank" Meister Hackersへの参加はこちら
       .field
         = f.label :募集概要, class: 'label'
         = f.text_area :content, class: 'control textarea', placeholder: "1000文字以内で入力"
