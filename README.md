@@ -1,4 +1,5 @@
 # README
+[![All Contributors](https://img.shields.io/badge/all_contributors-1-orange.svg?style=flat-square)](#contributors)
 
 ## アプリケーション名
 <p>Meister Hackers</p>
@@ -29,3 +30,15 @@ Meister-HackersLT会交流会のコミュニテイ→[Connpassリンク](https:/
 
 ## サポートバグ報告
 バクがあった場合は[こちら](https://github.com/WEBsinjyuku/meister-hackers-support)にissueで報告をお願い致します。
+
+## Contributors
+
+Thanks goes to these wonderful people ([emoji key](https://github.com/all-contributors/all-contributors#emoji-key)):
+
+<!-- ALL-CONTRIBUTORS-LIST:START - Do not remove or modify this section -->
+<!-- prettier-ignore -->
+| [<img src="https://avatars2.githubusercontent.com/u/94302?v=4" width="100px;" alt="Timo Suomela"/><br /><sub><b>Timo Suomela</b></sub>](https://github.com/tsu)<br />[🚧](#maintenance-tsu "Maintenance") |
+| :---: |
+<!-- ALL-CONTRIBUTORS-LIST:END -->
+
+This project follows the [all-contributors](https://github.com/all-contributors/all-contributors) specification. Contributions of any kind welcome!
