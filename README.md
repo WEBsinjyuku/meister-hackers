@@ -11,7 +11,7 @@
 そこで、現在のエンジニア業界において、このマイスター制度なるコミュニティを復活させて、ベテランエンジニアが中堅、駆け出しエンジニアを育てる仕組みを作ります。</p>
 
 ## 概要
-<p>Web系自社開発への就職を志望する未経験エンジニアとプライベートプロジェクトを手伝ってくれる人を探すベテランエンジニアを無料でマッチングさせOSSでの開発を促進させることで未経験エンジニアのポートフォリオとして活用し弟子である未経験エンジニアのWeb系自社開発への就職を支援する。</p>
+<p>Web系自社開発への就職を希望する未経験エンジニアとプライベートプロジェクトを手伝ってくれる人を探すベテランエンジニアを無料でマッチングさせOSSでのWebアプリ開発を促進させることで未経験エンジニアのポートフォリオとして開発したWebアプリを活用し弟子である未経験エンジニアのWeb系自社開発への就職を支援する。</p>
 
 ## バージョン
 Rails 5.2.2/Ruby 2.6.0/
@@ -21,6 +21,11 @@ Rails 5.2.2/Ruby 2.6.0/
 開発メンバー募集掲示板機能
 開発メンバースカウト機能（予定）
 GitHubダッシュボード機能（予定）
+
+## Another
+Meister-Hackersオンラインサロン（ご自由にご参加ください）→[Slackリンク](https://join.slack.com/t/meister-hackers/shared_invite/enQtNTYyMzAyNDM2MjI2LTAzYjIyYmY0ZWM5YWQ2ODc3M2Y4MGI3MWYxMTVmODk5NWU0NmNmMDc1NjVjMDBmODcxZDkyNjUwZTgxMTM0M2I)
+Meister-HackersLT会交流会のコミュニテイ→[Connpassリンク](https://ossteam.connpass.com/)
+
 
 ## サポートバグ報告
 バクがあった場合は[こちら](https://github.com/WEBsinjyuku/meister-hackers-support)にissueで報告をお願い致します。
