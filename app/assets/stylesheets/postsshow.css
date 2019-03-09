@@ -1,4 +1,3 @@
-
 /*=========================
         0.for-all
 ===========================*/
@@ -17,7 +16,9 @@
   width: 15px;
   height: 15px;
 }
-
+i.fab.fa-github-square.my-fa {
+  color: #000;
+}
 .my-small-fa {
   font-size: 15px !important;
   marigno-bottom: 9px !important;
@@ -41,7 +42,7 @@
   text-align: right;
   margin-top: 10px;
   display: inline-block;
-  color: #EF4D4D;
+  color: #ef4d4d;
 }
 
 /*=========================
@@ -52,7 +53,7 @@
   background-color: #fff;
   padding: 15px;
   margin-bottom: 50px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1)
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
 /*=========================
@@ -86,13 +87,13 @@
 }
 
 .is-sanity {
-  color: #F4B400;
+  color: #f4b400;
   background-color: rgba(244, 180, 0, 0.15);
 }
 
 .is-slack {
   color: #fff;
-  background-color: #F4B400;
+  background-color: #f4b400;
 }
 
 /*=========================
@@ -140,7 +141,7 @@
 .git-tag {
   font-size: 12px;
   padding: 3px 5px;
-  color: #00D1B2;
+  color: #00d1b2;
   background-color: rgba(0, 209, 178, 0.1);
   border-radius: 5px;
 }
@@ -281,7 +282,7 @@
 .post-end-button {
   width: 160px;
   box-shadow: inset -2px 2px 4px rgba(255, 255, 255, 0.5),
-  -2px 2px 4px rgba(0, 0, 0, 0.19);
+    -2px 2px 4px rgba(0, 0, 0, 0.19);
   transition: 0.3s;
   border-bottom: solid 1px #b5b5b5;
   background-color: #000;
@@ -312,8 +313,6 @@
 .show-button-join {
   background-color: #00d1b2;
 }
-
-
 
 /* 新規投稿用テキストエリア */
 .textarea:not([rows]) {
