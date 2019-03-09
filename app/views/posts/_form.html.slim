@@ -9,21 +9,28 @@
                 = msg
       .field
         = f.label :リポジトリ, class: 'label'
-        - if @post.repository.blank?
-          = f.text_field :repository, class: 'control input'
+        - if params[:action] == 'new' # 新規モード
+          = f.text_field :repository, class: 'control input', placeholder: "例: https://github.com/WEBsinjyuku/meister-hackers"
           p.help
             | 募集するリポジトリのURLを入力してください
-        - else
-          = f.text_field :repository, class: 'control input'
+        - elsif @post.id? # 編集モード(リポジトリは編集不可で表示)
+          = f.text_field :repository, readonly: true, value: [post[:owner], post[:repository]].join("/"), class: 'control input disabled-style', placeholder: "例: https://github.com/WEBsinjyuku/meister-hackers"
+        - else # 新規登録時の入力エラー(リポジトリは入力可能)
+          = f.text_field :repository, class: 'control input', placeholder: "例: https://github.com/WEBsinjyuku/meister-hackers"
       .field
         = f.label :募集タイトル, class: 'label'
-        = f.text_field :title, class: 'control input'
+        = f.text_field :title, class: 'control input', placeholder: "50文字以内で入力"
+      .field
+        = f.label :Slackチャンネル名, class: 'label'
+        = f.text_field :slack_channel, class: 'control input', placeholder: "例: meister-hackersチャンネル"
+        p.help
+          | Meister-HackersのSlack内で作成したチャンネル名を記載してください。
       .field
         = f.label :募集概要, class: 'label'
-        = f.text_area :content, class: 'control textarea'
+        = f.text_area :content, class: 'control textarea', placeholder: "1000文字以内で入力"
       .field
         .control
-          - if params[:action] == 'edit'
+          - if @post.id?
             = f.label :募集ステータス, class: 'label'
             = f.radio_button :status, 'wanted', checked: post.wanted?, class: 'radio'
             | 募集中
@@ -33,5 +40,5 @@
         .control
           = f.submit submit_text, class: 'button is-success', data: { confirm: '投稿しますか？' }
         .control
-          - if params[:action] == 'edit'
-            = link_to 'キャンセル', :back, class: 'button is-danger'
+          - if @post.id?
+            = link_to 'キャンセル', post_path(@post), class: 'button is-danger'
