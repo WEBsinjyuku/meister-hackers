@@ -31,6 +31,14 @@
           .label Blog URL
           input.input(type="text" v-model="profile.blog_url")
         button.button(type="submit").is-primary 更新
+        table.account-header
+          tr
+            td.account-header-left
+              | img(:src="{{this.user.avatar}}" alt="Placeholder image")
+            td.account-header-middle
+              | {{ this.user.name }}
+            td.account-header-right
+              .cancel-button(type="button" @click="cancel") キャンセル
 </template>
 
 <script>
