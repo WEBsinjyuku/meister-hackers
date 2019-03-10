@@ -39,11 +39,12 @@ Thanks goes to these wonderful people ([emoji key](https://github.com/all-contri
 <!-- prettier-ignore -->
 | [<img src="https://avatars3.githubusercontent.com/u/40923242?v=4" width="100px;" alt="dh_megane"/><br /><sub><b>dh_megane</b></sub>](https://github.com/dh-megane)<br />[🚧](#maintenance-dh-megane "Maintenance") |
 [<img src="https://avatars2.githubusercontent.com/u/40596064?v=4" width="100px;" alt="takahashi"/><br /><sub><b>takahashi</b></sub>](https://github.com/takahashi19)<br />[🚧](#maintenance-takahashi19 "Maintenance") |
-[<img src="https://avatars1.githubusercontent.com/u/760627?v=4" width="100px;" alt="Tsunemichi Harada"/><br /><sub><b>Tsunemichi Harada</b></sub>](https://github.com/tsu-nera)<br />[🚧](#maintenance-tsu-nera "Maintenance") |
+[<img src="https://avatars1.githubusercontent.com/u/760627?v=4" width="100px;" alt="Tsunemichi Harada"/><br /><sub><b>tsu-nera</b></sub>](https://github.com/tsu-nera)<br />[🚧](#maintenance-tsu-nera "Maintenance") |
 [<img src="https://avatars1.githubusercontent.com/u/39451570?v=4" width="100px;" alt="LeonardoMatusaki"/><br /><sub><b>LeonardoMatusaki</b></sub>](https://github.com/LeonardoMatusaki)<br />[🚧](#maintenance-LeonardoMatusaki "Maintenance") |
 [<img src="https://avatars1.githubusercontent.com/u/40492325?v=4" width="100px;" alt="hiromoto-kazuya"/><br /><sub><b>hiromoto-kazuya</b></sub>](https://github.com/hiromoto-kazuya)<br />[🚧](#maintenance-hiromoto-kazuya "Maintenance") |
 [<img src="https://avatars2.githubusercontent.com/u/45489481?v=4" width="100px;" alt="shikky0331"/><br /><sub><b>shikky0331</b></sub>](https://github.com/shikky0331)<br />[🚧](#maintenance-shikky0331 "Maintenance") |
-| :---: | :---: | :---: | :---: | :---: | :---: |
+[<img src="https://avatars3.githubusercontent.com/u/25857381?v=4" width="100px;" alt="takaaa220"/><br /><sub><b>takaaa220</b></sub>](https://github.com/takaaa220)<br />[🚧](#maintenance-takaaa220 "Maintenance") |
+| :---: | :---: | :---: | :---: | :---: | :---: | :---: |
 <!-- ALL-CONTRIBUTORS-LIST:END -->
 
 This project follows the [all-contributors](https://github.com/all-contributors/all-contributors) specification. Contributions of any kind welcome!

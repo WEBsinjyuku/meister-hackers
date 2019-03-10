@@ -10,6 +10,15 @@
   "commit": false,
   "contributors": [
     {
+      "login": "takaaa220",
+      "name": "takaaa220",
+      "avatar_url": "https://avatars3.githubusercontent.com/u/25857381?v=4",
+      "profile": "https://github.com/takaaa220",
+      "contributions": [
+        "maintenance"
+      ]
+    },
+    {
       "login": "shikky0331",
       "name": "shikky0331",
       "avatar_url": "https://avatars2.githubusercontent.com/u/45489481?v=4",
