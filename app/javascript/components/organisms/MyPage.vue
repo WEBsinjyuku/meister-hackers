@@ -13,9 +13,9 @@
 
 <script>
 import Axios from "axios";
+import GitHubCalendar from "github-calendar";
 import UserPost from "../molecules/UserPost.vue";
 import UserProfile from "../molecules/UserProfile.vue";
-import GitHubCalendar from 'github-calendar'
 
 export default {
   components: {
