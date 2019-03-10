@@ -7,6 +7,12 @@
             - @post.errors.full_messages.each do |msg|
               li
                 = msg
+      #post-form-title
+        .post-form-title-box
+          h1.post-form-title 投稿プロジェクト
+        .post-form-cancel-button-box
+          - if @post.id?
+            = link_to 'キャンセル', post_path(@post), class: 'post-form-cancel-button'
       .field
         = f.label :リポジトリ, class: 'label'
         - if params[:action] == 'new' # 新規モード
@@ -37,9 +43,6 @@
             | 募集中
             = f.radio_button :status, 'stopped', checked: post.stopped?, class: 'radio'
             | 募集停止
-      .field.is-grouped
-        .control
-          = f.submit submit_text, class: 'button is-success is-rounded', data: { confirm: '投稿しますか？' }
-        .control
-          - if @post.id?
-            = link_to 'キャンセル', post_path(@post), class: 'button is-danger is-rounded'
+      .field.is-grouped.post-form-buttons
+        .control.post-form-button-box
+          = f.submit submit_text, class: 'button is-success post-form-button', data: { confirm: '投稿しますか？' }

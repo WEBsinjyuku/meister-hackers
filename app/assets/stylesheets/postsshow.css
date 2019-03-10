@@ -208,7 +208,7 @@ section#show-stopped {
 #show-comment {
   background-color: #fff;
   padding: 15px;
-  margin-bottom: 50px;
+  margin-bottom: 80px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
@@ -274,7 +274,7 @@ section#show-stopped {
 
 #show-button {
   position: fixed;
-  bottom: 150px;
+  bottom: 165px;
   width: 100%;
   max-width: 980px;
 }
@@ -288,6 +288,7 @@ section#show-stopped {
   width: 80px;
   height: 80px;
   border-radius: 40px;
+  margin-right: 15px;
 }
 
 .post-end-button {
