@@ -10,6 +10,15 @@
   "commit": false,
   "contributors": [
     {
+      "login": "shikky0331",
+      "name": "shikky0331",
+      "avatar_url": "https://avatars2.githubusercontent.com/u/45489481?v=4",
+      "profile": "https://github.com/shikky0331",
+      "contributions": [
+        "maintenance"
+      ]
+    },
+    {
       "login": "hiromoto-kazuya",
       "name": "hiromoto-kazuya",
       "avatar_url": "https://avatars1.githubusercontent.com/u/40492325?v=4",
