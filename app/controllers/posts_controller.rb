@@ -34,16 +34,20 @@ class PostsController < ApplicationController
   end
 
   def show
-    @post = Post.find(params[:id])
-    client = GithubOss::GithubFetcher.new(@post.owner_and_repository)
+    @post = Post.find_by(id: params[:id])
+    if @post
+      client = GithubOss::GithubFetcher.new(@post.owner_and_repository)
 
-    @user = User.find(@post.user_id)
-    @git = {
-      "language" => client.language,
-      "topics" => client.topics.names,
-      "description" => client.description,
-      "stargazers_count" => client.stargazers_count
-    }
+      @user = User.find(@post.user_id)
+      @git = {
+        "language" => client.language,
+        "topics" => client.topics.names,
+        "description" => client.description,
+        "stargazers_count" => client.stargazers_count
+      }
+    else
+      redirect_to error_404_path
+    end
   end
 
   def destroy
