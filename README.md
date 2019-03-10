@@ -1,7 +1,10 @@
 Meister Hackers
 ===
 
+![](https://img.shields.io/github/issues/WEBsinjyuku/meister-hackers.svg)
+![](https://img.shields.io/github/license/WEBsinjyuku/meister-hackers.svg)
 [![All Contributors](https://img.shields.io/badge/all_contributors-1-orange.svg?style=flat-square)](#contributors)
+[![Open Source Love](https://badges.frapsoft.com/os/v3/open-source.svg?v=103)](https://github.com/WEBsinjyuku/meister-hackers)
 
 エンジニアがOSSでチーム開発をする事を支援するWebサービス
 
