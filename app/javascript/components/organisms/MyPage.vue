@@ -39,7 +39,7 @@ export default {
           return;
         }
         if (response.data.status === 500) {
-          window.location.href = "/error/500";
+          window.location.href = "/error/404";
           return;
         }
 
