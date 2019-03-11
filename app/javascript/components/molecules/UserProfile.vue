@@ -1,39 +1,50 @@
 <template lang="pug">
-.card
-  .card-image
-    figure.image.is-4by3
-      img(:src="user.avatar" alt="Placeholder image")
-  .card-content
-    .content
-      .title {{ user.name }}
-      .list(v-if="attributes")
-        .list-item
-          | 都道府県： {{ attributes.area }}
-        .list-item
-          | 性別： {{ attributes.sex }}
-        .list-item
-          | 登録日: {{ attributes.created_at | formatDate }}
-      div
-        .icon.is-large(v-if="attributes && attributes.github_url")
-          a.fab.fa-2x.fa-github(:href="attributes.github_url")
-        .icon.is-large(v-if="attributes && attributes.twitter_url")
-          a.fab.fa-2x.fa-twitter(:href="attributes.twitter_url")
-        .icon.is-large(v-if="attributes && attributes.facebook_url")
-          a.fab.fa-2x.fa-facebook(:href="attributes.facebook_url")
-        .icon.is-large(v-if="attributes && attributes.blog_url")
-          a.fas.fa-2x.fa-rss-square(:href="attributes.blog_url")
-      .button.is-primary(@click="edit" v-if="user.isCurrentUser") 編集
+.bd-content
+  .content
+    table.account-header
+      tr
+        td.account-header-left
+          img(:src="this.user.avatar" alt="Placeholder image" width="50" height="50")
+        td.account-header-middle
+          | {{ this.user.name }}
+        td.account-header-right
+          a.edit-button(@click="edit" v-if="user.isCurrentUser") 編集  
+    .account アカウント
+    table
+      tr
+        td.is-width-3
+          | 都道府県
+        td.is-width-7
+          | {{ attributes.area }}
+      tr
+        td
+          | 性別
+        td
+          | {{ attributes.sex }}
+      tr
+        td
+          | 自己紹介
+        td
+          | 自己紹介文を表示する
+    div
+      .icon.is-large(v-if="attributes && attributes.github_url")
+        a.fab.fa-2x.fa-github.is-black(:href="attributes.github_url")
+      .icon.is-large(v-if="attributes && attributes.twitter_url")
+        a.fab.fa-2x.fa-twitter.is-black(:href="attributes.twitter_url")
+      .icon.is-large(v-if="attributes && attributes.facebook_url")
+        a.fab.fa-2x.fa-facebook.is-black(:href="attributes.facebook_url")
+      .icon.is-large(v-if="attributes && attributes.blog_url")
+        a.fas.fa-2x.fa-rss-square.is-black(:href="attributes.blog_url")
 </template>
 
 <script>
 import moment from "moment";
-
 export default {
   filters: {
     formatDate(value) {
       if (!value) return "-";
       return moment(value).format("YYYY/MM/DD HH:mm");
-    },
+    }
   },
   props: ["user", "attributes"],
   computed: {
@@ -42,12 +53,72 @@ export default {
         return `/users/${this.user.id}/edit`;
       }
       return "/";
-    },
+    }
   },
   methods: {
     edit() {
       window.location.href = this.editUrl;
-    },
-  },
+    }
+  }
 };
 </script>
+
+<style scoped>
+.account-header {
+  height: 70px;
+  width: 100vw;
+  margin-left: calc(50% - 50vw);
+  background-color: #f0ffff;
+}
+
+img {
+  border-radius: 5px;
+}
+
+.account-header-left {
+  vertical-align: middle;
+  text-align: right;
+  padding-left: 3px;
+}
+
+.account-header-middle {
+  vertical-align: middle;
+  font-size: 1.5rem;
+  font-weight: bold;
+  padding-left: 0;
+}
+
+.account-header-right {
+  margin-left: 250px;
+  line-height: 75px;
+  text-align: left;
+  font-weight: bold;
+  padding-left: 8px;
+}
+
+.edit-button {
+  font-size: 1.2rem;
+  color: #00d1b2;
+  cursor: pointer;
+}
+
+.account {
+  font-weight: bold;
+  width: 80px;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  border-bottom: solid 3px black;
+}
+
+.is-width-3 {
+  width: 30%;
+}
+
+.is-width-7 {
+  width: 70%;
+}
+
+.is-black {
+  color: black;
+}
+</style>
