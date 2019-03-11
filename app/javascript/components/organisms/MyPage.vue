@@ -1,7 +1,5 @@
 <template lang="pug">
-.bd-content
-  .content
-      user-profile(:attributes="profile", :user="user")
+  user-profile(:attributes="profile", :user="user")
 </template>
 
 <script>
