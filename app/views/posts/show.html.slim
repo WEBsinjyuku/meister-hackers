@@ -1,6 +1,9 @@
+- content_for :title do
+  = @post.title
 
 section#show-delete
   - if user_signed_in?
+    script[type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-5c85aea5c49f9371"]
     - if @post.stopped?
       .post-delete-stopped
         section#show-stopped
@@ -14,11 +17,11 @@ section#show-delete
           = link_to post_path(params[:id]), class: "post-delete-button", method: :delete, data: { confirm: "本当に削除しますか" }
             p.post-delete-title プロジェクトを削除する
   - else
+    script[type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-5c85aea5c49f9371"]
     - if @post.stopped?
       .post-delete-stopped
         section#show-stopped
           p 募集停止
-
 
 section#show-post
   .show-post-item-title
