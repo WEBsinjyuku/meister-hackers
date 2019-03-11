@@ -1,5 +1,4 @@
-- content_for :title do
-  = @post.title
+- set_meta_tags title: @post.title
 
 section#show-delete
   - if user_signed_in?

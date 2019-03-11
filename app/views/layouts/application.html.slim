@@ -1,8 +1,9 @@
 doctype html
 html
   head
-    title
-      = content_for?(:title) ? yield(:title) : "Meister Hackers"
+    = display_meta_tags(default_meta_tags)
+    <!-- title
+       content_for?(:title) ? yield(:title) : "Meister Hackers" -->
     <!-- title
       | Meister Hackers -->
     = csrf_meta_tags
