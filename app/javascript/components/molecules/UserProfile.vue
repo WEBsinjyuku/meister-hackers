@@ -8,7 +8,7 @@
         td.account-header-middle
           | {{ this.user.name }}
         td.account-header-right
-          a.edit-button(@click="edit" v-if="user.isCurrentUser") 編集  
+          a.edit-button(@click="edit" v-if="user.isCurrentUser") 編集
     .account アカウント
     table
       tr
@@ -40,12 +40,6 @@
 <script>
 import moment from "moment";
 export default {
-  filters: {
-    formatDate(value) {
-      if (!value) return "-";
-      return moment(value).format("YYYY/MM/DD HH:mm");
-    }
-  },
   props: ["user", "attributes"],
   computed: {
     editUrl() {
@@ -53,13 +47,13 @@ export default {
         return `/users/${this.user.id}/edit`;
       }
       return "/";
-    }
+    },
   },
   methods: {
     edit() {
       window.location.href = this.editUrl;
-    }
-  }
+    },
+  },
 };
 </script>
 

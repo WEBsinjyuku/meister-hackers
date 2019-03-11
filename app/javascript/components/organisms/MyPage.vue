@@ -21,15 +21,15 @@ export default {
         id: 0,
         name: "",
         avatar: "",
-        isLogin: false
+        isLogin: false,
       },
       introduction: "自己紹介文が未入力",
-      profile: null
+      profile: null,
     };
   },
   mounted() {
     const profileUrl = `${location.href}/profiles`;
-    Axios.get(profileUrl).then(response => {
+    Axios.get(profileUrl).then((response) => {
       if (response.data.status === 404) {
         window.location.href = "/error/404";
         return;
@@ -49,6 +49,6 @@ export default {
         this.introduction = response.data.profile.introduction;
       }
     });
-  }
+  },
 };
 </script>
