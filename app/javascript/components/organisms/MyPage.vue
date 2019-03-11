@@ -39,7 +39,7 @@ export default {
           return;
         }
         if (response.data.status === 500) {
-          window.location.href = "/error/500";
+          window.location.href = "/error/404";
           return;
         }
 
@@ -47,6 +47,7 @@ export default {
         this.user.id = response.data.id;
         this.user.avatar = response.data.avatar;
         this.user.isLogin = response.data.is_login;
+        this.user.isCurrentUser = response.data.is_current_user;
         if (response.data.profile) {
           this.profile = response.data.profile;
           this.introduction = response.data.profile.introduction;

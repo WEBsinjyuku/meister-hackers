@@ -1,0 +1,77 @@
+{
+  "projectName": "meister-hackers",
+  "projectOwner": "WEBsinjyuku",
+  "repoType": "github",
+  "repoHost": "https://github.com",
+  "files": [
+    "README.md"
+  ],
+  "imageSize": 100,
+  "commit": false,
+  "contributors": [
+    {
+      "login": "takaaa220",
+      "name": "takaaa220",
+      "avatar_url": "https://avatars3.githubusercontent.com/u/25857381?v=4",
+      "profile": "https://github.com/takaaa220",
+      "contributions": [
+        "maintenance"
+      ]
+    },
+    {
+      "login": "shikky0331",
+      "name": "shikky0331",
+      "avatar_url": "https://avatars2.githubusercontent.com/u/45489481?v=4",
+      "profile": "https://github.com/shikky0331",
+      "contributions": [
+        "maintenance"
+      ]
+    },
+    {
+      "login": "hiromoto-kazuya",
+      "name": "hiromoto-kazuya",
+      "avatar_url": "https://avatars1.githubusercontent.com/u/40492325?v=4",
+      "profile": "https://github.com/hiromoto-kazuya",
+      "contributions": [
+        "maintenance"
+      ]
+    },
+    {
+      "login": "LeonardoMatusaki",
+      "name": "LeonardoMatusaki",
+      "avatar_url": "https://avatars1.githubusercontent.com/u/39451570?v=4",
+      "profile": "https://github.com/LeonardoMatusaki",
+      "contributions": [
+        "maintenance"
+      ]
+    },
+    {
+      "login": "dh-megane",
+      "name": "dh_megane",
+      "avatar_url": "https://avatars3.githubusercontent.com/u/40923242?v=4",
+      "profile": "https://github.com/dh-megane",
+      "contributions": [
+        "maintenance"
+      ]
+    },
+    {
+      "login": "takahashi19",
+      "name": "takahashi",
+      "avatar_url": "https://avatars2.githubusercontent.com/u/40596064?v=4",
+      "profile": "https://github.com/takahashi19",
+      "contributions": [
+        "maintenance"
+      ]
+    },
+    {
+      "login": "tsu-nera",
+      "name": "Tsunemichi Harada",
+      "avatar_url": "https://avatars1.githubusercontent.com/u/760627?v=4",
+      "profile": "https://futurismo.biz/",
+      "contributions": [
+        "maintenance"
+      ]
+    }
+  ],
+  "contributorsPerLine": 7
+}
