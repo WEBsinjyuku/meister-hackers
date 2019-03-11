@@ -25,7 +25,7 @@
         td
           | 自己紹介
         td
-          | 自己紹介文を表示する
+          user-post(:introduction="introduction")
     div
       .icon.is-large(v-if="attributes && attributes.github_url")
         a.fab.fa-2x.fa-github.is-black(:href="attributes.github_url")
@@ -38,8 +38,19 @@
 </template>
 
 <script>
+import Axios from "axios";
+import UserPost from "./UserPost.vue";
 import moment from "moment";
+
 export default {
+  components: {
+    UserPost,
+  },
+  data() {
+    return {
+      introduction: "自己紹介文が未入力",
+    };
+  },
   props: ["user", "attributes"],
   computed: {
     editUrl() {
@@ -54,6 +65,22 @@ export default {
       window.location.href = this.editUrl;
     },
   },
+  mounted() {
+    const profileUrl = `${location.href}/profiles`;
+    Axios.get(profileUrl).then((response) => {
+      if (response.data.status === 404) {
+        window.location.href = "/error/404";
+        return;
+      }
+      if (response.data.status === 500) {
+        window.location.href = "/error/404";
+        return;
+      }
+      if (response.data.profile) {
+        this.introduction = response.data.profile.introduction;
+      }
+    });
+  }
 };
 </script>
 

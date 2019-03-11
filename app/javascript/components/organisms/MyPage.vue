@@ -2,18 +2,15 @@
 .bd-content
   .content
       user-profile(:attributes="profile", :user="user")
-      user-post(:introduction="introduction")
 </template>
 
 <script>
 import Axios from "axios";
-import UserPost from "../molecules/UserPost.vue";
 import UserProfile from "../molecules/UserProfile.vue";
 
 export default {
   components: {
-    UserPost,
-    UserProfile
+    UserProfile,
   },
   data() {
     return {
@@ -23,7 +20,6 @@ export default {
         avatar: "",
         isLogin: false,
       },
-      introduction: "自己紹介文が未入力",
       profile: null,
     };
   },
@@ -46,7 +42,6 @@ export default {
       this.user.isCurrentUser = response.data.is_current_user;
       if (response.data.profile) {
         this.profile = response.data.profile;
-        this.introduction = response.data.profile.introduction;
       }
     });
   },
