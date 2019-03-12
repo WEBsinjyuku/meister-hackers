@@ -6,10 +6,14 @@
         user-profile(:attributes="profile", :user="user")
       .column.is-two-third
         user-post(:introduction="introduction")
+        link(rel="stylesheet" href="https://unpkg.com/github-calendar@latest/dist/github-calendar-responsive.css")
+        .calendar
+          | Loading the data just for you.
 </template>
 
 <script>
 import Axios from "axios";
+import GitHubCalendar from "github-calendar";
 import UserPost from "../molecules/UserPost.vue";
 import UserProfile from "../molecules/UserProfile.vue";
 
@@ -23,6 +27,7 @@ export default {
       user: {
         id: 0,
         name: "",
+        nickname: "",
         avatar: "",
         isLogin: false,
       },
@@ -44,6 +49,7 @@ export default {
         }
 
         this.user.name = response.data.username;
+        this.user.nickname = response.data.nickname;
         this.user.id = response.data.id;
         this.user.avatar = response.data.avatar;
         this.user.isLogin = response.data.is_login;
@@ -52,6 +58,7 @@ export default {
           this.profile = response.data.profile;
           this.introduction = response.data.profile.introduction;
         }
+        GitHubCalendar(".calendar", this.user.nickname, { responsive: true });
       });
   },
 };
