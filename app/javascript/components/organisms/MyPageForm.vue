@@ -24,15 +24,27 @@
         .field
           .label GitHub URL
           input.input(type="text" v-model="profile.github_url")
+        .err-msg(v-if="errMessages.github_url")
+          span(v-for="errMsg in errMessages.github_url")
+            | {{ errMsg }}
         .field
           .label Twitter URL
           input.input(type="text" v-model="profile.twitter_url")
+        .err-msg(v-if="errMessages.twitter_url")
+          span(v-for="errMsg in errMessages.twitter_url")
+            | {{ errMsg }}
         .field
           .label Facebook URL
           input.input(type="text" v-model="profile.facebook_url")
+        .err-msg(v-if="errMessages.facebook_url")
+          span(v-for="errMsg in errMessages.facebook_url")
+            | {{ errMsg }}
         .field
           .label Blog URL
           input.input(type="text" v-model="profile.blog_url")
+        .err-msg(v-if="errMessages.blog_url")
+          span(v-for="errMsg in errMessages.blog_url")
+            | {{ errMsg }}
         button.button(type="submit").is-primary 更新
 </template>
 
@@ -55,6 +67,12 @@ export default {
         name: "",
         avatar: "",
       },
+      errMessages: {
+        github_url: null,
+        twitter_url: null,
+        facebook_url: null,
+        blog_url: null,         
+      }
     };
   },
   mounted() {
@@ -80,9 +98,15 @@ export default {
       const baseUrl = location.href;
       const profileUrl = `${baseUrl.replace("edit", "profiles")}/${this.profile.id}`;
       Axios.put(profileUrl, this.profile)
-        .then(() => {
+        .then((response) => {
+        if (response.data.status === 200) {
           location.href = baseUrl.replace("edit", "");
-        });
+        }
+        if (response.data.status === 500) {
+          console.log(response.data.errors);
+          this.errMessages = response.data.errors
+        }       
+      });
     },
     cancel() {
       const baseUrl = location.href;
@@ -172,4 +196,9 @@ export default {
     border-radius: 10px;
   }
 
+  .err-msg {
+    text-align: left;
+    color: red;
+    margin-top: -30px;
+  }
 </style>

@@ -19,5 +19,11 @@
 
 
 class Profile < ApplicationRecord
+  INVALID_URL_FROMAT = "URLの形式が不正です"
   belongs_to :user
+
+  validates :github_url, allow_blank: true, format: { with: /\A#{URI::regexp(%w(http https))}\z/, message: INVALID_URL_FROMAT }
+  validates :twitter_url, allow_blank: true, format: { with: /\A#{URI::regexp(%w(http https))}\z/, message: INVALID_URL_FROMAT }
+  validates :facebook_url, allow_blank: true, format: { with: /\A#{URI::regexp(%w(http https))}\z/, message: INVALID_URL_FROMAT }
+  validates :blog_url, allow_blank: true, format: { with: /\A#{URI::regexp(%w(http https))}\z/, message: INVALID_URL_FROMAT }
 end
