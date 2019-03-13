@@ -34,16 +34,12 @@
       .icon.is-large(v-if="attributes && attributes.facebook_url")
         a.fab.fa-2x.fa-facebook.is-black(:href="attributes.facebook_url")
       .icon.is-large(v-if="attributes && attributes.blog_url")
-        a.fas.fa-2x.fa-rss-square.is-black(:href="attributes.blog_url")
-    .calendar(v-if="attributes")
-      | Loading the data just for you.
-</template>
+        a.fas.fa-2x.fa-rss-square.is-black(:href="attributes.blog_url")</template>
 
 <script>
 import Axios from "axios";
-import UserPost from "./UserPost.vue";
 import moment from "moment";
-import GitHubCalendar from "github-calendar";
+import UserPost from "./UserPost.vue";
 
 export default {
   components: {
@@ -53,11 +49,6 @@ export default {
     return {
       introduction: "自己紹介文が未入力",
     };
-  },
-  head: {
-    link: [
-      { rel: "stylesheet", href: "https://unpkg.com/github-calendar@latest/dist/github-calendar-responsive.css"},
-    ],
   },
   props: ["user", "attributes"],
   computed: {
@@ -87,9 +78,7 @@ export default {
       if (response.data.profile) {
         this.introduction = response.data.profile.introduction;
       }
-      GitHubCalendar(".calendar", "dh-megane", { responsive: true });
     });
-    
   }
 };
 </script>

@@ -1,10 +1,17 @@
 <template lang="pug">
-user-profile(:attributes="profile", :user="user")
+.bd-content
+  .content
+    user-profile(:attributes="profile", :user="user")
+  .content
+    link(rel="stylesheet" href="https://unpkg.com/github-calendar@latest/dist/github-calendar-responsive.css")
+    .calendar
+      | Loading the data just for you.
 </template>
 
 <script>
 import Axios from "axios";
 import UserProfile from "../molecules/UserProfile.vue";
+import GitHubCalendar from "github-calendar";
 
 export default {
   components: {
@@ -34,7 +41,6 @@ export default {
           window.location.href = "/error/404";
           return;
         }
-
         this.user.name = response.data.username;
         this.user.nickname = response.data.nickname;
         this.user.id = response.data.id;
@@ -44,6 +50,7 @@ export default {
         if (response.data.profile) {
           this.profile = response.data.profile;
         }
+        GitHubCalendar(".calendar", this.user.nickname, { responsive: true });
       });
   },
 };
