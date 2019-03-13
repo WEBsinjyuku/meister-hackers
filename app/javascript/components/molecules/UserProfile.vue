@@ -14,17 +14,17 @@
       tr
         td.is-width-3
           | 都道府県
-        td.is-width-7
+        td.is-width-7(v-if="attributes")
           | {{ attributes.area }}
       tr
         td
           | 性別
-        td
+        td(v-if="attributes")
           | {{ attributes.sex }}
       tr
         td
           | 自己紹介
-        td
+        td(v-if="attributes")
           user-post(:introduction="introduction")
     div
       .icon.is-large(v-if="attributes && attributes.github_url")
@@ -35,12 +35,15 @@
         a.fab.fa-2x.fa-facebook.is-black(:href="attributes.facebook_url")
       .icon.is-large(v-if="attributes && attributes.blog_url")
         a.fas.fa-2x.fa-rss-square.is-black(:href="attributes.blog_url")
+    .calendar(v-if="attributes")
+      | Loading the data just for you.
 </template>
 
 <script>
 import Axios from "axios";
 import UserPost from "./UserPost.vue";
 import moment from "moment";
+import GitHubCalendar from "github-calendar";
 
 export default {
   components: {
@@ -50,6 +53,11 @@ export default {
     return {
       introduction: "自己紹介文が未入力",
     };
+  },
+  head: {
+    link: [
+      { rel: "stylesheet", href: "https://unpkg.com/github-calendar@latest/dist/github-calendar-responsive.css"},
+    ],
   },
   props: ["user", "attributes"],
   computed: {
@@ -79,7 +87,9 @@ export default {
       if (response.data.profile) {
         this.introduction = response.data.profile.introduction;
       }
+      GitHubCalendar(".calendar", "dh-megane", { responsive: true });
     });
+    
   }
 };
 </script>
@@ -88,6 +98,7 @@ export default {
 .account-header {
   height: 70px;
   width: 100vw;
+  margin-top: -10px;
   margin-left: calc(50% - 50vw);
   background-color: #f0ffff;
 }
