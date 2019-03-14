@@ -6,7 +6,7 @@ class ProfilesController < ApplicationController
 
   def index
     if @user
-      render json: { status: 200, profile: @user.profile, username: @user.name, avatar: @user.avatar_url, id: @user.id, is_login: user_signed_in?, is_current_user: current? }
+      render json: { status: 200, profile: @user.profile, username: @user.name, avatar: @user.avatar_url, id: @user.id, is_login: user_signed_in?, is_current_user: current?, nickname: @user.nickname }
     else
       render json: { status: 500 }
     end
@@ -14,7 +14,7 @@ class ProfilesController < ApplicationController
 
   def index2
     if current?
-      render json: { status: 200, profile: @user.profile, username: @user.name, avatar: @user.avatar_url, id: @user.id, is_login: user_signed_in?, is_current_user: current? }
+      render json: { status: 200, profile: @user.profile, username: @user.name, avatar: @user.avatar_url, id: @user.id, is_login: user_signed_in?, is_current_user: current?, nickname: @user.nickname }
     else
       render json: { status: 401 }
     end
