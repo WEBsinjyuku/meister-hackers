@@ -10,8 +10,8 @@
 
 <script>
 import Axios from "axios";
-import UserProfile from "../molecules/UserProfile.vue";
 import GitHubCalendar from "github-calendar";
+import UserProfile from "../molecules/UserProfile.vue";
 
 export default {
   components: {

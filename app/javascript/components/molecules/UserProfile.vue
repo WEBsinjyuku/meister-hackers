@@ -59,11 +59,6 @@ export default {
       return "/";
     },
   },
-  methods: {
-    edit() {
-      window.location.href = this.editUrl;
-    },
-  },
   mounted() {
     const profileUrl = `${location.href}/profiles`;
     Axios.get(profileUrl).then((response) => {
@@ -79,7 +74,12 @@ export default {
         this.introduction = response.data.profile.introduction;
       }
     });
-  }
+  },
+  methods: {
+    edit() {
+      window.location.href = this.editUrl;
+    },
+  },
 };
 </script>
 
