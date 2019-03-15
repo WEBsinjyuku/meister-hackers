@@ -1,25 +1,20 @@
 <template lang="pug">
 .bd-content
   .content
-    .columns
-      .column.is-one-third
-        user-profile(:attributes="profile", :user="user")
-      .column.is-two-third
-        user-post(:introduction="introduction")
-        link(rel="stylesheet" href="https://unpkg.com/github-calendar@latest/dist/github-calendar-responsive.css")
-        .calendar
-          | Loading the data just for you.
+    user-profile(:attributes="profile", :user="user")
+  .content
+    link(rel="stylesheet" href="https://unpkg.com/github-calendar@latest/dist/github-calendar-responsive.css")
+    .calendar
+      | Loading the data just for you.
 </template>
 
 <script>
 import Axios from "axios";
 import GitHubCalendar from "github-calendar";
-import UserPost from "../molecules/UserPost.vue";
 import UserProfile from "../molecules/UserProfile.vue";
 
 export default {
   components: {
-    UserPost,
     UserProfile,
   },
   data() {
@@ -31,7 +26,6 @@ export default {
         avatar: "",
         isLogin: false,
       },
-      introduction: "自己紹介文が未入力",
       profile: null,
     };
   },
@@ -47,7 +41,6 @@ export default {
           window.location.href = "/error/404";
           return;
         }
-
         this.user.name = response.data.username;
         this.user.nickname = response.data.nickname;
         this.user.id = response.data.id;
@@ -56,7 +49,6 @@ export default {
         this.user.isCurrentUser = response.data.is_current_user;
         if (response.data.profile) {
           this.profile = response.data.profile;
-          this.introduction = response.data.profile.introduction;
         }
         GitHubCalendar(".calendar", this.user.nickname, { responsive: true });
       });
