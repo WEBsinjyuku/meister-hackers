@@ -1,7 +1,5 @@
 <template lang="pug">
-.card
-  .card-content
-    pre {{ introduction }}
+  span {{ introduction }}
 </template>
 
 <script>
