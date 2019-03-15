@@ -2,10 +2,6 @@ doctype html
 html
   head
     = display_meta_tags(default_meta_tags)
-    <!-- title
-       content_for?(:title) ? yield(:title) : "Meister Hackers" -->
-    <!-- title
-      | Meister Hackers -->
     = csrf_meta_tags
     = csp_meta_tag
     = stylesheet_link_tag    'application', media: 'all'
