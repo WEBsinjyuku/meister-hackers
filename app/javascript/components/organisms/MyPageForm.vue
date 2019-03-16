@@ -11,6 +11,9 @@
               | {{ this.user.name }}
             td.account-header-right
               a.cancel-button(type="button" @click="cancel") キャンセル
+        ul(v-if="errMessages")
+          li(v-for="errMsg in errMessages")
+            span {{ errMsg[0] }}
         .account アカウント
         .field
           .label 都道府県
@@ -55,6 +58,7 @@ export default {
         name: "",
         avatar: "",
       },
+      errMessages: null,
     };
   },
   mounted() {
@@ -80,8 +84,13 @@ export default {
       const baseUrl = location.href;
       const profileUrl = `${baseUrl.replace("edit", "profiles")}/${this.profile.id}`;
       Axios.put(profileUrl, this.profile)
-        .then(() => {
-          location.href = baseUrl.replace("edit", "");
+        .then((response) => {
+          if (response.data.status === 200) {
+            location.href = baseUrl.replace("edit", "");
+          }
+          if (response.data.status === 500) {
+            this.errMessages = response.data.errors;
+          }
         });
     },
     cancel() {
@@ -172,4 +181,7 @@ export default {
     border-radius: 10px;
   }
 
+  ul {
+    color: red;
+  }
 </style>
