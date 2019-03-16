@@ -90,7 +90,7 @@ export default {
           }
           if (response.data.status === 500) {
             this.errMessages = response.data.errors;
-          }    
+          }
         });
     },
     cancel() {
