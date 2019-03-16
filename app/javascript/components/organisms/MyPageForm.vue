@@ -85,14 +85,13 @@ export default {
       const profileUrl = `${baseUrl.replace("edit", "profiles")}/${this.profile.id}`;
       Axios.put(profileUrl, this.profile)
         .then((response) => {
-        if (response.data.status === 200) {
-          location.href = baseUrl.replace("edit", "");
-        }
-        if (response.data.status === 500) {
-          console.log(response.data.errors);
-          this.errMessages = response.data.errors
-        }       
-      });
+          if (response.data.status === 200) {
+            location.href = baseUrl.replace("edit", "");
+          }
+          if (response.data.status === 500) {
+            this.errMessages = response.data.errors;
+          }    
+        });
     },
     cancel() {
       const baseUrl = location.href;
