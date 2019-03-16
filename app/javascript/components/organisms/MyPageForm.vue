@@ -74,9 +74,6 @@ export default {
         this.user.name = response.data.username;
         this.user.avatar = response.data.avatar;
       });
-      
-      // ログインしてるuserのnameに書き換えたい
-      document.title = `${this.user.name}`;
   },
   methods: {
     submit() {

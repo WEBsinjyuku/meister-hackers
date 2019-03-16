@@ -81,10 +81,6 @@ export default {
       window.location.href = this.editUrl;
     },
   },
-  // ログインしてるuserのnameに書き換えたい
-  mounted: function(){
-    document.title = `${this.user.name}`;
-    },
 };
 </script>
 
