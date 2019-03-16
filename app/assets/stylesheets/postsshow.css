@@ -21,7 +21,7 @@ i.fab.fa-github-square.my-fa {
 }
 .my-small-fa {
   font-size: 15px !important;
-  marigno-bottom: 9px !important;
+  margin-bottom: 9px !important;
 }
 
 /*=========================
@@ -210,62 +210,6 @@ section#show-stopped {
   padding: 15px;
   margin-bottom: 80px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-}
-
-#show-comment .show-comment {
-  padding: 0.75rem;
-}
-
-#show-comment .title {
-  font-size: 1.5rem;
-  border-bottom: 1px solid;
-}
-
-#show-comment .input {
-  max-width: 88%;
-}
-
-#show-comment .button {
-  max-width: 9%;
-  margin-left: 3%;
-}
-
-#show-comment li {
-  display: block;
-  border-top: 1px solid;
-  margin-bottom: 30px;
-}
-
-#show-comment .message {
-  background-color: initial;
-  margin-bottom: initial;
-  margin-top: 10px;
-}
-
-#show-comment .message-header {
-  background-color: #f9fbfe;
-  color: initial;
-  padding: 0.50em 0.75em;
-  border: solid 1px #cdc8c8;
-  border-bottom: 0px;
-}
-
-#show-comment .message-header a {
-  color: red;
-}
-
-#show-comment .show-owner-img {
-  margin: 10px 0px 5px 5px;
-}
-
-#show-comment .message-body {
-  padding: 0.50em 0.75em;
-  border: solid 1px #cdc8c8;
-}
-
-#show-comment .message-time {
-  font-size: 0.75rem;
-  float: right;
 }
 
 /*=========================
