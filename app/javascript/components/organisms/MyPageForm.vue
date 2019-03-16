@@ -11,6 +11,9 @@
               | {{ this.user.name }}
             td.account-header-right
               a.cancel-button(type="button" @click="cancel") キャンセル
+        ul(v-if="errMessages")
+          li(v-for="errMsg in errMessages")
+            span {{ errMsg[0] }}
         .account アカウント
         .field
           .label 都道府県
@@ -24,27 +27,15 @@
         .field
           .label GitHub URL
           input.input(type="text" v-model="profile.github_url")
-        .err-msg(v-if="errMessages.github_url")
-          span(v-for="errMsg in errMessages.github_url")
-            | {{ errMsg }}
         .field
           .label Twitter URL
           input.input(type="text" v-model="profile.twitter_url")
-        .err-msg(v-if="errMessages.twitter_url")
-          span(v-for="errMsg in errMessages.twitter_url")
-            | {{ errMsg }}
         .field
           .label Facebook URL
           input.input(type="text" v-model="profile.facebook_url")
-        .err-msg(v-if="errMessages.facebook_url")
-          span(v-for="errMsg in errMessages.facebook_url")
-            | {{ errMsg }}
         .field
           .label Blog URL
           input.input(type="text" v-model="profile.blog_url")
-        .err-msg(v-if="errMessages.blog_url")
-          span(v-for="errMsg in errMessages.blog_url")
-            | {{ errMsg }}
         button.button(type="submit").is-primary 更新
 </template>
 
@@ -67,12 +58,7 @@ export default {
         name: "",
         avatar: "",
       },
-      errMessages: {
-        github_url: null,
-        twitter_url: null,
-        facebook_url: null,
-        blog_url: null,         
-      }
+      errMessages: null,
     };
   },
   mounted() {
@@ -196,9 +182,7 @@ export default {
     border-radius: 10px;
   }
 
-  .err-msg {
-    text-align: left;
+  ul {
     color: red;
-    margin-top: -30px;
   }
 </style>
