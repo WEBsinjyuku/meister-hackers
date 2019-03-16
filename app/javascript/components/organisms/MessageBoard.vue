@@ -31,7 +31,7 @@ export default {
     return {
       messages: [],
       content: "",
-      signed_in : false,
+      signed_in: false,
     };
   },
   mounted() {
