@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_03_08_053730) do
+ActiveRecord::Schema.define(version: 2019_03_17_120124) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -20,6 +20,7 @@ ActiveRecord::Schema.define(version: 2019_03_08_053730) do
     t.bigint "post_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.bigint "user_id"
     t.index ["post_id"], name: "index_messages_on_post_id"
   end
 
@@ -35,6 +36,7 @@ ActiveRecord::Schema.define(version: 2019_03_08_053730) do
     t.date "opened_on"
     t.date "closed_on"
     t.string "slack_channel"
+    t.integer "bosyu_type", default: 1
     t.index ["user_id"], name: "index_posts_on_user_id"
   end
 
