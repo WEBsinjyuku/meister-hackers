@@ -19,7 +19,7 @@ module ApplicationHelper
     {
     site: "Meister Hackers",
     title: "",
-    description: "本物の仲間達と市場価値を高め合う、エンジニア達のプラットフォーム",
+    description: "エンジニアがOSSでチーム開発をする事を支援するWebサービス",
     reverse: true,
     separator: "|",
     og: defalut_og,
@@ -44,7 +44,7 @@ module ApplicationHelper
       site: "",
       url: "https://meister-hackers.herokuapp.com",
       title: "Meister Hackers",
-      description: "本物の仲間達と市場価値を高め合う、エンジニア達のプラットフォーム",
+      description: "エンジニアがOSSでチーム開発をする事を支援するWebサービス",
       image: "https://github.com/WEBsinjyuku/meister-hackers/blob/master/public/Meister%20Hackers.png"
       }
     end
