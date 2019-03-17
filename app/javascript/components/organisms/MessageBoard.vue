@@ -68,10 +68,10 @@ export default {
         Axios.post(messageUrl, data)
           .then((response) => {
             this.messages.unshift({
-              message_id: response.data.data[0]["message"]["id"],
-              user_id: response.data.data[0]["message"]["user_id"],
-              avatar_url: response.data.data[0]["user"]["avatar_url"],
-              user_name: response.data.data[0]["user"]["name"],
+              message_id: response.data.data[0].message["id"],
+              user_id: response.data.data[0].message["user_id"],
+              avatar_url: response.data.data[0].user["avatar_url"],
+              user_name: response.data.data[0].user["name"],
               content: this.content,
               time: moment().format("YYYY/MM/DD HH:mm"),
             });
@@ -79,11 +79,10 @@ export default {
           });
       }
     },
-    del: function (id, index) {
+    del: function delete(id, index) {
       const messageDeleteUrl = `${location.href}/messages/${id}`;
-      console.log(messageDeleteUrl);
       Axios.delete(messageDeleteUrl)
-        .then((response) => {
+        .then(() => {
           this.messages.splice(index, 1);
         });
     },
