@@ -9,20 +9,19 @@ form(@submit.prevent="submit")
       li(v-if="messages.length == 0" v-bind:class="{'signed-out': !signed_in}")
         | コメントはありません
       li(v-for="(message, index) in messages" :key="message.id" v-bind:class="{'signed-out': !signed_in && index == 0}").message-wrapper
-        // TODO: サンプル画像(機能実装後、修正すること)
-        | {{ message.message_id }}
-        | {{ message.user_id }}
-        | {{ message.avatar_url }}
-        //img(src="https://avatars1.githubusercontent.com/u/40492325?v=4" size="30x30" alt="userIcon").show-owner-img
-        .message
-          // TODO: ユーザー名と削除ボタン(機能実装後、修正すること)
-          .message-header
-            p {{ message.user_name }}
-            //a(href="#") 削除
-          .message-body
-            | {{ `${message.content}` }}
-        .message-time
-          | {{ `${message.time}` }}
+        table
+          tr
+            td.is-width-1
+              img(v-bind:src="message.avatar_url" size="30x30" alt="userIcon" v-if="message.avatar_url").show-owner-img
+            td.is-width-9
+              .message
+                .message-header
+                  p {{ message.user_name }}
+                  a.delete-button(type="button" @click="del(message.message_id, index)") 削除
+                .message-body
+                  | {{ `${message.content}` }}
+                .message-time
+                  | {{ `${message.time}` }}
 </template>
 
 <script>
@@ -65,11 +64,30 @@ export default {
           content: this.content,
         };
         Axios.post(messageUrl, data)
-          .then(() => {
-            this.messages.unshift({ content: this.content, time: moment().format("YYYY/MM/DD HH:mm") });
+          .then((response) => {
+            this.messages.unshift({
+              message_id: response.data.data[0]["message"]["id"],
+              user_id: response.data.data[0]["message"]["user_id"],
+              avatar_url: response.data.data[0]["user"]["avatar_url"],
+              user_name: response.data.data[0]["user"]["name"],
+              content: this.content,
+              time: moment().format("YYYY/MM/DD HH:mm")
+            });
             this.content = "";
           });
       }
+    },
+    del: function (id, index) {
+      const messageDeleteUrl = `${location.href}/messages/${id}`;
+      console.log(messageDeleteUrl);
+      Axios.delete(messageDeleteUrl)
+        .then((response) => {
+          if (response.data.status === 200) {
+            this.messages.splice(index, 1)
+          }
+          if (response.data.status === 500) {
+          }
+        });
     },
   },
 };
@@ -106,7 +124,19 @@ export default {
     border-top: 1px solid;
     margin-bottom: 30px;
   }
+  
+  table {
+    width: 100%;
+  }
 
+  .is-width-1 {
+    text-align: center;    
+    width: 8%;
+  }
+
+  .is-width-9 {
+    width: 90%
+  }
   .message {
     background-color: initial;
     margin-bottom: initial;
@@ -137,5 +167,9 @@ export default {
   .message-time {
     font-size: 0.75rem;
     float: right;
+  }
+
+  .delete-button {
+    color: red !important;
   }
 </style>
