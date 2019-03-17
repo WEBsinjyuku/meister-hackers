@@ -97,12 +97,12 @@ section#show-stopped {
   border-radius: 12px;
 }
 
-.is-sanity {
+.is-hard {
   color: #f4b400;
   background-color: rgba(244, 180, 0, 0.15);
 }
 
-.is-slack {
+.is-soft {
   color: #fff;
   background-color: #f4b400;
 }

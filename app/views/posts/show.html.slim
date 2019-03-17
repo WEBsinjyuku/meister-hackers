@@ -27,8 +27,10 @@ section#show-post
 
     .show-post-right
       .bosyu-box
-        / span.is-sanity.bosyu-type ガチ募
-        / span.is-slack.bosyu-type ゆる募
+        - if @post.soft?
+          span.is-soft.bosyu-type ゆる募
+        - else
+          span.is-hard.bosyu-type がち募
 
   .show-post-item
     .my-icon
