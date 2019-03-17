@@ -20,7 +20,7 @@ class MessagesController < ApplicationController
       return
     end
 
-    message = post.messages.build(content: params[:content])
+    message = post.messages.build(content: params[:content], user_id: current_user[:id])
 
     if message.save
       render json: { status: 200 }

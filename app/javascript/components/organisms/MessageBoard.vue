@@ -14,7 +14,7 @@ form(@submit.prevent="submit")
         .message
           // TODO: ユーザー名と削除ボタン(機能実装後、修正すること)
           .message-header
-            //p ユーザー名
+            p {{ message.user_id }}
             //a(href="#") 削除
           .message-body
             | {{ `${message.content}` }}
@@ -40,7 +40,11 @@ export default {
       .then((response) => {
         if (response.data.data) {
           response.data.data.map((h) => {
-            this.messages.unshift({ content: h.content, time: moment(h.created_at).format("YYYY/MM/DD HH:mm") });
+            this.messages.unshift({ 
+              user_id: h.user_id,
+              content: h.content,
+              time: moment(h.created_at).format("YYYY/MM/DD HH:mm")
+            });
           });
         }
         this.signed_in = response.data.signed_in;
