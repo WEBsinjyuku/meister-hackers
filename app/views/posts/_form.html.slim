@@ -37,19 +37,19 @@
         = f.text_area :content, class: 'control textarea', placeholder: "1000文字以内で入力"
       .field
         .control
+          = f.label :募集タイプ, class: 'label'
+          = f.radio_button :bosyu_type, 'soft', checked: post.soft?, class: 'radio'
+          | ゆる募
+          = f.radio_button :bosyu_type, 'hard', checked: post.hard?, class: 'radio'
+          | がち募
+      .field          
+        .control
           - if @post.id?
             = f.label :募集ステータス, class: 'label'
             = f.radio_button :status, 'wanted', checked: post.wanted?, class: 'radio'
             | 募集中
             = f.radio_button :status, 'stopped', checked: post.stopped?, class: 'radio'
-            | 募集停止
-      .field
-        .control
-          = f.label :募集タイプ, class: 'label'
-          = f.radio_button :bosyu_type, 'soft', checked: post.soft?, class: 'radio'
-          | ゆる募
-          = f.radio_button :bosyu_type, 'hard', checked: post.hard?, class: 'radio'
-          | がち募          
+            | 募集停止         
       .field.is-grouped.post-form-buttons
         .control.post-form-button-box
           = f.submit submit_text, class: 'button is-success post-form-button', data: { confirm: '投稿しますか？' }
