@@ -16,14 +16,18 @@
 #  opened_on     :date
 #  closed_on     :date
 #  slack_channel :string
+#  bosyu_type    :integer          default("soft")
 #
 
 class Post < ApplicationRecord
   include ActiveModel::Validations
-
+  
   enum status: { wanted: 1, stopped: 2 }
+  enum bosyu_type: { soft: 1, hard: 2 }
+
   belongs_to :user
   has_many :messages, dependent: :destroy
+
   validates_with PostValidator, field: [:repository, :title, :content]
 
   before_save :format_repository, :update_date
