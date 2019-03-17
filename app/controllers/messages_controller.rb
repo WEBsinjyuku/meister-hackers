@@ -6,7 +6,7 @@ class MessagesController < ApplicationController
   def index
     messages = Message.joins("LEFT JOIN users ON messages.user_id = users.id").where(post_id: params[:post_id])
       .select("messages.id, messages.user_id, users.avatar_url, users.name, messages.content, messages.created_at")
-    
+
     if user_signed_in?
       logged_in_user_id = current_user[:id]
     else
@@ -30,7 +30,7 @@ class MessagesController < ApplicationController
     end
 
     message = post.messages.build(content: params[:content], user_id: current_user[:id])
- 
+
     if message.save
       user = User.find_by(id: message.user_id)
       render json: { status: 200, data: [ message: message, user: user] }

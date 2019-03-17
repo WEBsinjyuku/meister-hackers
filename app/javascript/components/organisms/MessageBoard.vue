@@ -43,13 +43,13 @@ export default {
       .then((response) => {
         if (response.data.data) {
           response.data.data.map((h) => {
-            this.messages.unshift({ 
-              message_id : h.id,
+            this.messages.unshift({
+              message_id: h.id,
               user_id: h.user_id,
               avatar_url: h.avatar_url,
               user_name: h.name,
               content: h.content,
-              time: moment(h.created_at).format("YYYY/MM/DD HH:mm")
+              time: moment(h.created_at).format("YYYY/MM/DD HH:mm"),
             });
           });
         }
@@ -73,7 +73,7 @@ export default {
               avatar_url: response.data.data[0]["user"]["avatar_url"],
               user_name: response.data.data[0]["user"]["name"],
               content: this.content,
-              time: moment().format("YYYY/MM/DD HH:mm")
+              time: moment().format("YYYY/MM/DD HH:mm"),
             });
             this.content = "";
           });
@@ -84,11 +84,7 @@ export default {
       console.log(messageDeleteUrl);
       Axios.delete(messageDeleteUrl)
         .then((response) => {
-          if (response.data.status === 200) {
-            this.messages.splice(index, 1)
-          }
-          if (response.data.status === 500) {
-          }
+          this.messages.splice(index, 1);
         });
     },
   },
@@ -126,13 +122,13 @@ export default {
     border-top: 1px solid;
     margin-bottom: 30px;
   }
-  
+
   table {
     width: 100%;
   }
 
   .is-width-1 {
-    text-align: center;    
+    text-align: center;
     width: 8%;
   }
 
