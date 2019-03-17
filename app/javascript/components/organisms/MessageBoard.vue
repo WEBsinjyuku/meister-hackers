@@ -79,11 +79,17 @@ export default {
           });
       }
     },
-    del: function delete(id, index) {
+    del: function (id, index) {
       const messageDeleteUrl = `${location.href}/messages/${id}`;
       Axios.delete(messageDeleteUrl)
-        .then(() => {
-          this.messages.splice(index, 1);
+        .then((response) => {
+          if (response.data.status === 200) {
+            console.log(this.messages);
+            this.messages.splice(index, 1);
+          }
+          if (response.data.status === 500) {
+            console.log("コメント削除失敗");
+          }
         });
     },
   },
