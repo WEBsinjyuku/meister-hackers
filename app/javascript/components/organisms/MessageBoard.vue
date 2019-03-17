@@ -17,7 +17,7 @@ form(@submit.prevent="submit")
               .message
                 .message-header
                   p {{ message.user_name }}
-                  a.delete-button(type="button" @click="del(message.message_id, index)") 削除
+                  a.delete-button(type="button" v-if="message.user_id == logged_in_user_id" @click="del(message.message_id, index)") 削除
                 .message-body
                   | {{ `${message.content}` }}
                 .message-time
@@ -34,6 +34,7 @@ export default {
       messages: [],
       content: "",
       signed_in: false,
+      logged_in_user_id: null,
     };
   },
   mounted() {
@@ -53,6 +54,7 @@ export default {
           });
         }
         this.signed_in = response.data.signed_in;
+        this.logged_in_user_id = response.data.logged_in_user_id;
       });
   },
   methods: {

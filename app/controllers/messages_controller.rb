@@ -7,9 +7,9 @@ class MessagesController < ApplicationController
     messages = Message.joins("LEFT JOIN users ON messages.user_id = users.id").where(post_id: params[:post_id])
       .select("messages.id, messages.user_id, users.avatar_url, users.name, messages.content, messages.created_at")
     if messages
-      render json: { status: 200, data: messages, signed_in: user_signed_in? }
+      render json: { status: 200, data: messages, signed_in: user_signed_in?, logged_in_user_id: current_user[:id] }
     else
-      render json: { status: 500, data: [], signed_in: user_signed_in? }
+      render json: { status: 500, data: [], signed_in: user_signed_in?, logged_in_user_id: current_user[:id] }
     end
   end
 
