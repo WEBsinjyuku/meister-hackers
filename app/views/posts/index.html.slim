@@ -23,7 +23,6 @@
             span 募集停止
 javascript:
   var posts = #{{ @posts.to_json }}
-  console.log(posts);
 = javascript_pack_tag 'posts/index.js'
 css:
   .topic {
