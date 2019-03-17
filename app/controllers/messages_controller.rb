@@ -10,6 +10,7 @@ class MessagesController < ApplicationController
     if user_signed_in?
       logged_in_user_id = current_user[:id]
     else
+      # 未ログイン時は-１とする
       logged_in_user_id = -1
     end
 
