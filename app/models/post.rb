@@ -21,7 +21,7 @@
 
 class Post < ApplicationRecord
   include ActiveModel::Validations
-  
+
   enum status: { wanted: 1, stopped: 2 }
   enum bosyu_type: { soft: 1, hard: 2 }
 
