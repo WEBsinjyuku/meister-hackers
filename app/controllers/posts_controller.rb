@@ -87,7 +87,8 @@ class PostsController < ApplicationController
           "topics" => client.topics.names,
           "description" => client.description,
           "stargazers_count" => client.stargazers_count,
-          "status" => repo.status
+          "status" => repo.status,
+          "bosyu_type" => repo.bosyu_type
         }
         posts.push(post)
       end

@@ -13,13 +13,17 @@
               | 言語 {{ repo.language }}
             span.tag.is-white
               i.fa.fa-star
-              | 　{{ repo.stargazers_count }}           
-          /.content.is-large
-            span.project-type ゆる募
+              | {{ repo.stargazers_count }}           
+          .content.is-medium
+            span.bosyu-type.is-soft v-if="repo.bosyu_type == 'soft'"
+              | ゆる募
+            span.bosyu-type.is-hard v-if="repo.bosyu_type == 'hard'"
+              | がち募
           .content.stopped-msg v-if="repo.status == 'stopped'"
             span 募集停止
 javascript:
   var posts = #{{ @posts.to_json }}
+  console.log(posts);
 = javascript_pack_tag 'posts/index.js'
 css:
   .topic {
@@ -49,10 +53,22 @@ css:
     font-weight: bold;
 
   }
-  .project-type {
+  .bosyu-type {
     position: absolute;
+    margin-right: 10px;
+    margin-bottom: 10px;
     right: 0;
     bottom: 0;
-    color : RGB(255, 191, 0) !important;
-    background-color : RGB(243, 226, 169, 0.1) !important;
+  }
+
+  .is-hard {
+    position: absolute;
+    color: #f4b400;
+    background-color: rgba(244, 180, 0, 0.15);
+  }
+
+  .is-soft {
+    position: absolute;
+    color: #fff;
+    background-color: #f4b400;
   }
