@@ -10,11 +10,14 @@ form(@submit.prevent="submit")
         | コメントはありません
       li(v-for="(message, index) in messages" :key="message.id" v-bind:class="{'signed-out': !signed_in && index == 0}").message-wrapper
         // TODO: サンプル画像(機能実装後、修正すること)
+        | {{ message.message_id }}
+        | {{ message.user_id }}
+        | {{ message.avatar_url }}
         //img(src="https://avatars1.githubusercontent.com/u/40492325?v=4" size="30x30" alt="userIcon").show-owner-img
         .message
           // TODO: ユーザー名と削除ボタン(機能実装後、修正すること)
           .message-header
-            p {{ message.user_id }}
+            p {{ message.user_name }}
             //a(href="#") 削除
           .message-body
             | {{ `${message.content}` }}
@@ -41,7 +44,10 @@ export default {
         if (response.data.data) {
           response.data.data.map((h) => {
             this.messages.unshift({ 
+              message_id : h.id,
               user_id: h.user_id,
+              avatar_url: h.avatar_url,
+              user_name: h.name,
               content: h.content,
               time: moment(h.created_at).format("YYYY/MM/DD HH:mm")
             });
