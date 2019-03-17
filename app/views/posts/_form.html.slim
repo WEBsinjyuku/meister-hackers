@@ -43,6 +43,13 @@
             | 募集中
             = f.radio_button :status, 'stopped', checked: post.stopped?, class: 'radio'
             | 募集停止
+      .field
+        .control
+          = f.label :募集タイプ, class: 'label'
+          = f.radio_button :bosyu_type, 'soft', checked: post.soft?, class: 'radio'
+          | ゆる募
+          = f.radio_button :bosyu_type, 'hard', checked: post.hard?, class: 'radio'
+          | がち募          
       .field.is-grouped.post-form-buttons
         .control.post-form-button-box
           = f.submit submit_text, class: 'button is-success post-form-button', data: { confirm: '投稿しますか？' }

@@ -60,7 +60,7 @@ class PostsController < ApplicationController
 
   private
     def post_params
-      params.require(:post).permit(:title, :content, :repository, :status, :slack_channel)
+      params.require(:post).permit(:title, :content, :repository, :status, :slack_channel, :bosyu_type)
     end
 
     def set_post
