@@ -17,7 +17,7 @@ form(@submit.prevent="submit")
               .message
                 .message-header
                   p {{ message.user_name }}
-                  a.delete-button(type="button" v-if="message.user_id == logged_in_user_id" @click="del(message.message_id, index)") 削除
+                  a.delete-button(type="button" v-if="message.user_id == logged_in_user_id" @click="doDelete(message.message_id, index)") 削除
                 .message-body
                   | {{ `${message.content}` }}
                 .message-time
@@ -68,10 +68,10 @@ export default {
         Axios.post(messageUrl, data)
           .then((response) => {
             this.messages.unshift({
-              message_id: response.data.data[0].message["id"],
-              user_id: response.data.data[0].message["user_id"],
-              avatar_url: response.data.data[0].user["avatar_url"],
-              user_name: response.data.data[0].user["name"],
+              message_id: response.data.data[0].message.id,
+              user_id: response.data.data[0].message.user_id,
+              avatar_url: response.data.data[0].user.avatar_url,
+              user_name: response.data.data[0].user.name,
               content: this.content,
               time: moment().format("YYYY/MM/DD HH:mm"),
             });
@@ -79,12 +79,11 @@ export default {
           });
       }
     },
-    del: function (id, index) {
+    doDelete(id, index) {
       const messageDeleteUrl = `${location.href}/messages/${id}`;
       Axios.delete(messageDeleteUrl)
         .then((response) => {
           if (response.data.status === 200) {
-            console.log(this.messages);
             this.messages.splice(index, 1);
           }
           if (response.data.status === 500) {
