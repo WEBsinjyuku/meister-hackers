@@ -1,3 +1,4 @@
+
 <template lang="pug">
 .bd-content
   .content
