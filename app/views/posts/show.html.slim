@@ -73,9 +73,8 @@ section#show-comment
 
 
 
-
-- if user_signed_in?
-  section#show-button
+section#show-button
+  - if user_signed_in?
     .show-button-box
       - if @user == current_user
         = link_to edit_post_path(params[:id]), class: "show-button my-shadow show-button-join"
