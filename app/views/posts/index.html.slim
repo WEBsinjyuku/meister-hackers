@@ -13,11 +13,12 @@
               | 言語 {{ repo.language }}
             span.tag.is-white
               i.fa.fa-star
-              | 　{{ repo.stargazers_count }}           
+              | 　{{ repo.stargazers_count }}
           /.content.is-large
             span.project-type ゆる募
           .content.stopped-msg v-if="repo.status == 'stopped'"
             span 募集停止
+          script[type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-5c85aea5c49f9371"]
 javascript:
   var posts = #{{ @posts.to_json }}
 = javascript_pack_tag 'posts/index.js'
@@ -31,7 +32,7 @@ css:
     position: relative;
   }
   .stopped {
-    z-index: 2; 
+    z-index: 2;
     background-color : #A4A4A4;
     opacity: 0.7;
   }
