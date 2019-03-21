@@ -12,7 +12,7 @@ Rails.application.routes.draw do
   end
 
   resources :posts, only: %i(new create edit update show index destroy) do
-    resources :messages, only: %i(index create)
+    resources :messages, only: %i(index create destroy)
   end
 
   get "error/404", controller: 'application', action: 'render_404'
