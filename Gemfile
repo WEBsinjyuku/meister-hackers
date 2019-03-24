@@ -39,6 +39,9 @@ gem "rspec-rails"
 gem "factory_bot_rails"
 gem "rails-controller-testing"
 
+# SEO
+gem "meta-tags", require: "meta_tags"
+
 # Use ActiveStorage variant
 # gem 'mini_magick', '~> 4.8'
 
