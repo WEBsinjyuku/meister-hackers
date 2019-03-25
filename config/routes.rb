@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  get 'home/top'
   root :to => 'posts#index'
 
   devise_for :users, controllers: {
@@ -11,7 +12,7 @@ Rails.application.routes.draw do
     get "profiles2", :to => "profiles#index2"
   end
 
-  resources :posts, only: %i(new create edit update show index destroy) do
+  resources :posts, only: %i(new create edit update show index destroy top) do
     resources :messages, only: %i(index create destroy)
   end
 

@@ -1,24 +1,25 @@
-.section#app
-  .columns.is-multiline
-    .box.column.is-5 v-for="repo in repos" v-bind:key="repo.id" v-bind:class="{ stopped: repo.status == 'stopped'}"
-        a v-bind:href="repo.url"
-          .content.is-large
-            b = "{{ repo.title }}"
-          .content.is-medium style="color: black; font-size: small;" v-if="repo.description" {{ repo.description }}
-          .tags
-            span.tag.topic v-for="topic in repo.topics"
-              = "{{ topic }}"
-          .tags
-            span.tag.is-white
-              | 言語 {{ repo.language }}
-            span.tag.is-white
-              i.fa.fa-star
-              | 　{{ repo.stargazers_count }}
-          /.content.is-large
-            span.project-type ゆる募
-          .content.stopped-msg v-if="repo.status == 'stopped'"
-            span 募集停止
-          script[type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-5c85aea5c49f9371"]
+.inner
+  .section#app
+    .columns.is-multiline
+      .box.column.is-5 v-for="repo in repos" v-bind:key="repo.id" v-bind:class="{ stopped: repo.status == 'stopped'}"
+          a v-bind:href="repo.url"
+            .content.is-large
+              b = "{{ repo.title }}"
+            .content.is-medium style="color: black; font-size: small;" v-if="repo.description" {{ repo.description }}
+            .tags
+              span.tag.topic v-for="topic in repo.topics"
+                = "{{ topic }}"
+            .tags
+              span.tag.is-white
+                | 言語 {{ repo.language }}
+              span.tag.is-white
+                i.fa.fa-star
+                | 　{{ repo.stargazers_count }}
+            /.content.is-large
+              span.project-type ゆる募
+            .content.stopped-msg v-if="repo.status == 'stopped'"
+              span 募集停止
+            script[type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-5c85aea5c49f9371"]
 javascript:
   var posts = #{{ @posts.to_json }}
 = javascript_pack_tag 'posts/index.js'

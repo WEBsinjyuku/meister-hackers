@@ -40,7 +40,7 @@ header {
   width: 100%;
 }
 
-#main {
+.inner {
   width: 100%;
   max-width: 1000px;
   margin: 0 auto;
