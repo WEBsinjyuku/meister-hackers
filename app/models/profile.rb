@@ -25,7 +25,7 @@ class Profile < ApplicationRecord
 
   validates :area, length: { maximum: 9, message: MAX_LENGTH_ERROR % { field: "都道府県", length: 9 } }
   validates :sex, length: { maximum: 5, message: MAX_LENGTH_ERROR % { field: "性別", length: 5 } }
-  validates :introduction, length: { maximum: 160, message: MAX_LENGTH_ERROR % { field: "自己紹介", length: 160 } }
+  validates :introduction, length: { maximum: 160, message: MAX_LENGTH_ERROR % { field: "自己紹介", length: 500 } }
   validates :github_url, allow_blank: true, format: { with: /\A#{URI.regexp(%w(http https))}\z/, message: INVALID_URL_FORMAT % { field: "GitHub" } }, length: { maximum: 2000, message: MAX_LENGTH_ERROR % { field: "GitHub URL", length: 2000 } }
   validates :twitter_url, allow_blank: true, format: { with: /\A#{URI.regexp(%w(http https))}\z/, message: INVALID_URL_FORMAT % { field: "Twitter" } }, length: { maximum: 2000, message: MAX_LENGTH_ERROR % { field: "Twitter URL", length: 2000 } }
   validates :facebook_url, allow_blank: true, format: { with: /\A#{URI.regexp(%w(http https))}\z/, message: INVALID_URL_FORMAT % { field: "Facebook" } }, length: { maximum: 2000, message: MAX_LENGTH_ERROR % { field: "Facebook URL", length: 2000 } }
