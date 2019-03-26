@@ -47,11 +47,11 @@ header {
   padding: 10px 10px;
 }
 
-.container-wrapper {
+/* .container-wrapper {
   width: 100%;
   max-width: 980px;
   margin: 0 auto;
-}
+} */
 
 .disabled-style {
   background-color: #f5f5f5 !important;
