@@ -92,8 +92,8 @@
               | プロジェクト応募手順
             button.delete @click="isActive=!isActive"
           section.modal-card-body
-            p 1.下記URLよりMeister HackersのSlackに参加してください
+            p 1.下記URLよりMeister HackersのSlackに参加して下さい。
             a href="https://meister-hackers.slack.com/join/shared_invite/enQtNTYyMzAyNDM2MjI2LTAzYjIyYmY0ZWM5YWQ2ODc3M2Y4MGI3MWYxMTVmODk5NWU0NmNmMDc1NjVjMDBmODcxZDkyNjUwZTgxMTM0M2I" target="_blank" Slackに参加
-            p 2.募集ページに記載されたSlackチャンネルを検索してください
-            p 3.チャンネル内でプロジェクト投稿者とやりとりをしてください
+            p 2.このプロジェクトの連絡用チャンネル名は「#{@post.slack_channel}」です。
+            p 連絡用チャンネルに参加してプロジェクト投稿者と連絡を取って下さい。
           footer.modal-card-foot

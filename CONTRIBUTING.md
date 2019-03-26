@@ -47,6 +47,7 @@ WIPのPullRequestでは`WIP`ラベルをつけ、変更内容に関連するissu
 ### master への マージ
 
 @tsu-neraともう一人の計2人のLGTMが出たら、`Merge pull request`ボタンを押して masterへのマージをします。マージが完了したら、作業していたブランチは削除します。
+PRでReviewのLGTMが二人以上出ている場合で特段のコメントがない限り24時間後にはmergeします。
 
 ### issueを閉じる
 
