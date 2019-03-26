@@ -35,7 +35,7 @@
           input.input(type="text" v-model="profile.blog_url")
         .field
           .label 自己紹介
-          textarea.input(type="text" v-model="profile.introduction")
+          textarea.input(type="text" v-model="profile.introduction" placeholder="500文字以内で入力")
         button.button(type="submit").is-primary 更新
 </template>
 
