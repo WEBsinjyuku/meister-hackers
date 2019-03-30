@@ -22,9 +22,6 @@
           .label 性別
           input.input(type="text" v-model="profile.sex")
         .field
-          .label 自己紹介
-          input.input(v-model="profile.introduction")
-        .field
           .label GitHub URL
           input.input(type="text" v-model="profile.github_url")
         .field
@@ -36,6 +33,9 @@
         .field
           .label Blog URL
           input.input(type="text" v-model="profile.blog_url")
+        .field
+          .label 自己紹介
+          textarea.input(type="text" v-model="profile.introduction" placeholder="500文字以内で入力")
         button.button(type="submit").is-primary 更新
 </template>
 
@@ -165,6 +165,10 @@ export default {
 
   .input {
     width: 800px;
+  }
+
+  textarea {
+    height: 250px;
   }
 
   form {

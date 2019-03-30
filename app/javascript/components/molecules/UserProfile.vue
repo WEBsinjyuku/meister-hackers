@@ -25,7 +25,7 @@
       tr
         td
           | 自己紹介
-        td(v-if="attributes")
+        td.new-line(v-if="attributes")
           user-post(:introduction="introduction")
     div
       .icon.is-large(v-if="attributes && attributes.github_url")
@@ -142,5 +142,9 @@ img {
 
 .is-black {
   color: black;
+}
+
+.new-line {
+  white-space: pre-line;
 }
 </style>
