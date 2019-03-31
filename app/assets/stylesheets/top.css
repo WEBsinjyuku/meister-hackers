@@ -1,0 +1,266 @@
+/*=========================
+        1.top
+===========================*/
+
+.lp-top-image {
+  width: 100%;
+  /* height: auto; */
+
+  /* todo: この下は最後に消す */
+  height: 900px;
+  background-color: yellow;
+}
+
+.lp-top-image-filter {
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0,0,0, 0.35);
+  position: relative;
+}
+
+.lp-top-title {
+  position: absolute;
+  top: 45%;
+  left: 50%;
+  -ms-transform: translate(-50%, -50%);
+  -webkit-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+  color: #fff;
+  font-size: 40px;
+  font-weight: bold;
+  text-align: center;
+  text-shadow: 0 0 0 rgba(0,0,0, 1);
+  width: 100%;
+}
+
+.lp-login-button {
+  position: absolute;
+  top: 60%;
+  left: 50%;
+  -ms-transform: translate(-50%, -50%);
+  -webkit-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+}
+
+/*=========================
+        2.introduction
+===========================*/
+
+#lp-introduction {
+  background-color: #F9FBFE;
+}
+
+.lp-introduction {
+  padding: 0 20px;
+}
+
+.lp-introduction-text {
+  text-align: center;
+  font-size: 22px;
+  font-weight: bold;
+  margin: 150px 0;
+}
+
+/*=========================
+        3.merit
+===========================*/
+
+#lp-merit {
+  background-color: #333;
+}
+
+.lp-merit-wrapper {
+  margin: 100px 0;
+  display: flex;
+  justify-content: space-between;
+}
+
+.lp-merit-left {
+  width: 50%;
+  color: #fff;
+}
+
+.lp-merit-title {
+  font-size: 36px;
+  font-weight: bold;
+  margin-bottom: 60px;
+}
+
+.lp-merit-text {
+  font-size: 18px;
+}
+
+.lp-merit-right {
+  
+}
+
+.lp-merit-image {
+  margin-top: 100px;
+  background-color: gray;
+  width: 400px;
+  height: 300px;
+}
+
+/*=========================
+        4.feature
+===========================*/
+
+.lp-feature-title {
+  margin: 100px 0 60px;
+  text-align: center;
+  font-size: 36px;
+  font-weight: bold;
+}
+
+.lp-feature-wrapper {
+  display: flex;
+  margin-bottom: 100px;
+}
+
+.lp-feature-left {
+  width: 50%;
+}
+
+.lp-feature-right {
+  padding: 40px 0;
+}
+
+.lp-feature-image {
+  background-color: gray;
+  width: 400px;
+  height: 300px
+}
+
+.lp-feature-text {
+  font-size: 22px;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+/*=========================
+        5.join
+===========================*/
+
+#lp-join {
+  background-color: #333;
+}
+
+.lp-join-button {
+  display: flex;
+  justify-content: center;
+  margin: 150px 0;
+}
+
+.join-button {
+  padding: 15px 30px;
+  font-size: 20px;
+  font-weight: bold;
+  border-radius: 8px;
+  background-color: #00d1b2;
+  color: #fff;
+  margin: 0 auto;
+  box-shadow: inset 0 1px 3px rgba(255, 255, 255, 0.5),
+    0 3px 6px rgba(255, 255, 255, 0.5);
+  transition: 0.5s;
+  border-bottom: siled 1px #b5b5b5;
+}
+
+.join-button:hover {
+  color: #fff;
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.5), 0 0 3px rgba(255, 255, 255, 0.5);
+  top: 3px;
+  position: relative;
+}
+
+/*=========================
+        6.responsive
+===========================*/
+
+@media screen and (max-width: 768px) {
+  .lp-top-title {
+    font-size: 32px;
+  }
+
+  .lp-merit-wrapper {
+    flex-wrap: wrap;
+    margin: 50px 0;
+  }
+
+  .lp-merit-left,
+  .lp-feature-right {
+    width: 100%;
+    text-align: center;
+  }
+
+  .lp-merit-right,
+  .lp-feature-left {
+    width: 100%;
+  }
+
+  .lp-merit-image,
+  .lp-feature-image {
+    width: 80%;
+    margin: 50px 10% 0;
+  }
+
+  .lp-feature-wrapper {
+    flex-wrap: wrap;
+    margin: 0;
+  }
+
+  .lp-feature-title {
+    margin: 50px 0 0;
+  }
+
+}
+
+@media screen and (max-width: 415px) {
+  .lp-top-title {
+    font-size: 15px;
+  }
+
+  .lp-introduction-text {
+    font-size: 12px;
+    margin: 50px 0;
+    text-align: left;
+  }
+
+  .lp-merit-left {
+    padding: 0 20px;
+    margin-bottom: 30px;
+  }
+
+  .lp-merit-title {
+    font-size: 20px;
+    margin-bottom: 30px;
+  }
+
+  .lp-merit-text {
+    font-size: 12px;
+    text-align: left;
+  }
+
+  .lp-merit-image,
+  .lp-feature-image {
+    margin: 0;
+    width: 100%;
+  }
+
+  .lp-feature-title {
+    font-size: 20px;
+    margin-bottom: 30px;
+  }
+
+  .lp-feature-text {
+    font-size: 12px;
+  }
+
+  .lp-join-button {
+    margin: 50px 0;
+  }
+
+  .join-button {
+    font-size: 15px;
+    padding: 10px 10px;
+  }
+}

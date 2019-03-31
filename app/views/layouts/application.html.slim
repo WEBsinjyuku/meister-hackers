@@ -16,7 +16,6 @@ html
     - if flash[:notice].present?
       div.flash
         = flash[:notice]
-    main#main
-      .container-wrapper
-        = yield
+    .container-wrapper
+      = yield
     = render 'layouts/footer'
