@@ -12,7 +12,7 @@ section#lp-top
         | エンジニアのためのマイスターコミュニティ
       .lp-login-button.lp-join-button
         - if user_signed_in?
-          = link_to "ログアウト", destroy_user_session_path, method: :delete, class: 'join-button'
+          / = link_to "ログアウト", destroy_user_session_path, method: :delete, class: 'join-button'
         - else
           = link_to 'さあ、仲間と共に圧倒的成長をしよう！', user_github_omniauth_authorize_path, class: 'join-button'
 
@@ -79,10 +79,14 @@ section#lp-feature
         p.lp-feature-text オフラインMeetUpとの連携
         p.lp-feature-text オンラインSlack コミュニティとの連携
 
-section#lp-join
-  .inner
-    .lp-join-button
-      - if user_signed_in?
-        = link_to "ログアウト", destroy_user_session_path, method: :delete, class: 'join-button'
-      - else
+
+- if user_signed_in?
+  / section#lp-join
+  /   .inner
+  /     .lp-join-button
+  /       = link_to "ログアウト", destroy_user_session_path, method: :delete, class: 'join-button'
+- else
+  section#lp-join
+    .inner
+      .lp-join-button
         = link_to 'さあ、仲間と共に圧倒的成長をしよう！', user_github_omniauth_authorize_path, class: 'join-button'
