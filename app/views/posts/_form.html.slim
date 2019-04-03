@@ -1,48 +1,49 @@
-.columns.is-centered
-  .column.is-half
-    = form_with(model: post, local: true) do |f|
-      - if @post.errors.any?
-        #error_messages
-          ul
-            - @post.errors.full_messages.each do |msg|
-              li
-                = msg
-      #post-form-title
-        .post-form-title-box
-          h1.post-form-title 投稿プロジェクト
-        .post-form-cancel-button-box
-          - if @post.id?
-            = link_to 'キャンセル', post_path(@post), class: 'post-form-cancel-button'
-      .field
-        = f.label :リポジトリ, class: 'label'
-        - if params[:action] == 'new' # 新規モード
-          = f.text_field :repository, class: 'control input', placeholder: "例: https://github.com/WEBsinjyuku/meister-hackers"
+.inner
+  .columns.is-centered
+    .column.is-half
+      = form_with(model: post, local: true) do |f|
+        - if @post.errors.any?
+          #error_messages
+            ul
+              - @post.errors.full_messages.each do |msg|
+                li
+                  = msg
+        #post-form-title
+          .post-form-title-box
+            h1.post-form-title 投稿プロジェクト
+          .post-form-cancel-button-box
+            - if @post.id?
+              = link_to 'キャンセル', post_path(@post), class: 'post-form-cancel-button'
+        .field
+          = f.label :リポジトリ, class: 'label'
+          - if params[:action] == 'new' # 新規モード
+            = f.text_field :repository, class: 'control input', placeholder: "例: https://github.com/WEBsinjyuku/meister-hackers"
+            p.help
+              | 募集するリポジトリのURLを入力してください
+          - elsif @post.id? # 編集モード(リポジトリは編集不可で表示)
+            = f.text_field :repository, readonly: true, value: [post[:owner], post[:repository]].join("/"), class: 'control input disabled-style', placeholder: "例: https://github.com/WEBsinjyuku/meister-hackers"
+          - else # 新規登録時の入力エラー(リポジトリは入力可能)
+            = f.text_field :repository, class: 'control input', placeholder: "例: https://github.com/WEBsinjyuku/meister-hackers"
+        .field
+          = f.label :募集タイトル, class: 'label'
+          = f.text_field :title, class: 'control input', placeholder: "50文字以内で入力"
+        .field
+          = f.label :Slackチャンネル名, class: 'label'
+          = f.text_field :slack_channel, class: 'control input', placeholder: "例: meister-hackersチャンネル"
           p.help
-            | 募集するリポジトリのURLを入力してください
-        - elsif @post.id? # 編集モード(リポジトリは編集不可で表示)
-          = f.text_field :repository, readonly: true, value: [post[:owner], post[:repository]].join("/"), class: 'control input disabled-style', placeholder: "例: https://github.com/WEBsinjyuku/meister-hackers"
-        - else # 新規登録時の入力エラー(リポジトリは入力可能)
-          = f.text_field :repository, class: 'control input', placeholder: "例: https://github.com/WEBsinjyuku/meister-hackers"
-      .field
-        = f.label :募集タイトル, class: 'label'
-        = f.text_field :title, class: 'control input', placeholder: "50文字以内で入力"
-      .field
-        = f.label :Slackチャンネル名, class: 'label'
-        = f.text_field :slack_channel, class: 'control input', placeholder: "例: meister-hackersチャンネル"
-        p.help
-          | Meister-HackersのSlackに参加し、作成したチャンネル名を記載してください。
-          a.help href="https://meister-hackers.slack.com/join/shared_invite/enQtNTYyMzAyNDM2MjI2LTAzYjIyYmY0ZWM5YWQ2ODc3M2Y4MGI3MWYxMTVmODk5NWU0NmNmMDc1NjVjMDBmODcxZDkyNjUwZTgxMTM0M2I" target="_blank" Meister Hackersへの参加はこちら
-      .field
-        = f.label :募集概要, class: 'label'
-        = f.text_area :content, class: 'control textarea', placeholder: "1000文字以内で入力"
-      .field
-        .control
-          - if @post.id?
-            = f.label :募集ステータス, class: 'label'
-            = f.radio_button :status, 'wanted', checked: post.wanted?, class: 'radio'
-            | 募集中
-            = f.radio_button :status, 'stopped', checked: post.stopped?, class: 'radio'
-            | 募集停止
-      .field.is-grouped.post-form-buttons
-        .control.post-form-button-box
-          = f.submit submit_text, class: 'button is-success post-form-button', data: { confirm: '投稿しますか？' }
+            | Meister-HackersのSlackに参加し、作成したチャンネル名を記載してください。
+            a.help href="https://meister-hackers.slack.com/join/shared_invite/enQtNTYyMzAyNDM2MjI2LTAzYjIyYmY0ZWM5YWQ2ODc3M2Y4MGI3MWYxMTVmODk5NWU0NmNmMDc1NjVjMDBmODcxZDkyNjUwZTgxMTM0M2I" target="_blank" Meister Hackersへの参加はこちら
+        .field
+          = f.label :募集概要, class: 'label'
+          = f.text_area :content, class: 'control textarea', placeholder: "1000文字以内で入力"
+        .field
+          .control
+            - if @post.id?
+              = f.label :募集ステータス, class: 'label'
+              = f.radio_button :status, 'wanted', checked: post.wanted?, class: 'radio'
+              | 募集中
+              = f.radio_button :status, 'stopped', checked: post.stopped?, class: 'radio'
+              | 募集停止
+        .field.is-grouped.post-form-buttons
+          .control.post-form-button-box
+            = f.submit submit_text, class: 'button is-success post-form-button', data: { confirm: '投稿しますか？' }

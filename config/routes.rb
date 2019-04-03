@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  get "top", :to => 'home#top'
   root :to => 'posts#index'
 
   devise_for :users, controllers: {
