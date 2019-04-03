@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
-  get "top", :to => 'home#top'
-  root :to => 'posts#index'
+  get "top", :to => 'posts#index'
+  root :to => 'home#top'
 
   devise_for :users, controllers: {
     registrations: "users/registrations",
