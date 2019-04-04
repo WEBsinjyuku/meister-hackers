@@ -45,7 +45,7 @@ module ApplicationHelper
       url: "https://meister-hackers.herokuapp.com",
       title: "Meister Hackers",
       description: "エンジニアがOSSでチーム開発をする事を支援するWebサービス",
-      image: "public/Meister Hackers two-rows.png"
+      image: "https://raw.githubusercontent.com/WEBsinjyuku/meister-hackers/master/public/Meister%20Hackers%20two-rows.png"
       }
     end
 end
