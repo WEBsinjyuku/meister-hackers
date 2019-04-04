@@ -179,6 +179,13 @@
   position: relative;
 }
 
+.btn2 {
+  background-color: #fff;
+  color: #333;
+}
+.btn2:hover {
+  color: #333;
+}
 /*=========================
         6.responsive
 ===========================*/
