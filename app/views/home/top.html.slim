@@ -79,7 +79,6 @@ section#lp-feature
         p.lp-feature-text オフラインMeetUpとの連携
         p.lp-feature-text オンラインSlack コミュニティとの連携
 
-
 - if user_signed_in?
   / section#lp-join
   /   .inner
@@ -89,7 +88,7 @@ section#lp-feature
   section#lp-join
     .inner
       .lp-join-button
-        = link_to 'さあ、仲間と共に圧倒的成長をしよう！', user_github_omniauth_authorize_path, class: 'join-button'
-        = link_to 'ログインせずに投稿をみる', top_path, class: 'join-button btn2'
-
-        
+        .join-button-box
+          = link_to 'さあ、仲間と共に圧倒的成長をしよう！', user_github_omniauth_authorize_path, class: 'join-button'
+        .join-button-box
+          = link_to 'ログインせずに投稿をみる', top_path, class: 'join-button btn2'
