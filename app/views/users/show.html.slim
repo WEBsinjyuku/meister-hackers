@@ -1,5 +1,7 @@
-div#mypage
-  = javascript_pack_tag 'users/show.js'
+- set_meta_tags title: current_user.name
+.inner
+  div#mypage
+    = javascript_pack_tag 'users/show.js'
 css:
   body {
     background-color: white;

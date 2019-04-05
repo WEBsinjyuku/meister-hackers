@@ -11,6 +11,9 @@
               | {{ this.user.name }}
             td.account-header-right
               a.cancel-button(type="button" @click="cancel") キャンセル
+        ul(v-if="errMessages")
+          li(v-for="errMsg in errMessages")
+            span {{ errMsg[0] }}
         .account アカウント
         .field
           .label 都道府県
@@ -18,9 +21,6 @@
         .field
           .label 性別
           input.input(type="text" v-model="profile.sex")
-        .field
-          .label 自己紹介
-          input.input(v-model="profile.introduction")
         .field
           .label GitHub URL
           input.input(type="text" v-model="profile.github_url")
@@ -33,6 +33,9 @@
         .field
           .label Blog URL
           input.input(type="text" v-model="profile.blog_url")
+        .field
+          .label 自己紹介
+          textarea.input(type="text" v-model="profile.introduction" placeholder="500文字以内で入力")
         button.button(type="submit").is-primary 更新
 </template>
 
@@ -55,6 +58,7 @@ export default {
         name: "",
         avatar: "",
       },
+      errMessages: null,
     };
   },
   mounted() {
@@ -80,8 +84,13 @@ export default {
       const baseUrl = location.href;
       const profileUrl = `${baseUrl.replace("edit", "profiles")}/${this.profile.id}`;
       Axios.put(profileUrl, this.profile)
-        .then(() => {
-          location.href = baseUrl.replace("edit", "");
+        .then((response) => {
+          if (response.data.status === 200) {
+            location.href = baseUrl.replace("edit", "");
+          }
+          if (response.data.status === 500) {
+            this.errMessages = response.data.errors;
+          }
         });
     },
     cancel() {
@@ -158,6 +167,10 @@ export default {
     width: 800px;
   }
 
+  textarea {
+    height: 250px;
+  }
+
   form {
     width: 100%;
   }
@@ -172,4 +185,7 @@ export default {
     border-radius: 10px;
   }
 
+  ul {
+    color: red;
+  }
 </style>

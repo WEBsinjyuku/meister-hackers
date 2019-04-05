@@ -1,23 +1,24 @@
-.error-container
-  .error-left
-    h1
-      | あなたが探しているページは見つかりませんでした。
-    ul
-      - if user_signed_in?
-        li
-          = link_to "ホーム（プロジェクト一覧）", root_path
-        li
-          = link_to "プロフィール", user_path(current_user)
-        li
-          = link_to "プロフィール編集", edit_user_path(current_user)
-        li
-          = link_to "プロジェクト新規投稿", new_post_path
-        li
-          = link_to "お問い合わせ", "#"
-      - else
-        li
-          = link_to "ホーム（プロジェクト一覧）", root_path
-        li
-          = link_to "お問い合わせ", "#"
-  .error-right
-    = image_tag("/404.jpg", size: "200x200")
+.inner
+  .error-container
+    .error-left
+      h1
+        | あなたが探しているページは見つかりませんでした。
+      ul
+        - if user_signed_in?
+          li
+            = link_to "ホーム（プロジェクト一覧）", root_path
+          li
+            = link_to "プロフィール", user_path(current_user)
+          li
+            = link_to "プロフィール編集", edit_user_path(current_user)
+          li
+            = link_to "プロジェクト新規投稿", new_post_path
+          li
+            = link_to "お問い合わせ", "https://github.com/WEBsinjyuku/meister-hackers-support"
+        - else
+          li
+            = link_to "ホーム（プロジェクト一覧）", root_path
+          li
+            = link_to "お問い合わせ", "https://github.com/WEBsinjyuku/meister-hackers-support"
+    .error-right
+      = image_tag("/404.jpg", size: "200x200")

@@ -1,97 +1,97 @@
+- set_meta_tags title: @post.title
 
-section#show-delete
-  - if user_signed_in?
-    - if @post.stopped?
-      .post-delete-stopped
-        section#show-stopped
-          p 募集停止
-        - if @user == current_user
-          = link_to post_path(params[:id]), class: "post-delete-button", method: :delete, data: { confirm: "本当に削除しますか" }
-            p.post-delete-title プロジェクトを削除する
+.inner
+  section#show-delete
+    - if user_signed_in?
+      script[type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-5c85aea5c49f9371"]
+      - if @post.stopped?
+        .post-delete-stopped
+          section#show-stopped
+            p 募集停止
+          - if @user == current_user
+            = link_to post_path(params[:id]), class: "post-delete-button", method: :delete, data: { confirm: "本当に削除しますか" }
+              p.post-delete-title プロジェクトを削除する
+      - else
+        .post-delete-box
+          - if @user == current_user
+            = link_to post_path(params[:id]), class: "post-delete-button", method: :delete, data: { confirm: "本当に削除しますか" }
+              p.post-delete-title プロジェクトを削除する
     - else
-      .post-delete-box
-        - if @user == current_user
-          = link_to post_path(params[:id]), class: "post-delete-button", method: :delete, data: { confirm: "本当に削除しますか" }
-            p.post-delete-title プロジェクトを削除する
-  - else
-    - if @post.stopped?
-      .post-delete-stopped
-        section#show-stopped
-          p 募集停止
+      script[type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-5c85aea5c49f9371"]
+      - if @post.stopped?
+        .post-delete-stopped
+          section#show-stopped
+            p 募集停止
 
+  section#show-post
+    .show-post-item-title
+      .show-post-left
+        h1.show-post-title = @post.title
 
-section#show-post
-  .show-post-item-title
-    .show-post-left
-      h1.show-post-title = @post.title
+      .show-post-right
+        .bosyu-box
+          / span.is-sanity.bosyu-type ガチ募
+          / span.is-slack.bosyu-type ゆる募
 
-    .show-post-right
-      .bosyu-box
-        / span.is-sanity.bosyu-type ガチ募
-        / span.is-slack.bosyu-type ゆる募
+    .show-post-item
+      .my-icon
+        a href="https://github.com/#{@post.owner}/#{@post.repository}"
+          i.fab.fa-github-square.my-fa
+      .git-item
+        p.git-text = @git['description']
 
-  .show-post-item
-    .my-icon
-      a href="https://github.com/#{@post.owner}/#{@post.repository}"
-        i.fab.fa-github-square.my-fa
-    .git-item
-      p.git-text = @git['description']
+    .show-post-item
+      .git-item.git-item-language
+        span.git-language-circle
+        span.git-small-text = @git['language']
+      .git-item.git-item-star
+        .my-small-icon
+          i.fa.fa-star.my-small-fa
+        span.git-small-text = @git['stargazers_count']
+      ul.git-item
+        - @git['topics'].each do |topic|
+          li.git-tag = topic
 
-  .show-post-item
-    .git-item.git-item-language
-      span.git-language-circle
-      span.git-small-text = @git['language']
-    .git-item.git-item-star
-      .my-small-icon
-        i.fa.fa-star.my-small-fa
-      span.git-small-text = @git['stargazers_count']
-    ul.git-item
-      - @git['topics'].each do |topic|
-        li.git-tag = topic
+    .show-post-item
+      = link_to user_path(@user), class: 'show-owner-items'
+        .show-owner
+          - if @user.avatar_url.present?
+            = image_tag(@user.avatar_url, :size => "30x30", :alt => "userIcon", :class => "show-owner-img")
+          - else
+            img.show-owner-img src="http://placehold.id/30x30"
+        .show-owner-item
+          p.show-owner-name = @user.name
 
-  .show-post-item
-    = link_to user_path(@user), class: 'show-owner-items'
-      .show-owner
-        - if @user.avatar_url.present?
-          = image_tag(@user.avatar_url, :size => "30x30", :alt => "userIcon", :class => "show-owner-img")
-        - else
-          img.show-owner-img src="http://placehold.id/30x30"
-      .show-owner-item
-        p.show-owner-name = @user.name
+    .show-post-description
+      .show-description-title
+        h2.show-post-description-title 募集概要
+      .show-description-text
+        = simple_format(h(@post.content))
 
-  .show-post-description
-    .show-description-title
-      h2.show-post-description-title 募集概要
-    .show-description-text
-      = simple_format(h(@post.content))
+  section#show-comment
+    #message-board
+  = javascript_pack_tag 'posts/show.js'
 
-section#show-comment
-  #message-board
-= javascript_pack_tag 'posts/show.js'
-
-
-
-
-- if user_signed_in?
   section#show-button
-    .show-button-box
-      - if @user == current_user
-        = link_to edit_post_path(params[:id]), class: "show-button my-shadow show-button-join"
-          p 編集
-      - elsif @post.wanted?
-        a.show-button.my-shadow.show-button-join
-          p @click="isActive=!isActive" 参加
+    - if user_signed_in?
+      .show-button-box
+        - if @user == current_user
+          = link_to edit_post_path(params[:id]), class: "show-button my-shadow show-button-join"
+            p 編集
+        - elsif @post.wanted?
+          a.show-button.my-shadow.show-button-join
+            p @click="isActive=!isActive" 参加
 
-    .modal :class="{'is-active':isActive}"
-      .modal-background @click="isActive=!isActive"
-      .modal-card
-        header.modal-card-head
-          p.modal-card-title
-            | プロジェクト応募手順
-          button.delete @click="isActive=!isActive"
-        section.modal-card-body
-          p 1.下記URLよりMeister HackersのSlackに参加してください
-          a href="https://meister-hackers.slack.com/join/shared_invite/enQtNTYyMzAyNDM2MjI2LTAzYjIyYmY0ZWM5YWQ2ODc3M2Y4MGI3MWYxMTVmODk5NWU0NmNmMDc1NjVjMDBmODcxZDkyNjUwZTgxMTM0M2I" target="_blank" Slackに参加
-          p 2.募集ページに記載されたSlackチャンネルを検索してください
-          p 3.チャンネル内でプロジェクト投稿者とやりとりをしてください
-        footer.modal-card-foot
+      .modal :class="{'is-active':isActive}"
+        .modal-background @click="isActive=!isActive"
+        .modal-card
+          header.modal-card-head
+            p.modal-card-title
+              | プロジェクト応募手順
+            button.delete @click="isActive=!isActive"
+          section.modal-card-body
+            p 1.下記URLよりMeister HackersのSlackに参加して下さい。
+            a href="https://meister-hackers.slack.com/join/shared_invite/enQtNTYyMzAyNDM2MjI2LTAzYjIyYmY0ZWM5YWQ2ODc3M2Y4MGI3MWYxMTVmODk5NWU0NmNmMDc1NjVjMDBmODcxZDkyNjUwZTgxMTM0M2I" target="_blank" Slackに参加
+            p 2.このプロジェクトの連絡用チャンネル名は「#{@post.slack_channel}」です。
+            p 連絡用チャンネルに参加してプロジェクト投稿者と連絡を取って下さい。
+          footer.modal-card-foot

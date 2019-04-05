@@ -1,2 +1,4 @@
-div#mypageedit
-  = javascript_pack_tag 'users/edit.js'
+- set_meta_tags title: "#{current_user.name}の編集"
+.inner
+  div#mypageedit
+    = javascript_pack_tag 'users/edit.js'

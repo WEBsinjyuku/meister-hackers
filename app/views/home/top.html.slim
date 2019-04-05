@@ -1,0 +1,95 @@
+section#lp-top
+  .lp-top-image
+    .lp-top-image-filter
+      h1.lp-top-title 
+        | 会社を越えてつながり
+        br
+        | 共に創り、共に教え合い、共に成長する
+        br
+        br
+        | オープンソースで結ばれた本物の仲間と出会う
+        br
+        | エンジニアのためのマイスターコミュニティ
+      .lp-login-button.lp-join-button
+        - if user_signed_in?
+          / = link_to "ログアウト", destroy_user_session_path, method: :delete, class: 'join-button'
+        - else
+          = link_to 'さあ、仲間と共に圧倒的成長をしよう！', user_github_omniauth_authorize_path, class: 'join-button'
+
+section#lp-introduction
+  .inner
+    .lp-introduction
+      h3.lp-introduction-text
+        | 時は中世ヨーロッパ...大学や教育機関がない時代。
+        br
+        | 駆け出しの職人はギルドに所属し、腕を磨き、マイスターと呼ばれる最高位の職人を目指し、切磋琢磨した。
+        br
+        br
+        | そして現代の日本...会社が教育に対して投資をせず、現場の即戦力が求められる時代。
+        br
+        | 駆け出しエンジニアは、会社に依存せず学び成長する必要がある。
+        br
+        br
+        | 今こそ、エンジニアの師弟関係が必要だ。
+        br
+        | そこで、現代のエンジニア業界においてマイスター制度を復活させ、
+        br
+        | ベテランエンジニアが中堅、駆け出しエンジニアを育てる仕組みをつくりたい。
+
+section#lp-merit
+  .inner
+    .lp-merit-wrapper
+      .lp-merit-left
+        h4.lp-merit-title チームを結成し、０から１を
+        p.lp-merit-text
+          | 開発メンバー募集掲示板でチームメンバを集めよう！
+          br
+          br
+          | 保守開発では得られない、要件定義からデプロイまでのゼロイチ開発を体験し、
+          br
+          | スキルを高めながら良質なポートフォリオを作成できます。
+          br
+          br
+          | もし、あなたが駆け出しエンジニアなら、
+          br
+          | ベテランエンジニアからのフィードバックを無料で得られます。
+          br
+          br
+          | もし、あなたがベテランエンジニアなら、
+          br
+          | オープンソース開発のコントリビューションを無料で得られます。
+          br
+          br
+          | オープンソースに貢献することでエンジニアとしての地位が向上し、
+          br
+          | 就活や転職で有利になります。
+      .lp-merit-right
+        img.lp-merit-image
+
+section#lp-feature
+  .inner
+    h4.lp-feature-title ５つの特徴
+    .lp-feature-wrapper
+      .lp-feature-left
+        img.lp-feature-image
+      .lp-feature-right
+        p.lp-feature-text 仲間をみつけて開発チームを結成
+        p.lp-feature-text 師匠となるべきベテランプログラマとの出会い
+        p.lp-feature-text GitHubつかったオープンソース開発
+        p.lp-feature-text オフラインMeetUpとの連携
+        p.lp-feature-text オンラインSlack コミュニティとの連携
+
+
+- if user_signed_in?
+  / section#lp-join
+  /   .inner
+  /     .lp-join-button
+  /       = link_to "ログアウト", destroy_user_session_path, method: :delete, class: 'join-button'
+- else
+  section#lp-join
+    .inner
+      .lp-join-button
+        = link_to 'さあ、仲間と共に圧倒的成長をしよう！', user_github_omniauth_authorize_path, class: 'join-button'
+        = link_to 'ログインせずに投稿をみる', top_path, class: 'join-button btn2'
+
+        

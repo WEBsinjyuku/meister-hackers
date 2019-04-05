@@ -77,7 +77,7 @@ class PostsController < ApplicationController
 
     def search_posts
       posts = []
-      Post.order(created_at: "DESC").select() do |repo|
+      Post.order(status: "ASC", updated_at: "DESC").select() do |repo|
         client = GithubOss::GithubFetcher.new(repo.owner_and_repository)
         post = {
           "id" => repo.id,
