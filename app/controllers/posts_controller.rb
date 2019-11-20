@@ -79,17 +79,19 @@ class PostsController < ApplicationController
       posts = []
       Post.order(status: "ASC", updated_at: "DESC").select() do |repo|
         client = GithubOss::GithubFetcher.new(repo.owner_and_repository)
-        post = {
-          "id" => repo.id,
-          "url" => "/posts/#{ repo.id }",
-          "title" => repo.title,
-          "language" => client.language,
-          "topics" => client.topics.names,
-          "description" => client.description,
-          "stargazers_count" => client.stargazers_count,
-          "status" => repo.status
-        }
-        posts.push(post)
+        if client.repository? then
+          post = {
+            "id" => repo.id,
+            "url" => "/posts/#{ repo.id }",
+            "title" => repo.title,
+            "language" => client.language,
+            "topics" => client.topics.names,
+            "description" => client.description,
+            "stargazers_count" => client.stargazers_count,
+            "status" => repo.status
+          }
+          posts.push(post)
+        end
       end
       posts
     end
