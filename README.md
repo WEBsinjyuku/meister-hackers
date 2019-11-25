@@ -54,7 +54,7 @@ See also [Introduction Guide](https://github.com/WEBsinjyuku/meister-hackers/wik
 
 ## コミュニティに参加
 
-* Slackコミュニティ→[Slackリンク](https://join.slack.com/t/meister-hackers/shared_invite/enQtNTYyMzAyNDM2MjI2LTAzYjIyYmY0ZWM5YWQ2ODc3M2Y4MGI3MWYxMTVmODk5NWU0NmNmMDc1NjVjMDBmODcxZDkyNjUwZTgxMTM0M2I)
+* Slackコミュニティ→[Slackリンク](https://join.slack.com/t/meister-hackers/shared_invite/enQtNTYyMzAyNDM2MjI2LWMzMTZmNjY3YTg1MmZmNTg0NjY3YTU3ODgxNTQ4NzRhNTk0NTc0OWU4ODEzOTE0NjBiMDQ2Y2ZkMWM1NTFjZWQ)
 
 * LT会交流会のコミュニテイ→[Connpassリンク](https://ossteam.connpass.com/)
 
